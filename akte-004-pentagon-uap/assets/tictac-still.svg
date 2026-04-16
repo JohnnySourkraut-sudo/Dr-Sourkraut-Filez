@@ -1,0 +1,38 @@
+<svg viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <!-- FLIR thermal background -->
+  <defs>
+    <radialGradient id="thermalGrad3" cx="45%" cy="45%">
+      <stop offset="0%" style="stop-color:#ffff00;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#ffaa00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#001100;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <rect width="1024" height="768" fill="url(#thermalGrad3)"/>
+  
+  <!-- Targeting crosshair -->
+  <g stroke="rgba(0,255,0,0.3)" stroke-width="2">
+    <line x1="300" y1="384" x2="724" y2="384"/>
+    <line x1="512" y1="150" x2="512" y2="618"/>
+    <circle cx="512" cy="384" r="150" fill="none"/>
+    <circle cx="512" cy="384" r="250" fill="none"/>
+  </g>
+  
+  <!-- Tic-Tac Object - distinctive shape -->
+  <g>
+    <!-- Top dome -->
+    <circle cx="512" cy="320" r="70" fill="#ffff00" opacity="0.8"/>
+    <!-- Bottom dome -->
+    <circle cx="512" cy="448" r="70" fill="#ffff00" opacity="0.8"/>
+    <!-- Middle band -->
+    <rect x="455" y="375" width="114" height="18" fill="#ffff88" opacity="0.9"/>
+    
+    <!-- Highlight -->
+    <ellipse cx="485" cy="310" rx="30" ry="20" fill="#ffffff" opacity="0.4"/>
+  </g>
+  
+  <!-- Pentagon label -->
+  <rect x="30" y="680" width="280" height="60" fill="rgba(0,0,0,0.7)" stroke="#00ff00" stroke-width="2"/>
+  <text x="50" y="710" font-family="monospace" font-size="16" fill="#00ff00">TIC-TAC INCIDENT 2004</text>
+  <text x="50" y="728" font-family="monospace" font-size="12" fill="#00ff00">USS NIMITZ ENCOUNTER</text>
+</svg>
