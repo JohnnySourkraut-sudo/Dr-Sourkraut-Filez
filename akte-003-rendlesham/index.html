@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Sourkraut Filez // Akte 003: Rendlesham Forest Briefing</title>
+  <meta name="description" content="Dr. Sourkraut Filez // Akte 003: Rendlesham Forest (1980). V9 Dossier-Look mit Papierblatt-Ästhetik und SCIF-Hintergrund." />
+  <style>
+    :root {
+      --bg: #0b1110;
+      --bg2: #101716;
+      --sheet: #f2ead9;
+      --sheet2: #e8deca;
+      --sheet3: #dfd4c2;
+      --ink: #1f231e;
+      --muted: #667066;
+      --olive: #6f816f;
+      --accent: #6f9ba8;
+      --amber: #b67a1e;
+      --red: #8e3d3d;
+      --line: rgba(18,24,20,.12);
+      --type: "Courier New", Courier, monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #edf2ee;
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at top left, rgba(111,129,111,.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(111,155,168,.07), transparent 18%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height: 1.72;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0; pointer-events: none; opacity: .08;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.6), transparent 75%);
+    }
+    .wrap { max-width: 1220px; margin: 0 auto; padding: 28px 18px 90px; position: relative; }
+
+    .ufo {
+      position: fixed;
+      right: 26px;
+      top: 120px;
+      width: 140px;
+      height: 80px;
+      z-index: 60;
+      pointer-events: none;
+      transition: transform 0.08s linear;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
+    }
+    .ufo .body { position:absolute; left:14px; right:14px; bottom:6px; height:32px; border-radius:999px; background:linear-gradient(180deg,#a8b2af,#525a56); box-shadow: inset 0 2px 8px rgba(0,0,0,.3); }
+    .ufo .dome { position:absolute; left:42px; top:4px; width:56px; height:32px; border-radius:999px 999px 12px 12px; background:linear-gradient(180deg,#e0fff8,#7eb5b0); box-shadow: inset -2px 2px 6px rgba(0,0,0,.1); }
+    .ufo .light { position:absolute; bottom:14px; width:12px; height:12px; border-radius:50%; background:#ffd47b; box-shadow:0 0 20px rgba(255,212,123,1), 0 0 40px rgba(255,212,123,.6); }
+    .ufo .l1 { left:26px; } .ufo .l2 { left:64px; } .ufo .l3 { left:102px; }
+    .ufo .pulse { animation: pulse-light 2s ease-in-out infinite; }
+    @keyframes pulse-light { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    .hero {
+      background: linear-gradient(180deg, rgba(17,23,21,.94), rgba(22,29,26,.90));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 26px 70px rgba(0,0,0,.34);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .hero::before {
+      content: "TOP SECRET // DR. SOURKRAUT FILEZ // 24H SELF-DESTRUCT";
+      position: absolute; top: 18px; right: -84px; transform: rotate(16deg);
+      background: rgba(111,155,168,.14); color: #b4d9e8; border: 1px solid rgba(111,155,168,.25);
+      padding: 10px 90px; letter-spacing: .18em; font-size: 11px; font-weight: 900; font-family: var(--type);
+    }
+    .eyebrow {
+      color: #96a79b; text-transform: uppercase; letter-spacing: .18em; font-size: 12px; font-weight: 900; margin-bottom: 12px; font-family: var(--type);
+    }
+    h1 {
+      margin: 0 0 12px; font-size: clamp(42px, 6vw, 82px); line-height: .95; letter-spacing: -0.05em; max-width: 840px;
+    }
+    .sub { font-size: 19px; color: #a8b5ab; max-width: 860px; }
+    .notice {
+      margin-top: 18px; padding: 14px 16px; border-left: 4px solid var(--accent); border-radius: 14px; background: rgba(111,155,168,.08); color: #b4d9e8; font-weight: 700; font-family: var(--type);
+    }
+    .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:22px; }
+    .metric {
+      padding:18px; border-radius:20px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+    }
+    .metric small { display:block; margin-bottom:8px; color:#9cad9f; font-size:11px; text-transform:uppercase; letter-spacing:.14em; font-weight:800; font-family: var(--type); }
+    .metric strong { font-size:31px; letter-spacing:-.04em; }
+
+    .stack {
+      position: relative;
+      margin-top: 30px;
+      padding: 28px 0;
+    }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3, .sheet-main {
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      box-shadow: 0 22px 60px rgba(0,0,0,.22);
+    }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1020px, calc(100% - 30px));
+      background: linear-gradient(180deg, var(--sheet2), var(--sheet3));
+    }
+    .sheet-bg-1 {
+      top: 26px;
+      height: calc(100% - 40px);
+      transform: translateX(-50%) rotate(-2.4deg);
+      opacity: .68;
+    }
+    .sheet-bg-2 {
+      top: 14px;
+      height: calc(100% - 24px);
+      transform: translateX(-50%) rotate(1.6deg);
+      opacity: .82;
+    }
+    .sheet-bg-3 {
+      top: 6px;
+      height: calc(100% - 12px);
+      transform: translateX(-50%) rotate(-0.8deg);
+      opacity: .90;
+    }
+    .sheet-main {
+      position: relative;
+      z-index: 4;
+      max-width: 1040px;
+      margin: 0 auto;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.16), transparent 140px),
+        var(--sheet);
+      color: var(--ink);
+      overflow: hidden;
+      box-shadow:
+        0 22px 60px rgba(0,0,0,.22),
+        inset 0 1px 0 rgba(255,255,255,.4);
+    }
+    .sheet-main::before {
+      content: "";
+      position: absolute; inset: 0;
+      pointer-events: none;
+      opacity: .06;
+      background-image:
+        linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .sheet-main::after {
+      content: "";
+      position: absolute;
+      left: 18px; top: 0; bottom: 0;
+      width: 28px;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 6px,
+        rgba(0,0,0,.05) 6px,
+        rgba(0,0,0,.05) 8px
+      );
+      pointer-events: none;
+    }
+    .sheet-inner {
+      position: relative;
+      z-index: 1;
+      padding: 30px 30px 30px 60px;
+    }
+    .briefing-head {
+      display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start;
+      border-bottom:1px dashed rgba(0,0,0,.15); padding-bottom:16px; margin-bottom:22px;
+    }
+    .briefing-title { font-family: var(--type); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); font-size: 12px; }
+    .briefing-stamp {
+      font-family: var(--type); color: #547383; border: 2px solid rgba(111,155,168,.45); padding: 8px 12px; border-radius: 999px; font-weight: 900; transform: rotate(-4deg);
+    }
+    .content-grid { display:grid; grid-template-columns: 1.48fr .9fr; gap: 22px; }
+    .article h2, .side h2 { font-size: 26px; margin-top:22px; margin-bottom:12px; letter-spacing: -.03em; }
+    .article h2:first-child { margin-top:0; }
+    .article p { margin: 0 0 16px; }
+    .quote {
+      margin: 18px 0; padding: 16px 18px; border-left: 4px solid var(--olive); background: rgba(111,129,111,.10); border-radius: 14px; font-weight: 600; color: #334233;
+    }
+    .visual-pair { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin: 18px 0 24px; }
+    .visual-card {
+      min-height: 240px; border-radius: 18px; border:2px solid rgba(0,0,0,.12);
+      background: linear-gradient(145deg, rgba(38,49,42,.98), rgba(15,20,17,.96));
+      overflow:hidden; position:relative; box-shadow:0 18px 36px rgba(0,0,0,.16);
+    }
+    .visual-card.with-image {
+      background-size: cover;
+      background-position: center;
+      min-height: 320px;
+    }
+    .visual-card::before { content:""; position:absolute; inset:14px; border:1px dashed rgba(255,255,255,.12); border-radius:14px; }
+    .visual-card .label { position:absolute; left:12px; bottom:10px; color:rgba(255,255,255,.86); font-size:11px; font-weight:900; letter-spacing:.15em; text-transform:uppercase; font-family: var(--type); background:rgba(0,0,0,.4); padding:4px 8px; border-radius:6px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .panel {
+      background: rgba(111,129,111,.06);
+      border: 1px solid rgba(0,0,0,.10);
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .tag { display:inline-block; padding:7px 10px; border-radius:999px; border:1px solid rgba(0,0,0,.12); margin-right:8px; margin-bottom:8px; background:rgba(255,255,255,.42); color:var(--muted); font-size:13px; font-weight:800; font-family: var(--type); }
+    .source-list { display:grid; gap:12px; }
+    .source-item { padding:14px; border-radius:16px; border:1px solid rgba(0,0,0,.10); background:rgba(255,255,255,.32); }
+    a { color: #547383; font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .small { font-size: 14px; color: var(--muted); }
+    .footer { max-width:1040px; margin:18px auto 0; color:#93a195; font-size:14px; text-align:center; }
+
+    .asset-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 22px 0;
+    }
+    .asset-img {
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,.12);
+      background: linear-gradient(135deg, rgba(255,255,255,.8), rgba(240,240,235,.6));
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0,0,0,.12);
+    }
+    .asset-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 380px;
+      object-fit: cover;
+    }
+    .asset-img .caption {
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      font-family: var(--type);
+      background: rgba(255,255,255,.6);
+      border-top: 1px solid rgba(0,0,0,.08);
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .metrics, .content-grid, .visual-pair, .asset-gallery { grid-template-columns:1fr; }
+      .hero::before, .ufo { display:none; }
+      .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 { display:none; }
+      .sheet-main::after { display:none; }
+      .sheet-inner { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ufo" id="ufo">
+    <div class="dome"></div><div class="body"></div><div class="light l1 pulse"></div><div class="light l2 pulse" style="animation-delay: .3s"></div><div class="light l3 pulse" style="animation-delay: .6s"></div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Dr. Sourkraut Filez // Akte 003 // Briefing</div>
+      <h1>Rendlesham Forest</h1>
+      <p class="sub">Bro, Dezember 1980, RAF Woodbridge, England: Ein unbekanntes Objekt taucht im Wald auf, Militärpersonal jagt hinterher, Sensoren spielen verrückt, und am Ende fällt die legendäre Formulierung „nicht irdischer Art“. Rendlesham ist genau die Sorte Fall, bei der selbst trainierte Leute merken: Das hier war nicht normal.</p>
+      <div class="notice">Diese Nachricht ist top secret und zerstört sich in 24 Stunden von selbst.</div>
+      <div class="metrics">
+        <div class="metric"><small>Bullshit-Wahrscheinlichkeitsfaktor</small><strong>58%</strong></div>
+        <div class="metric"><small>Credibility Score</small><strong>7.4 / 10</strong></div>
+        <div class="metric"><small>WTF-Faktor</small><strong>8.7 / 10</strong></div>
+      </div>
+    </section>
+
+<!-- IMAGE GALLERY -->
+<div class="asset-gallery">
+</div>
+<!-- END IMAGE GALLERY -->
+
+
+    <section class="stack">
+      <div class="sheet-bg-1"></div>
+      <div class="sheet-bg-2"></div>
+      <div class="sheet-bg-3"></div>
+      <div class="sheet-main">
+        <div class="sheet-inner">
+          <div class="briefing-head">
+            <div>
+              <div class="briefing-title">Field Briefing // Akte 003 // Rendlesham Forest 1980</div>
+              <h2 style="margin:8px 0 0; font-size:34px;">SCIF Briefing zum RAF Woodbridge Incident</h2>
+            </div>
+            <div class="briefing-stamp">CLASSIFIED</div>
+          </div>
+
+          <div class="content-grid">
+            <article class="article">
+              <h2>Zusammenfassung</h2>
+              <p>Am 26. Dezember 1980 beobachteten britische Royal Air Force (RAF) Soldaten bei RAF Woodbridge ein unbekanntes, leuchtend rotes Objekt über dem nahe gelegenen Rendlesham Forest. Das Objekt war niedrig, zu langsam zu fliegen, und beschrieb unmögliche Flugmanöver. Sicherheitspersonal verließ die Basis, um das Objekt zu verfolgen. Am nächsten Tag traten Anomalien an den Radaranlagen auf und wurden dokumentiert. Ein Offizier schrieb später einen Bericht mit den Worten: "Das Objekt war von nicht irdischer Art".</p>
+              <p>Dieser Fall ist besonders faszinierend, weil die RAF-Dokumentation eher nach echtem Kontakt mit etwas Unbekanntem klingt als nach Missverständnis. Das britische Verteidigungsministerium erklärte den Fall später mit einem Leuchtturm, aber genau diese Erklärung hat den Mythos von Rendlesham nur noch größer gemacht.</p>
+
+              <div class="asset-gallery">
+                <div class="asset-img">
+                  <img src="./assets/rendlesham-east-gate.jpg" alt="RAF Woodbridge East Gate at the site where the Rendlesham incident began" loading="lazy" />
+                  <div class="caption">RAF Woodbridge East Gate, der Bereich, an dem die ersten Sichtungen im Dezember 1980 gemeldet wurden. Historisches Foto via Wikimedia Commons.</div>
+                </div>
+                <div class="asset-img">
+                  <img src="./assets/rendlesham-halt-memo.jpg" alt="Charles Halt memorandum on the Rendlesham Forest incident" loading="lazy" />
+                  <div class="caption">Der berühmte Halt-Memorandum-Scan, in dem Lt. Col. Charles Halt die ungewöhnlichen Lichter offiziell dokumentierte. Originaldokument via Wikimedia Commons.</div>
+                </div>
+              </div>
+
+              <div class="quote">Sourkraut-Notiz: Das ist einer dieser Fälle, bei denen militärische Professionalität die Sache nicht kleiner macht, sondern größer. Wenn trainierte RAF-Leute rausgehen, etwas verfolgen und danach Worte wie „nicht irdischer Art“ fallen, dann hören echte UFO-Fans sehr genau hin.</div>
+
+              <h2>Zeitleiste: "The Rendlesham Incident"</h2>
+              <ul>
+                <li><strong>26. Dezember 1980, ~23:00 Uhr:</strong> RAF Woodbridge-Wachpersonal sieht unbekanntes leuchtend rotes Objekt südöstlich über dem Rendlesham Forest.</li>
+                <li><strong>~23:15-23:45:</strong> Sicherheitsteam verlässt die Basis und betritt den Wald zur Verfolgung. Das Objekt zeigt "nicht normale" Flugeigenschaften - plötzliche Richtungswechsel, unmögliche Beschleunigungen.</li>
+                <li><strong>27. Dezember, frühe Stunden:</strong> Das Objekt verschwindet aus dem Sichtfeld. Suchtrupps kehren zur Basis zurück.</li>
+                <li><strong>27. Dezember, Tageszeit:</strong> Berichte von merkwürdigen Marks am Boden im Wald - dreieckige Bodenbuckel und seltsame Impressionen. (Später als natürliche Waldeigenschaften identifiziert.)</li>
+                <li><strong>28. Dezember, ~23:00 Uhr:</strong> Ein zweiter Sichtungsbericht: Das Objekt kehrt zurück, wird gesehen über oder in der Nähe der Waffensicherheits-Bereiche. Radaranomalien werden registriert.</li>
+                <li><strong>29. Dezember 1980:</strong> Offizier verfasst Bericht und schreibt: "Das Objekt war von nicht irdischer Art".</li>
+              </ul>
+
+              <h2>Was wurde beobachtet?</h2>
+              <p><strong>Erste Nacht (26. Dezember):</strong></p>
+              <ul>
+                <li>Leuchtend rotes Objekt, leuchtend weiße und blaue Lichter</li>
+                <li>Niedrig am Himmel, schien zu landen oder zu schweigen über dem Wald</li>
+                <li>Beschrieb sofortige Richtungswechsel und "unmögliche" Manöver</li>
+                <li>Radaranlagen zeigten keine Reaktion (später als Fehler erklärt)</li>
+              </ul>
+
+              <p><strong>Zweite Nacht (28. Dezember):</strong></p>
+              <ul>
+                <li>Ähnliche Lichter, näher an der Waffenlagerung</li>
+                <li>Radaranlagen zeigten ungewöhnliche "Echos" oder Anomalien</li>
+                <li>Offizier beschrieb das Objekt als "von nicht irdischer Art"</li>
+              </ul>
+
+              <h2>Die offizielle Erklärung: "Das war nur ein Leuchtturm"</h2>
+              <p>Später erklärte das britische Verteidigungsministerium den Fall mit dem Leuchtfeuer des Orford Ness Lighthouse. Genau hier steigt für viele erst die Spannung richtig an: Entfernung, Dynamik und Zeugenaussagen wirken auf viele Beobachter bis heute deutlich größer als diese offizielle Version.</p>
+
+              <h2>Warum ist dieser Fall so bedeutsam?</h2>
+              <ul>
+                <li><strong>Militärisches Personal:</strong> Keine "Spinner" - RAF-Sicherheitsoffiziere mit Training und Erfahrung</li>
+                <li><strong>Offizielle Dokumentation:</strong> Der Fall wurde tatsächlich schriftlich festgehalten, nicht nur mündlich überliefert</li>
+                <li><strong>Die berühmte Phrase:</strong> Ein Offizier schrieb tatsächlich "von nicht irdischer Art" - das ist nicht normale militärische Sprache</li>
+                <li><strong>Wiederholte Sichtungen:</strong> Zwei getrennte Nächte mit ähnlichen Berichten, nicht nur ein einmaliger Incident</li>
+                <li><strong>Rückzugnahme der Informationen:</strong> Das britische Verteidigungsministerium gab lange Zeit nichts zu, bis Dokumente freigegeben wurden</li>
+              </ul>
+
+              <h2>Sourkraut-Briefing Fazit</h2>
+              <p>Rendlesham gehört zu den Fällen, die man als UFO-Fan einfach lieben muss. Nicht, weil jedes Detail perfekt geklärt wäre, sondern weil hier Militärpersonal, Dokumente und wiederholte Sichtungen zusammenkommen. Es fühlt sich nicht wie ein kleiner Irrtum an, sondern wie eine echte Begegnung mit etwas, das damals niemand sauber einordnen konnte. Und genau das macht den Fall so stark.</p>
+            </article>
+
+            <aside class="side">
+              <div class="panel">
+                <h2>Aktenstatus</h2>
+                <div class="tag">Unexplained</div>
+                <div class="tag">UK MOD Involved</div>
+                <div class="tag">Military Personnel</div>
+                <div class="tag">Cold Case</div>
+                <p class="small" style="margin-top:10px;">Der Fall, bei dem der Leuchtturm-Debunk die Legende nur noch größer gemacht hat.</p>
+              </div>
+
+              <div class="panel">
+                <h2>Bro-Weiterleitungsfaktor</h2>
+                <p>"Lies das. Das ist der Fall, bei dem die RAF selbst sagt: 'Das war nicht normal', und das Verteidigungsministerium antwortet: 'Äh... Leuchtturm?' Niemand ist überzeugt."</p>
+              </div>
+
+              <div class="panel">
+                <h2>Quellen / Spurensicherung</h2>
+                <div class="source-list">
+                  <div class="source-item"><a href="https://en.wikipedia.org/wiki/Rendlesham_Forest_incident" target="_blank" rel="noopener noreferrer">Wikipedia: Rendlesham Forest</a><div class="small">Chronologie und dokumentierte Berichte</div></div>
+                  <div class="source-item"><a href="https://www.nationalarchives.gov.uk/documents/ufo-rendlesham" target="_blank" rel="noopener noreferrer">UK National Archives</a><div class="small">Offizielle RAF-Dokumente und Briefe</div></div>
+                  <div class="source-item"><a href="https://www.youtube.com/watch?v=m1eBIlAEhIU" target="_blank" rel="noopener noreferrer">Documentary: Rendlesham Incident</a><div class="small">Zeugenaussagen und Analyse</div></div>
+                  <div class="source-item"><a href="https://commons.wikimedia.org/wiki/Category:Rendlesham_Forest_incident" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a><div class="small">Archivierte Dokumente und Karten</div></div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">Dr. Sourkraut Filez // Agent-Sourkraut // Briefing V9 // Rendlesham Archive</div>
+  </div>
+
+  <script>
+    const ufo = document.getElementById('ufo');
+    const updateUfo = () => {
+      const y = window.scrollY || 0;
+      const driftY = 90 + y * 0.22;
+      const wobbleX = Math.sin(y / 90) * 18;
+      const tilt = Math.sin(y / 140) * 6;
+      ufo.style.transform = `translate(${wobbleX}px, ${driftY}px) rotate(${tilt}deg)`;
+    };
+    window.addEventListener('scroll', updateUfo, { passive: true });
+    updateUfo();
+  </script>
+</body>
+</html>

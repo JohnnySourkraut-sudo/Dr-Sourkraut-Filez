@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Sourkraut Filez // Akte 002: Phoenix Lights Briefing</title>
+  <meta name="description" content="Dr. Sourkraut Filez // Akte 002: Phoenix Lights (1997). V9 Dossier-Look mit Papierblatt-Ästhetik und SCIF-Hintergrund." />
+  <style>
+    :root {
+      --bg: #0b1110;
+      --bg2: #101716;
+      --sheet: #f2ead9;
+      --sheet2: #e8deca;
+      --sheet3: #dfd4c2;
+      --ink: #1f231e;
+      --muted: #667066;
+      --olive: #6f816f;
+      --accent: #d47a4a;
+      --amber: #b67a1e;
+      --red: #8e3d3d;
+      --line: rgba(18,24,20,.12);
+      --type: "Courier New", Courier, monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #edf2ee;
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at top left, rgba(111,129,111,.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(212,122,74,.07), transparent 18%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height: 1.72;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0; pointer-events: none; opacity: .08;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.6), transparent 75%);
+    }
+    .wrap { max-width: 1220px; margin: 0 auto; padding: 28px 18px 90px; position: relative; }
+    
+    .ufo {
+      position: fixed;
+      right: 26px;
+      top: 120px;
+      width: 140px;
+      height: 80px;
+      z-index: 60;
+      pointer-events: none;
+      transition: transform 0.08s linear;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
+    }
+    .ufo .body { position:absolute; left:14px; right:14px; bottom:6px; height:32px; border-radius:999px; background:linear-gradient(180deg,#a8b2af,#525a56); box-shadow: inset 0 2px 8px rgba(0,0,0,.3); }
+    .ufo .dome { position:absolute; left:42px; top:4px; width:56px; height:32px; border-radius:999px 999px 12px 12px; background:linear-gradient(180deg,#e0fff8,#7eb5b0); box-shadow: inset -2px 2px 6px rgba(0,0,0,.1); }
+    .ufo .light { position:absolute; bottom:14px; width:12px; height:12px; border-radius:50%; background:#ffd47b; box-shadow:0 0 20px rgba(255,212,123,1), 0 0 40px rgba(255,212,123,.6); }
+    .ufo .l1 { left:26px; } .ufo .l2 { left:64px; } .ufo .l3 { left:102px; }
+    .ufo .pulse { animation: pulse-light 2s ease-in-out infinite; }
+    @keyframes pulse-light { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    .hero {
+      background: linear-gradient(180deg, rgba(17,23,21,.94), rgba(22,29,26,.90));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 26px 70px rgba(0,0,0,.34);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .hero::before {
+      content: "TOP SECRET // DR. SOURKRAUT FILEZ // 24H SELF-DESTRUCT";
+      position: absolute; top: 18px; right: -84px; transform: rotate(16deg);
+      background: rgba(212,122,74,.14); color: #f0d9b4; border: 1px solid rgba(212,122,74,.25);
+      padding: 10px 90px; letter-spacing: .18em; font-size: 11px; font-weight: 900; font-family: var(--type);
+    }
+    .eyebrow {
+      color: #96a79b; text-transform: uppercase; letter-spacing: .18em; font-size: 12px; font-weight: 900; margin-bottom: 12px; font-family: var(--type);
+    }
+    h1 {
+      margin: 0 0 12px; font-size: clamp(42px, 6vw, 82px); line-height: .95; letter-spacing: -0.05em; max-width: 840px;
+    }
+    .sub { font-size: 19px; color: #a8b5ab; max-width: 860px; }
+    .notice {
+      margin-top: 18px; padding: 14px 16px; border-left: 4px solid var(--accent); border-radius: 14px; background: rgba(212,122,74,.08); color: #f0ddbd; font-weight: 700; font-family: var(--type);
+    }
+    .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:22px; }
+    .metric {
+      padding:18px; border-radius:20px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+    }
+    .metric small { display:block; margin-bottom:8px; color:#9cad9f; font-size:11px; text-transform:uppercase; letter-spacing:.14em; font-weight:800; font-family: var(--type); }
+    .metric strong { font-size:31px; letter-spacing:-.04em; }
+
+    .stack {
+      position: relative;
+      margin-top: 30px;
+      padding: 28px 0;
+    }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3, .sheet-main {
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      box-shadow: 0 22px 60px rgba(0,0,0,.22);
+    }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1020px, calc(100% - 30px));
+      background: linear-gradient(180deg, var(--sheet2), var(--sheet3));
+    }
+    .sheet-bg-1 {
+      top: 26px;
+      height: calc(100% - 40px);
+      transform: translateX(-50%) rotate(-2.4deg);
+      opacity: .68;
+    }
+    .sheet-bg-2 {
+      top: 14px;
+      height: calc(100% - 24px);
+      transform: translateX(-50%) rotate(1.6deg);
+      opacity: .82;
+    }
+    .sheet-bg-3 {
+      top: 6px;
+      height: calc(100% - 12px);
+      transform: translateX(-50%) rotate(-0.8deg);
+      opacity: .90;
+    }
+    .sheet-main {
+      position: relative;
+      z-index: 4;
+      max-width: 1040px;
+      margin: 0 auto;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.16), transparent 140px),
+        var(--sheet);
+      color: var(--ink);
+      overflow: hidden;
+      box-shadow: 
+        0 22px 60px rgba(0,0,0,.22),
+        inset 0 1px 0 rgba(255,255,255,.4);
+    }
+    .sheet-main::before {
+      content: "";
+      position: absolute; inset: 0;
+      pointer-events: none;
+      opacity: .06;
+      background-image:
+        linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .sheet-main::after {
+      content: "";
+      position: absolute;
+      left: 18px; top: 0; bottom: 0;
+      width: 28px;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 6px,
+        rgba(0,0,0,.05) 6px,
+        rgba(0,0,0,.05) 8px
+      );
+      pointer-events: none;
+    }
+    .sheet-inner {
+      position: relative;
+      z-index: 1;
+      padding: 30px 30px 30px 60px;
+    }
+    .briefing-head {
+      display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start;
+      border-bottom:1px dashed rgba(0,0,0,.15); padding-bottom:16px; margin-bottom:22px;
+    }
+    .briefing-title { font-family: var(--type); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); font-size: 12px; }
+    .briefing-stamp {
+      font-family: var(--type); color: #a86a3a; border: 2px solid rgba(212,122,74,.45); padding: 8px 12px; border-radius: 999px; font-weight: 900; transform: rotate(-4deg);
+    }
+    .content-grid { display:grid; grid-template-columns: 1.48fr .9fr; gap: 22px; }
+    .article h2, .side h2 { font-size: 26px; margin-top:22px; margin-bottom:12px; letter-spacing: -.03em; }
+    .article h2:first-child { margin-top:0; }
+    .article p { margin: 0 0 16px; }
+    .quote {
+      margin: 18px 0; padding: 16px 18px; border-left: 4px solid var(--olive); background: rgba(111,129,111,.10); border-radius: 14px; font-weight: 600; color: #334233;
+    }
+    .visual-pair { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin: 18px 0 24px; }
+    .visual-card {
+      min-height: 240px; border-radius: 18px; border:2px solid rgba(0,0,0,.12);
+      background: linear-gradient(145deg, rgba(38,49,42,.98), rgba(15,20,17,.96));
+      overflow:hidden; position:relative; box-shadow:0 18px 36px rgba(0,0,0,.16);
+    }
+    .visual-card.with-image {
+      background-size: cover;
+      background-position: center;
+      min-height: 320px;
+    }
+    .visual-card::before { content:""; position:absolute; inset:14px; border:1px dashed rgba(255,255,255,.12); border-radius:14px; }
+    .visual-card .label { position:absolute; left:12px; bottom:10px; color:rgba(255,255,255,.86); font-size:11px; font-weight:900; letter-spacing:.15em; text-transform:uppercase; font-family: var(--type); background:rgba(0,0,0,.4); padding:4px 8px; border-radius:6px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .panel {
+      background: rgba(111,129,111,.06);
+      border: 1px solid rgba(0,0,0,.10);
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .tag { display:inline-block; padding:7px 10px; border-radius:999px; border:1px solid rgba(0,0,0,.12); margin-right:8px; margin-bottom:8px; background:rgba(255,255,255,.42); color:var(--muted); font-size:13px; font-weight:800; font-family: var(--type); }
+    .source-list { display:grid; gap:12px; }
+    .source-item { padding:14px; border-radius:16px; border:1px solid rgba(0,0,0,.10); background:rgba(255,255,255,.32); }
+    a { color: #a86a3a; font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .small { font-size: 14px; color: var(--muted); }
+    .footer { max-width:1040px; margin:18px auto 0; color:#93a195; font-size:14px; text-align:center; }
+    
+    .asset-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 22px 0;
+    }
+    .asset-img {
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,.12);
+      background: linear-gradient(135deg, rgba(255,255,255,.8), rgba(240,240,235,.6));
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0,0,0,.12);
+    }
+    .asset-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 380px;
+      object-fit: cover;
+    }
+    .asset-img .caption {
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      font-family: var(--type);
+      background: rgba(255,255,255,.6);
+      border-top: 1px solid rgba(0,0,0,.08);
+      text-align: center;
+    }
+    
+    @media (max-width: 980px) {
+      .metrics, .content-grid, .visual-pair, .asset-gallery { grid-template-columns:1fr; }
+      .hero::before, .ufo { display:none; }
+      .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 { display:none; }
+      .sheet-main::after { display:none; }
+      .sheet-inner { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ufo" id="ufo">
+    <div class="dome"></div><div class="body"></div><div class="light l1 pulse"></div><div class="light l2 pulse" style="animation-delay: .3s"></div><div class="light l3 pulse" style="animation-delay: .6s"></div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Dr. Sourkraut Filez // Akte 002 // Briefing</div>
+      <h1>Phoenix Lights</h1>
+      <p class="sub">Bro, März 1997, über Phoenix, Arizona: Tausende Menschen sehen orangefarbene Lichter und gewaltige Formationen über den Himmel ziehen. Eine Stunde später folgt der nächste unheimliche Event. Das Militär sagt: „Flares", aber für die Zeugen war klar, dass da etwas viel Größeres über Arizona unterwegs war. Genau solche Fälle machen die UFO-Akten legendär.</p>
+      <div class="notice">Diese Nachricht ist top secret und zerstört sich in 24 Stunden von selbst.</div>
+      <div class="metrics">
+        <div class="metric"><small>Bullshit-Wahrscheinlichkeitsfaktor</small><strong>34%</strong></div>
+        <div class="metric"><small>Credibility Score</small><strong>6.8 / 10</strong></div>
+        <div class="metric"><small>WTF-Faktor</small><strong>8.1 / 10</strong></div>
+      </div>
+    </section>
+
+<!-- IMAGE GALLERY -->
+<div class="asset-gallery">
+</div>
+<!-- END IMAGE GALLERY -->
+
+
+    <section class="stack">
+      <div class="sheet-bg-1"></div>
+      <div class="sheet-bg-2"></div>
+      <div class="sheet-bg-3"></div>
+      <div class="sheet-main">
+        <div class="sheet-inner">
+          <div class="briefing-head">
+            <div>
+              <div class="briefing-title">Field Briefing // Akte 002 // Phoenix Lights 1997</div>
+              <h2 style="margin:8px 0 0; font-size:34px;">SCIF Briefing zum Arizona Mass Sighting</h2>
+            </div>
+            <div class="briefing-stamp">CLASSIFIED</div>
+          </div>
+
+          <div class="content-grid">
+            <article class="article">
+              <h2>Zusammenfassung</h2>
+              <p>In der Nacht des 13. März 1997 beobachteten über 10.000 Menschen in Arizona und Nevada eine Reihe außergewöhnlicher aeronautischer Phänomene. Das erste Ereignis, gegen 7:30–8:30 PM MST, war ein oder mehrere V-förmige Objekte, die langsam über Nevada und Arizona fliegen. Das zweite Ereignis, gegen 10:00 PM, war eine Reihe orangefarbener, Flare-ähnlicher Lichter, die über Phoenix hingen, bevor sie verschwanden.</p>
+              <p>Das Militär erklärte später beide Ereignisse als bekannte militärische Aktivität: A-10 Thunderbolt II Kampfjets und LUU-2B/B Illuminierungsfackeln. Jedoch wird die militärische Erklärung bis heute von UFO-Forschern und Zeugen angefochten, da die beobachteten Lichter nicht den erwarteten Mustern von Flares entsprechen würden.</p>
+
+              <div class="asset-gallery">
+                <div class="asset-img">
+                  <img src="./assets/phoenix-1997-drawing.jpg" alt="Phoenix Lights 1997 - Witness drawing of V-shaped formation" loading="lazy" />
+                  <div class="caption">Witness reconstruction - V-shaped formation observed March 13, 1997. Drawing based on eyewitness accounts from Phoenix area.</div>
+                </div>
+                <div class="asset-img">
+                  <img src="./assets/phoenix-1997-skyline.jpg" alt="Phoenix Lights 1997 - Skyline observation points" loading="lazy" />
+                  <div class="caption">Phoenix skyline reference - March 13, 1997 sighting route. Lights observed crossing multiple observation points across metropolitan area.</div>
+                </div>
+              </div>
+
+              <div class="quote">Sourkraut-Notiz: Das ist die raffinierteste Art von Fall: Keine schwachen Beweise, keine anonymen Zeugen. Massensichtung, Video, Fotografien — und ein Militär-Debunk, der alle Fragen beantwortete, aber die Augenzeugen nicht überzeugte. Das ist, wenn du die offizielle Erklärung technisch nicht widerlegen kannst, aber deine Intuition dir sagt: „Das passt nicht zusammen".</div>
+
+              <h2>Zeitleiste der Ereignisse</h2>
+              <ul>
+                <li><strong>7:55 PM MST:</strong> Zeuge in Henderson, Nevada, berichtet großes V-förmiges Objekt, das südöstlich reist.</li>
+                <li><strong>8:15 PM MST:</strong> Paulden, Arizona berichtet orangerote Lichtcluster. Prescott Valley Sichtungen beginnen.</li>
+                <li><strong>8:30–8:45 PM MST:</strong> Formation von Lichtern über Glendale und Scottsdale. Einige Beobachter sahen normale Flugmuster, viele andere beschrieben jedoch eine gewaltige, zusammenhängende Struktur am Himmel.</li>
+                <li><strong>~10:00 PM MST:</strong> Zweites Ereignis beginnt: Phoenix-Area berichtet „Reihe brilianter Lichter über Himmel, schwebend oder langsam fallend". Fotos und Videos aufgezeichnet.</li>
+                <li><strong>10:15 PM onwards:</strong> Flares sinken und verschwinden hinter Sierra Estrella Gebirgszug südwestlich von Phoenix.</li>
+              </ul>
+
+              <h2>Die militärische Erklärung: A-10 + Flares</h2>
+              <p><strong>Militär-Identifikation:</strong> Luftwaffe bestätigte später, dass das 104th Fighter Squadron des Maryland Air National Guard für beide Ereignisse verantwortlich war. Pilot Lt. Col. Ed Jones bestätigte 2007 seine Teilnahme an der Flare-Drop-Übung.</p>
+              <ul>
+                <li><strong>Flugzeugtyp:</strong> A-10 Thunderbolt II in enger Formation</li>
+                <li><strong>Flugmuster:</strong> Enge Formation, stetige Navigationslichter (keine blink erforderlich für Militär-Flugzeuge)</li>
+                <li><strong>Höhe:</strong> Hohe Flughöhe, teilweise durch dünne Wolken in Glendale-Area verdeckt</li>
+                <li><strong>Dauer erstes Ereignis:</strong> ca. 45 Minuten (8:00–8:45 PM)</li>
+                <li><strong>Landezeit:</strong> Davis-Monthan AFB ~8:45 PM</li>
+                <li><strong>Flare-Typ:</strong> LUU-2B/B Illuminierungsfackeln (militärische Bezeichnung)</li>
+                <li><strong>Brenndauer:</strong> 5–6 Minuten pro Flare</li>
+                <li><strong>Abstiegsrate:</strong> ~6 Fuß pro Sekunde (normal), erhöht auf ~9 Fuß/Sek. durch aufsteigende Wärme</li>
+              </ul>
+
+              <h2>Warum Tausende bis heute an mehr glauben</h2>
+              <p>Gerade weil so viele Menschen dieselbe Nacht erlebt haben, blieb für viele das Gefühl: Hier war mehr los als nur eine Übung. Diese Punkte halten den Fall bis heute lebendig:</p>
+              <ul>
+                <li>Phoenix-Area ist ~50–70 Meilen entfernt von Davis-Monthan AFB — ob Flares diese Distanz sichtbar machen könnten, war unklar</li>
+                <li>Erste Sichtung (V-förmiges Objekt) wurde vom Militär nicht vollständig erklärt</li>
+                <li>Viele Zeugen behaupteten, die zweite Lichtreihe schwebte oder sank abnormal langsam für Fallschirm-Flares</li>
+                <li>Militär war zunächst nicht öffentlich und erklärte den Fall erst viel später</li>
+              </ul>
+
+              <h2>Sourkraut-Briefing Fazit</h2>
+              <p>Die Phoenix Lights bleiben einer der stärksten Massensichtungsfälle überhaupt. Vielleicht erklärt das Militär einen Teil der Nacht, aber für unglaublich viele Zeugen war da etwas am Himmel, das größer, stiller und seltsamer wirkte als jede normale Erklärung. Genau deshalb lebt der Fall weiter: weil Phoenix nicht wie Einbildung wirkt, sondern wie ein Moment, in dem zu viele Menschen gleichzeitig etwas Außergewöhnliches gesehen haben.</p>
+            </article>
+
+            <aside class="side">
+              <div class="panel">
+                <h2>Aktenstatus</h2>
+                <div class="tag">Military Exercise</div>
+                <div class="tag">Mass Sighting</div>
+                <div class="tag">Video Evidence</div>
+                <div class="tag">Contentious</div>
+                <p class="small" style="margin-top:10px;">Der Fall, der zeigt: Eine offizielle Erklärung löscht keine Massensichtung aus.</p>
+              </div>
+
+              <div class="panel">
+                <h2>Bro-Weiterleitungsfaktor</h2>
+                <p>„Lies das. Tausende sehen dasselbe am Himmel, und bis heute fühlt es sich größer an als jeder Standard-Debunk.“</p>
+              </div>
+
+              <div class="panel">
+                <h2>Quellen / Spurensicherung</h2>
+                <div class="source-list">
+                  <div class="source-item"><a href="https://en.wikipedia.org/wiki/Phoenix_lights" target="_blank" rel="noopener noreferrer">Wikipedia: Phoenix Lights</a><div class="small">Chronologie und Debunking-Analyse</div></div>
+                  <div class="source-item"><a href="https://commons.wikimedia.org/wiki/Category:Phoenix_Lights" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a><div class="small">Historische Fotos und Dokumente</div></div>
+                  <div class="source-item"><a href="https://www.youtube.com/watch?v=XD9-Q1eIhI0" target="_blank" rel="noopener noreferrer">Phoenix Lights Documentary</a><div class="small">Zeugenvideo und Pressekonferenz-Archiv</div></div>
+                  <div class="source-item"><a href="https://web.archive.org/web/*/www.phoenixlights.net" target="_blank" rel="noopener noreferrer">Phoenix Lights Archive</a><div class="small">Sammlung von Zeugenaussagen und Analysen</div></div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">Dr. Sourkraut Filez // Agent-Sourkraut // Briefing V9 // Phoenix Archive</div>
+  </div>
+
+  <script>
+    const ufo = document.getElementById('ufo');
+    const updateUfo = () => {
+      const y = window.scrollY || 0;
+      const driftY = 90 + y * 0.22;
+      const wobbleX = Math.sin(y / 90) * 18;
+      const tilt = Math.sin(y / 140) * 6;
+      ufo.style.transform = `translate(${wobbleX}px, ${driftY}px) rotate(${tilt}deg)`;
+    };
+    window.addEventListener('scroll', updateUfo, { passive: true });
+    updateUfo();
+  </script>
+</body>
+</html>

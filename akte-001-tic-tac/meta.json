@@ -1,0 +1,12 @@
+{
+  "project": "Dr. Sourkraut Filez",
+  "agent": "Agent-Sourkraut",
+  "case_id": "001",
+  "slug": "tic-tac",
+  "title": "Akte 001: Das Tic-Tac-UFO",
+  "status": "draft",
+  "language": "de",
+  "bullshit_probability": 28,
+  "credibility_score": 8.1,
+  "wtf_factor": 9.2
+}

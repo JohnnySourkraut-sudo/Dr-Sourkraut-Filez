@@ -1,0 +1,25 @@
+{
+  "case_id": "AKTE-001",
+  "case_name": "Roswell Incident",
+  "date": "June 4 - July 10, 1947",
+  "location": "Lincoln County, New Mexico, USA",
+  "coordinates": "33.9501°N 105.3142°W",
+  "classification": "Recovered Debris / Military Balloon",
+  "witnesses": 75,
+  "duration_days": 6,
+  "official_explanation": "Project Mogul surveillance balloon",
+  "ufo_classification": "High-interest historical",
+  "sources": [
+    "Wikipedia - Roswell incident",
+    "The Roswell Report (USAF)",
+    "National Archives",
+    "Witness testimonies (declassified)"
+  ],
+  "key_evidence": [
+    "Metallic and rubber debris",
+    "Press statements (retracted)",
+    "Jesse Marcel's testimony",
+    "Project Mogul documentation"
+  ],
+  "published": "2026-04-14"
+}

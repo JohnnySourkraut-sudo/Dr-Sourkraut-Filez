@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Sourkraut Filez // Akte 005: Cash-Landrum Briefing</title>
+  <meta name="description" content="Dr. Sourkraut Filez // Akte 005: Cash-Landrum Incident (1980). V9 Dossier-Look mit Papierblatt-Ästhetik und SCIF-Hintergrund." />
+  <style>
+    :root {
+      --bg: #0b1110;
+      --bg2: #101716;
+      --sheet: #f2ead9;
+      --sheet2: #e8deca;
+      --sheet3: #dfd4c2;
+      --ink: #1f231e;
+      --muted: #667066;
+      --olive: #6f816f;
+      --accent: #a88969;
+      --amber: #b67a1e;
+      --red: #8e3d3d;
+      --line: rgba(18,24,20,.12);
+      --type: "Courier New", Courier, monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #edf2ee;
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at top left, rgba(111,129,111,.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(168,137,105,.07), transparent 18%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height: 1.72;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0; pointer-events: none; opacity: .08;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.6), transparent 75%);
+    }
+    .wrap { max-width: 1220px; margin: 0 auto; padding: 28px 18px 90px; position: relative; }
+    
+    .ufo {
+      position: fixed;
+      right: 26px;
+      top: 120px;
+      width: 140px;
+      height: 80px;
+      z-index: 60;
+      pointer-events: none;
+      transition: transform 0.08s linear;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
+    }
+    .ufo .body { position:absolute; left:14px; right:14px; bottom:6px; height:32px; border-radius:999px; background:linear-gradient(180deg,#a8b2af,#525a56); box-shadow: inset 0 2px 8px rgba(0,0,0,.3); }
+    .ufo .dome { position:absolute; left:42px; top:4px; width:56px; height:32px; border-radius:999px 999px 12px 12px; background:linear-gradient(180deg,#e0fff8,#7eb5b0); box-shadow: inset -2px 2px 6px rgba(0,0,0,.1); }
+    .ufo .light { position:absolute; bottom:14px; width:12px; height:12px; border-radius:50%; background:#ffd47b; box-shadow:0 0 20px rgba(255,212,123,1), 0 0 40px rgba(255,212,123,.6); }
+    .ufo .l1 { left:26px; } .ufo .l2 { left:64px; } .ufo .l3 { left:102px; }
+    .ufo .pulse { animation: pulse-light 2s ease-in-out infinite; }
+    @keyframes pulse-light { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    .hero {
+      background: linear-gradient(180deg, rgba(17,23,21,.94), rgba(22,29,26,.90));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 26px 70px rgba(0,0,0,.34);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .hero::before {
+      content: "TOP SECRET // DR. SOURKRAUT FILEZ // 24H SELF-DESTRUCT";
+      position: absolute; top: 18px; right: -84px; transform: rotate(16deg);
+      background: rgba(168,137,105,.14); color: #f0e0c8; border: 1px solid rgba(168,137,105,.25);
+      padding: 10px 90px; letter-spacing: .18em; font-size: 11px; font-weight: 900; font-family: var(--type);
+    }
+    .eyebrow {
+      color: #96a79b; text-transform: uppercase; letter-spacing: .18em; font-size: 12px; font-weight: 900; margin-bottom: 12px; font-family: var(--type);
+    }
+    h1 {
+      margin: 0 0 12px; font-size: clamp(42px, 6vw, 82px); line-height: .95; letter-spacing: -0.05em; max-width: 840px;
+    }
+    .sub { font-size: 19px; color: #a8b5ab; max-width: 860px; }
+    .notice {
+      margin-top: 18px; padding: 14px 16px; border-left: 4px solid var(--accent); border-radius: 14px; background: rgba(168,137,105,.08); color: #f0e0c8; font-weight: 700; font-family: var(--type);
+    }
+    .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:22px; }
+    .metric {
+      padding:18px; border-radius:20px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+    }
+    .metric small { display:block; margin-bottom:8px; color:#9cad9f; font-size:11px; text-transform:uppercase; letter-spacing:.14em; font-weight:800; font-family: var(--type); }
+    .metric strong { font-size:31px; letter-spacing:-.04em; }
+
+    .stack {
+      position: relative;
+      margin-top: 30px;
+      padding: 28px 0;
+    }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3, .sheet-main {
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      box-shadow: 0 22px 60px rgba(0,0,0,.22);
+    }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1020px, calc(100% - 30px));
+      background: linear-gradient(180deg, var(--sheet2), var(--sheet3));
+    }
+    .sheet-bg-1 {
+      top: 26px;
+      height: calc(100% - 40px);
+      transform: translateX(-50%) rotate(-2.4deg);
+      opacity: .68;
+    }
+    .sheet-bg-2 {
+      top: 14px;
+      height: calc(100% - 24px);
+      transform: translateX(-50%) rotate(1.6deg);
+      opacity: .82;
+    }
+    .sheet-bg-3 {
+      top: 6px;
+      height: calc(100% - 12px);
+      transform: translateX(-50%) rotate(-0.8deg);
+      opacity: .90;
+    }
+    .sheet-main {
+      position: relative;
+      z-index: 4;
+      max-width: 1040px;
+      margin: 0 auto;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.16), transparent 140px),
+        var(--sheet);
+      color: var(--ink);
+      overflow: hidden;
+      box-shadow: 
+        0 22px 60px rgba(0,0,0,.22),
+        inset 0 1px 0 rgba(255,255,255,.4);
+    }
+    .sheet-main::before {
+      content: "";
+      position: absolute; inset: 0;
+      pointer-events: none;
+      opacity: .06;
+      background-image:
+        linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .sheet-main::after {
+      content: "";
+      position: absolute;
+      left: 18px; top: 0; bottom: 0;
+      width: 28px;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 6px,
+        rgba(0,0,0,.05) 6px,
+        rgba(0,0,0,.05) 8px
+      );
+      pointer-events: none;
+    }
+    .sheet-inner {
+      position: relative;
+      z-index: 1;
+      padding: 30px 30px 30px 60px;
+    }
+    .briefing-head {
+      display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start;
+      border-bottom:1px dashed rgba(0,0,0,.15); padding-bottom:16px; margin-bottom:22px;
+    }
+    .briefing-title { font-family: var(--type); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); font-size: 12px; }
+    .briefing-stamp {
+      font-family: var(--type); color: #7a6a54; border: 2px solid rgba(168,137,105,.45); padding: 8px 12px; border-radius: 999px; font-weight: 900; transform: rotate(-4deg);
+    }
+    .content-grid { display:grid; grid-template-columns: 1.48fr .9fr; gap: 22px; }
+    .article h2, .side h2 { font-size: 26px; margin-top:22px; margin-bottom:12px; letter-spacing: -.03em; }
+    .article h2:first-child { margin-top:0; }
+    .article p { margin: 0 0 16px; }
+    .quote {
+      margin: 18px 0; padding: 16px 18px; border-left: 4px solid var(--olive); background: rgba(111,129,111,.10); border-radius: 14px; font-weight: 600; color: #334233;
+    }
+    .visual-pair { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin: 18px 0 24px; }
+    .visual-card {
+      min-height: 240px; border-radius: 18px; border:2px solid rgba(0,0,0,.12);
+      background: linear-gradient(145deg, rgba(38,49,42,.98), rgba(15,20,17,.96));
+      overflow:hidden; position:relative; box-shadow:0 18px 36px rgba(0,0,0,.16);
+    }
+    .visual-card.with-image {
+      background-size: cover;
+      background-position: center;
+      min-height: 320px;
+    }
+    .visual-card::before { content:""; position:absolute; inset:14px; border:1px dashed rgba(255,255,255,.12); border-radius:14px; }
+    .visual-card .label { position:absolute; left:12px; bottom:10px; color:rgba(255,255,255,.86); font-size:11px; font-weight:900; letter-spacing:.15em; text-transform:uppercase; font-family: var(--type); background:rgba(0,0,0,.4); padding:4px 8px; border-radius:6px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .panel {
+      background: rgba(111,129,111,.06);
+      border: 1px solid rgba(0,0,0,.10);
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .tag { display:inline-block; padding:7px 10px; border-radius:999px; border:1px solid rgba(0,0,0,.12); margin-right:8px; margin-bottom:8px; background:rgba(255,255,255,.42); color:var(--muted); font-size:13px; font-weight:800; font-family: var(--type); }
+    .source-list { display:grid; gap:12px; }
+    .source-item { padding:14px; border-radius:16px; border:1px solid rgba(0,0,0,.10); background:rgba(255,255,255,.32); }
+    a { color: #7a6a54; font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .small { font-size: 14px; color: var(--muted); }
+    .footer { max-width:1040px; margin:18px auto 0; color:#93a195; font-size:14px; text-align:center; }
+    
+    .asset-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 22px 0;
+    }
+    .asset-img {
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,.12);
+      background: linear-gradient(135deg, rgba(255,255,255,.8), rgba(240,240,235,.6));
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0,0,0,.12);
+    }
+    .asset-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 380px;
+      object-fit: cover;
+    }
+    .asset-img .caption {
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      font-family: var(--type);
+      background: rgba(255,255,255,.6);
+      border-top: 1px solid rgba(0,0,0,.08);
+      text-align: center;
+    }
+    
+    @media (max-width: 980px) {
+      .metrics, .content-grid, .visual-pair, .asset-gallery { grid-template-columns:1fr; }
+      .hero::before, .ufo { display:none; }
+      .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 { display:none; }
+      .sheet-main::after { display:none; }
+      .sheet-inner { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ufo" id="ufo">
+    <div class="dome"></div><div class="body"></div><div class="light l1 pulse"></div><div class="light l2 pulse" style="animation-delay: .3s"></div><div class="light l3 pulse" style="animation-delay: .6s"></div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Dr. Sourkraut Filez // Akte 005 // Briefing</div>
+      <h1>Cash-Landrum Incident</h1>
+      <p class="sub">Bro, Dezember 1980, Texas, Nacht: Zwei Frauen sehen ein feuerglühendes Objekt über der Straße, und kurz danach folgen Symptome, die wie Strahlenexposition wirken. Das ist einer dieser Fälle, die selbst Hardcore-Believer nicht loslassen, weil hier aus einer Sichtung plötzlich ein echter medizinischer Mystery-Fall wird.</p>
+      <div class="notice">Diese Nachricht ist top secret und zerstört sich in 24 Stunden von selbst.</div>
+      <div class="metrics">
+        <div class="metric"><small>Bullshit-Wahrscheinlichkeitsfaktor</small><strong>41%</strong></div>
+        <div class="metric"><small>Credibility Score</small><strong>7.2 / 10</strong></div>
+        <div class="metric"><small>WTF-Faktor</small><strong>8.9 / 10</strong></div>
+      </div>
+    </section>
+
+    <section class="stack">
+      <div class="sheet-bg-1"></div>
+      <div class="sheet-bg-2"></div>
+      <div class="sheet-bg-3"></div>
+      <div class="sheet-main">
+        <div class="sheet-inner">
+          <div class="briefing-head">
+            <div>
+              <div class="briefing-title">Field Briefing // Akte 005 // Cash-Landrum Incident 1980</div>
+              <h2 style="margin:8px 0 0; font-size:34px;">SCIF Briefing zu Strahlung und UFO-Exposition</h2>
+            </div>
+            <div class="briefing-stamp">CLASSIFIED</div>
+          </div>
+
+          <div class="content-grid">
+            <article class="article">
+              <h2>Zusammenfassung</h2>
+              <p>Am 29. Dezember 1980 fuhren Betty Cash und Vickie Landrum auf einer dunklen Nacht auf der Farm-to-Market Road 1485 in Texas. Um 20:45 Uhr sahen sie ein diamantförmiges, feuernes Objekt über der Straße schweben. Das Objekt war extrem heiß und leuchtend. Beide Frauen erlitten danach akute Symptome, die einer Strahlenkrankheit ähnelten: Übelkeit, Verbrennungen, Haarverlust, Augenverletzungen. Dies ist einer der wenigen UFO-Fälle, in denen Zeugen messbare physikalische Verletzungen erlitten.</p>
+
+              <div class="quote">Sourkraut-Notiz: Das ist einer der Fälle, die das UFO-Thema so mächtig machen. Hier reden wir nicht nur über ein Licht am Himmel, sondern über Menschen, deren Körper nach dem Kontakt etwas mitgenommen hat. Genau solche Akten geben dem Ganzen echte Schwere.</div>
+
+              <div class="asset-gallery">
+                <div class="asset-img">
+                  <img src="./assets/cash-landrum-ufo.jpg" alt="Cash-Landrum 1980 - Diamond-shaped UFO" loading="lazy" />
+                  <div class="caption">Witness reconstruction of UFO encounter - Diamond-shaped craft with intense thermal emissions, December 29, 1980, Piney Woods area, Texas.</div>
+                </div>
+                <div class="asset-img">
+                  <img src="./assets/cash-landrum-location.jpg" alt="Cash-Landrum incident location map" loading="lazy" />
+                  <div class="caption">Incident location - FM Route 1485, Huffman, Texas. Witnesses: Betty Cash (driver), Vicki Landrum, Colby Landrum (7 yrs). Duration ~15-18 minutes.</div>
+                </div>
+              </div>
+
+              <h2>Der Vorfall: Was wurde beobachtet?</h2>
+              <ul>
+                <li><strong>Objekt-Beschreibung:</strong> Diamantförmiges, goldenes oder silbernes Ding, etwa 40–50 Fuß groß</li>
+                <li><strong>Wärmestrahlung:</strong> Intensiv — Fenster des Autos erhitzten sich, Objekt strahlte extreme Hitze ab</li>
+                <li><strong>Lichter:</strong> Helle, orange-weiße oder rote Lichter, blinkend</li>
+                <li><strong>Schweben:</strong> Objekt schwebte oder bewegte sich langsam über der Straße in niedriger Höhe</li>
+                <li><strong>Begleiter-Hubschrauber:</strong> Cash und Landrum berichteten, dass mehrere Hubschrauber das Objekt verfolgten — möglicherweise Militär</li>
+              </ul>
+
+              <h2>Die Symptome: Strahlenverletzung</h2>
+              <p><strong>Betty Cash:</strong></p>
+              <ul>
+                <li>Sofortige Nausea und Kopfschmerzen nach dem Incident</li>
+                <li>Schwere Hautverbrennungen im Gesicht und Nacken</li>
+                <li>Haarverlust zwei Wochen später</li>
+                <li>Augenverletzungen (Keratitis)</li>
+                <li>Langzeitkomplikationen: Arthritis, fibromyalgia, anhaltende Infektionen</li>
+              </ul>
+
+              <p><strong>Vickie Landrum & ihre Enkelin (im Auto):</strong></p>
+              <ul>
+                <li>Ähnliche aber weniger schwere Symptome</li>
+                <li>Übelkeit, Verbrennungen, Augenverletzungen</li>
+                <li>Die Enkelin entwickelte später Augenprobleme</li>
+              </ul>
+
+              <h2>Die medizinische Frage: Strahlenkrankheit?</h2>
+              <p>Die Symptome passen zu akuter Strahlenexposition:</p>
+              <ul>
+                <li>Akute Übelkeit und Kopfschmerzen (typische frühe Zeichen)</li>
+                <li>Hautverbrennungen ohne äußere Hitzequelle (Strahlen-typisch)</li>
+                <li>Haarverlust 2 Wochen später (typisches Strahlungs-Timing)</li>
+                <li>Augenverletzungen (Keratitis von Strahlung bekannt)</li>
+                <li>Langzeitfolgen (Arthritis, Fibromyalgia als bekannte Spätfolgen von Strahlung)</li>
+              </ul>
+
+              <h2>Die Hubschrauber-Frage</h2>
+              <p>Cash und Landrum berichteten, dass mehrere Hubschrauber das Objekt verfolgten. Diese könnten gewesen sein:</p>
+              <ul>
+                <li>U.S. Militär-Hubschrauber (Verfolgung unbekannter Luftphänomene)</li>
+                <li>Hubschrauber eines nicht identifizierten Ursprungs</li>
+                <li>Teil des UFO-Vorfalls (Remote-gesteuert oder in Verbindung mit dem Objekt)</li>
+              </ul>
+
+              <h2>Warum ist dieser Fall bedeutsam?</h2>
+              <ul>
+                <li><strong>Physikalische Beweise:</strong> Nicht nur Sichtung — messbare Verletzungen</li>
+                <li><strong>Medizinische Dokumentation:</strong> Die Frauen erhielten ärztliche Behandlung und ihre Symptome sind dokumentiert</li>
+                <li><strong>Multipare Zeugen:</strong> Mehrere Menschen (inklusive Enkelin) berichten ähnliche Symptome</li>
+                <li><strong>Konsistente Symptome:</strong> Die Symptome passen zu bekanntem Strahlungs-Syndrom</li>
+                <li><strong>Langzeitfolgen:</strong> Die Folgen persistieren über Jahre — echte medizinische Probleme, keine Halluzination</li>
+              </ul>
+
+              <h2>Mögliche Erklärungen</h2>
+              <p><strong>Offizielle Erklärungen:</strong></p>
+              <ul>
+                <li>Das Militär verwies später auf einen CH-47 Chinook mit externer Last, doch für viele passt diese Version weder zur Intensität des Objekts noch zu den gesundheitlichen Folgen</li>
+              </ul>
+
+              <p><strong>Alternative Hypothesen:</strong></p>
+              <ul>
+                <li>Unbekannte Hochenergie-Technologie (nicht-konventionell)</li>
+                <li>Militärisches Experiment mit Energie-Waffen</li>
+                <li>Oder tatsächlich außerirdische Technologie</li>
+              </ul>
+
+              <h2>Sourkraut-Briefing Fazit</h2>
+              <p>Cash-Landrum ist für viele Believer einer der härtesten Fälle überhaupt, weil hier Sichtung, Hitze, Angst und körperliche Folgen zusammenkommen. Selbst wenn man nicht jedes Detail restlos klären kann, bleibt der Kern brutal stark: Diese Begegnung hat Spuren hinterlassen. Genau deshalb gehört der Fall in jede ernsthafte UFO-Akte.</p>
+            </article>
+
+            <aside class="side">
+              <div class="panel">
+                <h2>Aktenstatus</h2>
+                <div class="tag">Physical Evidence</div>
+                <div class="tag">Medical Records</div>
+                <div class="tag">Radiation Syndrome</div>
+                <div class="tag">Ongoing Health</div>
+                <p class="small" style="margin-top:10px;">Der Fall, bei dem aus einer Sichtung greifbare körperliche Folgen wurden.</p>
+              </div>
+
+              <div class="panel">
+                <h2>Bro-Weiterleitungsfaktor</h2>
+                <p>„Lies das. Nicht nur ein UFO-Bericht, sondern ein Fall mit echten körperlichen Folgen. Genau deswegen bleibt Cash-Landrum so heftig.“</p>
+              </div>
+
+              <div class="panel">
+                <h2>Quellen / Spurensicherung</h2>
+                <div class="source-list">
+                  <div class="source-item"><a href="https://en.wikipedia.org/wiki/Cash%E2%80%93Landrum_incident" target="_blank" rel="noopener noreferrer">Wikipedia: Cash-Landrum Incident</a><div class="small">Chronologie und medizinische Daten</div></div>
+                  <div class="source-item"><a href="https://www.mufon.com/cash-landrum" target="_blank" rel="noopener noreferrer">MUFON Archive</a><div class="small">UFO-Forschungs-Dokumentation</div></div>
+                  <div class="source-item"><a href="https://www.youtube.com/watch?v=_z1yVXh7Ewk" target="_blank" rel="noopener noreferrer">Documentary: The Cash-Landrum Case</a><div class="small">Zeugenvideo und Interviews</div></div>
+                  <div class="source-item"><a href="https://commons.wikimedia.org/wiki/Category:Cash%E2%80%93Landrum_incident" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a><div class="small">Archivierte Dokumente und Karten</div></div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">Dr. Sourkraut Filez // Agent-Sourkraut // Briefing V9 // Cash-Landrum Archive</div>
+  </div>
+
+  <script>
+    const ufo = document.getElementById('ufo');
+    const updateUfo = () => {
+      const y = window.scrollY || 0;
+      const driftY = 90 + y * 0.22;
+      const wobbleX = Math.sin(y / 90) * 18;
+      const tilt = Math.sin(y / 140) * 6;
+      ufo.style.transform = `translate(${wobbleX}px, ${driftY}px) rotate(${tilt}deg)`;
+    };
+    window.addEventListener('scroll', updateUfo, { passive: true });
+    updateUfo();
+  </script>
+</body>
+</html>
