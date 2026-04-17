@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" fill="#ece1cc"/>
+  <rect x="72" y="72" width="1056" height="756" rx="20" fill="#f7efde" stroke="#9f896f" stroke-width="3"/>
+  <text x="100" y="140" fill="#1f231e" font-family="Courier New, monospace" font-size="38" font-weight="700">LOMBARDEI // OPERATIONSKARTE</text>
+  <rect x="104" y="190" width="992" height="542" rx="18" fill="#d9d0bb" stroke="#807562" stroke-width="2"/>
+  <path d="M240 598C300 516 398 398 460 366C535 328 670 322 776 256C844 214 904 178 1016 180" stroke="#8aa08c" stroke-width="18" stroke-linecap="round" opacity="0.9"/>
+  <path d="M170 278C256 296 338 284 428 242C524 196 666 192 764 214C864 236 954 292 1038 354" stroke="#b9ab8f" stroke-width="22" stroke-linecap="round" opacity="0.95"/>
+  <circle cx="564" cy="376" r="18" fill="#8e3d3d"/>
+  <circle cx="792" cy="452" r="18" fill="#a88969"/>
+  <text x="508" y="346" fill="#1f231e" font-family="Arial, sans-serif" font-size="34" font-weight="700">MAGENTA</text>
+  <text x="742" y="422" fill="#1f231e" font-family="Arial, sans-serif" font-size="34" font-weight="700">MAILAND</text>
+  <path d="M582 388L772 440" stroke="#1f231e" stroke-width="4" stroke-dasharray="10 10"/>
+  <rect x="850" y="560" width="204" height="100" rx="14" fill="#1f231e" opacity="0.9"/>
+  <text x="878" y="608" fill="#f2ead9" font-family="Courier New, monospace" font-size="26">25 KM WESTLICH</text>
+  <text x="898" y="640" fill="#f2ead9" font-family="Courier New, monospace" font-size="26">VON MAILAND</text>
+  <g transform="translate(140 520)">
+    <ellipse cx="124" cy="62" rx="100" ry="32" fill="#7f8782"/>
+    <ellipse cx="124" cy="38" rx="50" ry="28" fill="#b3d1cd"/>
+    <circle cx="70" cy="72" r="7" fill="#ffd47b"/>
+    <circle cx="124" cy="72" r="7" fill="#ffd47b"/>
+    <circle cx="178" cy="72" r="7" fill="#ffd47b"/>
+  </g>
+  <text x="98" y="790" fill="#6b705f" font-family="Courier New, monospace" font-size="21">SYMBOLISCHE KARTE FÜR DAS DOSSIER // KEIN HISTORISCHES ORIGINAL</text>
+</svg>

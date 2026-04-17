@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Sourkraut Filez // Akte 005: Magenta Crash Briefing</title>
+  <meta name="description" content="Dr. Sourkraut Filez // Akte 005: Der angebliche UFO-Absturz von Magenta 1933. V9 Dossier-Look mit Mussolini-Akte, Vatikan-Spur, David-Grusch-Verweis und Mystery-Ton." />
+  <style>
+    :root {
+      --bg: #0b1110;
+      --bg2: #101716;
+      --sheet: #f2ead9;
+      --sheet2: #e8deca;
+      --sheet3: #dfd4c2;
+      --ink: #1f231e;
+      --muted: #667066;
+      --olive: #6f816f;
+      --accent: #a88969;
+      --amber: #b67a1e;
+      --red: #8e3d3d;
+      --line: rgba(18,24,20,.12);
+      --type: "Courier New", Courier, monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #edf2ee;
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at top left, rgba(111,129,111,.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(168,137,105,.07), transparent 18%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height: 1.72;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0; pointer-events: none; opacity: .08;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.6), transparent 75%);
+    }
+    .wrap { max-width: 1220px; margin: 0 auto; padding: 28px 18px 90px; position: relative; }
+    .ufo {
+      position: fixed;
+      right: 26px;
+      top: 120px;
+      width: 140px;
+      height: 80px;
+      z-index: 60;
+      pointer-events: none;
+      transition: transform 0.08s linear;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
+    }
+    .ufo .body { position:absolute; left:14px; right:14px; bottom:6px; height:32px; border-radius:999px; background:linear-gradient(180deg,#a8b2af,#525a56); box-shadow: inset 0 2px 8px rgba(0,0,0,.3); }
+    .ufo .dome { position:absolute; left:42px; top:4px; width:56px; height:32px; border-radius:999px 999px 12px 12px; background:linear-gradient(180deg,#e0fff8,#7eb5b0); box-shadow: inset -2px 2px 6px rgba(0,0,0,.1); }
+    .ufo .light { position:absolute; bottom:14px; width:12px; height:12px; border-radius:50%; background:#ffd47b; box-shadow:0 0 20px rgba(255,212,123,1), 0 0 40px rgba(255,212,123,.6); }
+    .ufo .l1 { left:26px; } .ufo .l2 { left:64px; } .ufo .l3 { left:102px; }
+    .ufo .pulse { animation: pulse-light 2s ease-in-out infinite; }
+    @keyframes pulse-light { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .hero {
+      background: linear-gradient(180deg, rgba(17,23,21,.94), rgba(22,29,26,.90));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 26px 70px rgba(0,0,0,.34);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .hero::before {
+      content: "TOP SECRET // DR. SOURKRAUT FILEZ // MAGENTA 1933";
+      position: absolute; top: 18px; right: -84px; transform: rotate(16deg);
+      background: rgba(168,137,105,.14); color: #f0e0c8; border: 1px solid rgba(168,137,105,.25);
+      padding: 10px 90px; letter-spacing: .18em; font-size: 11px; font-weight: 900; font-family: var(--type);
+    }
+    .eyebrow { color: #96a79b; text-transform: uppercase; letter-spacing: .18em; font-size: 12px; font-weight: 900; margin-bottom: 12px; font-family: var(--type); }
+    h1 { margin: 0 0 12px; font-size: clamp(42px, 6vw, 82px); line-height: .95; letter-spacing: -0.05em; max-width: 840px; }
+    .sub { font-size: 19px; color: #a8b5ab; max-width: 930px; }
+    .notice { margin-top: 18px; padding: 14px 16px; border-left: 4px solid var(--accent); border-radius: 14px; background: rgba(168,137,105,.08); color: #f0e0c8; font-weight: 700; font-family: var(--type); }
+    .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:22px; }
+    .metric { padding:18px; border-radius:20px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); }
+    .metric small { display:block; margin-bottom:8px; color:#9cad9f; font-size:11px; text-transform:uppercase; letter-spacing:.14em; font-weight:800; font-family: var(--type); }
+    .metric strong { font-size:31px; letter-spacing:-.04em; }
+    .stack { position: relative; margin-top: 30px; padding: 28px 0; }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3, .sheet-main { border-radius: 20px; border: 1px solid var(--line); box-shadow: 0 22px 60px rgba(0,0,0,.22); }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 { position: absolute; left: 50%; transform: translateX(-50%); width: min(1020px, calc(100% - 30px)); background: linear-gradient(180deg, var(--sheet2), var(--sheet3)); }
+    .sheet-bg-1 { top: 26px; height: calc(100% - 40px); transform: translateX(-50%) rotate(-2.4deg); opacity: .68; }
+    .sheet-bg-2 { top: 14px; height: calc(100% - 24px); transform: translateX(-50%) rotate(1.6deg); opacity: .82; }
+    .sheet-bg-3 { top: 6px; height: calc(100% - 12px); transform: translateX(-50%) rotate(-0.8deg); opacity: .90; }
+    .sheet-main {
+      position: relative; z-index: 4; max-width: 1040px; margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.16), transparent 140px), var(--sheet);
+      color: var(--ink); overflow: hidden;
+      box-shadow: 0 22px 60px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.4);
+    }
+    .sheet-main::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .06;
+      background-image: linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .sheet-main::after {
+      content: ""; position: absolute; left: 18px; top: 0; bottom: 0; width: 28px;
+      background: repeating-linear-gradient(90deg, transparent 0px, transparent 6px, rgba(0,0,0,.05) 6px, rgba(0,0,0,.05) 8px);
+      pointer-events: none;
+    }
+    .sheet-inner { position: relative; z-index: 1; padding: 30px 30px 30px 60px; }
+    .briefing-head { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start; border-bottom:1px dashed rgba(0,0,0,.15); padding-bottom:16px; margin-bottom:22px; }
+    .briefing-title { font-family: var(--type); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); font-size: 12px; }
+    .briefing-stamp { font-family: var(--type); color: #7a6a54; border: 2px solid rgba(168,137,105,.45); padding: 8px 12px; border-radius: 999px; font-weight: 900; transform: rotate(-4deg); }
+    .content-grid { display:grid; grid-template-columns: 1.48fr .9fr; gap: 22px; }
+    .article h2, .side h2 { font-size: 26px; margin-top:22px; margin-bottom:12px; letter-spacing: -.03em; }
+    .article h2:first-child { margin-top:0; }
+    .article p { margin: 0 0 16px; }
+    .quote { margin: 18px 0; padding: 16px 18px; border-left: 4px solid var(--olive); background: rgba(111,129,111,.10); border-radius: 14px; font-weight: 600; color: #334233; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .panel { background: rgba(111,129,111,.06); border: 1px solid rgba(0,0,0,.10); border-radius: 18px; padding: 18px; margin-bottom: 16px; }
+    .tag { display:inline-block; padding:7px 10px; border-radius:999px; border:1px solid rgba(0,0,0,.12); margin-right:8px; margin-bottom:8px; background:rgba(255,255,255,.42); color:var(--muted); font-size:13px; font-weight:800; font-family: var(--type); }
+    .source-list { display:grid; gap:12px; }
+    .source-item { padding:14px; border-radius:16px; border:1px solid rgba(0,0,0,.10); background:rgba(255,255,255,.32); }
+    a { color: #7a6a54; font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .small { font-size: 14px; color: var(--muted); }
+    .footer { max-width:1040px; margin:18px auto 0; color:#93a195; font-size:14px; text-align:center; }
+    .asset-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0; }
+    .asset-img { border-radius: 14px; border: 1px solid rgba(0,0,0,.12); background: linear-gradient(135deg, rgba(255,255,255,.8), rgba(240,240,235,.6)); overflow: hidden; box-shadow: 0 12px 28px rgba(0,0,0,.12); }
+    .asset-img img { width: 100%; height: auto; display: block; max-height: 420px; object-fit: cover; }
+    .asset-img .caption { padding: 10px 12px; font-size: 12px; color: var(--muted); font-family: var(--type); background: rgba(255,255,255,.6); border-top: 1px solid rgba(0,0,0,.08); text-align: center; }
+    @media (max-width: 980px) {
+      .metrics, .content-grid, .asset-gallery { grid-template-columns:1fr; }
+      .hero::before, .ufo { display:none; }
+      .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 { display:none; }
+      .sheet-main::after { display:none; }
+      .sheet-inner { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ufo" id="ufo">
+    <div class="dome"></div><div class="body"></div><div class="light l1 pulse"></div><div class="light l2 pulse" style="animation-delay: .3s"></div><div class="light l3 pulse" style="animation-delay: .6s"></div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Dr. Sourkraut Filez // Akte 005 // Briefing</div>
+      <h1>Magenta Crash 1933</h1>
+      <p class="sub">13. Juni 1933, Lombardei, westlich von Mailand: Laut den berüchtigten RS/33-Unterlagen stürzt bei Magenta ein scheiben- oder glockenförmiges Objekt ab. Wenn diese Akte echt ist, dann liegt hier nicht nur ein UFO-Fall vor, sondern der mögliche erste staatlich dokumentierte Crash-Retrieval der Moderne, 14 Jahre vor Roswell. Mussolini, der Vatikan, geheime Telegramme und später sogar David Grusch, alles führt zurück zu dieser verdammt unruhigen Stelle auf der Karte Italiens.</p>
+      <div class="notice">Diese Nachricht ist top secret und zerstört sich in 24 Stunden von selbst.</div>
+      <div class="metrics">
+        <div class="metric"><small>Bullshit-Wahrscheinlichkeitsfaktor</small><strong>41%</strong></div>
+        <div class="metric"><small>Credibility Score</small><strong>7.8 / 10</strong></div>
+        <div class="metric"><small>WTF-Faktor</small><strong>9.9 / 10</strong></div>
+      </div>
+    </section>
+
+    <section class="stack">
+      <div class="sheet-bg-1"></div>
+      <div class="sheet-bg-2"></div>
+      <div class="sheet-bg-3"></div>
+      <div class="sheet-main">
+        <div class="sheet-inner">
+          <div class="briefing-head">
+            <div>
+              <div class="briefing-title">Field Briefing // Akte 005 // Magenta Crash 1933</div>
+              <h2 style="margin:8px 0 0; font-size:34px;">SCIF Briefing zu Mussolinis Geheimakte, Vatikan-Leaks und dem Fall vor Roswell</h2>
+            </div>
+            <div class="briefing-stamp">CLASSIFIED</div>
+          </div>
+
+          <div class="content-grid">
+            <article class="article">
+              <h2>Zusammenfassung</h2>
+              <p>Die Magenta-Akte beginnt mit einer Behauptung, die so groß ist, dass sie entweder historisch oder legendär sein muss: Ein unbekanntes Flugobjekt soll am <strong>13. Juni 1933</strong> nahe <strong>Magenta bei Mailand</strong> abgestürzt sein. Die Geschichte taucht Jahrzehnte später in Form angeblicher faschistischer Geheimdokumente auf, inklusive Telegrammen über <strong>"absolute Stille"</strong>, einer geheimen Untersuchungsgruppe namens <strong>RS/33</strong> und Hinweisen darauf, dass das Objekt in einen Hangar bei <strong>Vergiate</strong> gebracht wurde.</p>
+
+              <div class="quote">Sourkraut-Notiz: Wenn Roswell der Popstar unter den Crash-Fällen ist, dann ist Magenta die verschlossene Vorakte im Keller, die plötzlich jeder haben will. Genau deshalb ist sie so gefährlich spannend.</div>
+
+              <div class="asset-gallery">
+                <div class="asset-img">
+                  <img src="./assets/magenta-telegram-dossier.svg" alt="Symbolische RS/33-Telegramm-Grafik zum Magenta-Crash" loading="lazy" />
+                  <div class="caption">Symbolische Dossier-Grafik nach den bekannten RS/33-Telegrammen: Schweigen, Sicherung, Verlagerung.</div>
+                </div>
+                <div class="asset-img">
+                  <img src="./assets/magenta-map-card.svg" alt="Symbolische Lagekarte Magenta westlich von Mailand" loading="lazy" />
+                  <div class="caption">Magenta liegt rund 25 Kilometer westlich von Mailand. Genau dort soll der Vorfall 1933 passiert sein.</div>
+                </div>
+              </div>
+
+              <h2>Warum dieser Fall so groß ist</h2>
+              <p>Der Magenta-Crash wird in Mystery-Kreisen oft als <strong>der erste moderne UFO-Absturz</strong> bezeichnet. Der entscheidende Punkt: Er soll <strong>14 Jahre vor Roswell 1947</strong> passiert sein. Sollte an den Papieren etwas dran sein, dann hätte nicht die US-Regierung, sondern das faschistische Italien als erstes einen geborgenen Non-Human-Craft untersucht.</p>
+              <ul>
+                <li><strong>Datum:</strong> 13. Juni 1933</li>
+                <li><strong>Ort:</strong> Magenta, Lombardei, nahe Mailand</li>
+                <li><strong>Objekt:</strong> scheiben- oder glockenförmiger Crash-Körper</li>
+                <li><strong>Staatliche Reaktion:</strong> Mussolini soll militärische Bergung angeordnet haben</li>
+                <li><strong>Historische Sprengkraft:</strong> möglicher erster Crash-Retrieval der Moderne</li>
+              </ul>
+
+              <h2>Mussolinis Geheimakte RS/33</h2>
+              <p>Die Kernstory dreht sich um die ominöse Einheit <strong>Gabinetto RS/33</strong>, oft als <strong>Ricerche Speciali 1933</strong> gelesen. Laut den verbreiteten Unterlagen ließ Mussolini eine abgeschirmte Gruppe aus Wissenschaftlern, Militärs und Nachrichtendienst-Leuten auf den Fall ansetzen. Ziel war nicht Romantik, sondern Kontrolle: War das Ding eine geheime Waffe aus Frankreich, Deutschland oder Großbritannien, oder etwas völlig Fremdes?</p>
+              <p>In mehreren Darstellungen taucht <strong>Guglielmo Marconi</strong>, Nobelpreisträger und Funkpionier, als leitende Figur dieser Untersuchung auf. Belegt ist das nicht unabhängig, aber genau dieser Mix aus Diktatur, Militär und Spitzenwissenschaft macht die Akte bis heute so verführerisch.</p>
+
+              <div class="asset-gallery">
+                <div class="asset-img">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Mussolini_mezzobusto.jpg" alt="Benito Mussolini, Wikimedia Commons" loading="lazy" referrerpolicy="no-referrer" />
+                  <div class="caption">Benito Mussolini auf einem historischen Wikimedia-Commons-Porträt. Laut den bekannten Dokumenten soll er persönlich Schweigen und Bergung angeordnet haben.</div>
+                </div>
+                <div class="asset-img">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Guglielmo_Marconi.jpg" alt="Guglielmo Marconi, Wikimedia Commons" loading="lazy" referrerpolicy="no-referrer" />
+                  <div class="caption">Guglielmo Marconi, ebenfalls über Wikimedia Commons. In der Legende um Magenta gilt er als wissenschaftlicher Kopf hinter RS/33.</div>
+                </div>
+              </div>
+
+              <h2>Die Bergung und der Hangar-Mythos</h2>
+              <p>Mehrere spätere Berichte behaupten, das abgestürzte Objekt sei nach dem Crash in die Nähe von <strong>Vergiate</strong> gebracht worden, in Anlagen der <strong>SIAI-Marchetti</strong>-Luftfahrtindustrie. Dort soll es unter höchster Geheimhaltung gelagert worden sein. Manche Versionen sprechen von einer klassischen Scheibe, andere eher von einer glockenartigen Form, aber alle Erzählstränge laufen auf denselben Kern hinaus: etwas Unbekanntes stürzte ab, wurde gesichert und verschwand in staatlicher Obhut.</p>
+
+              <h2>Der Vatikan-Faden</h2>
+              <p>Richtig düster wird die Akte durch die <strong>Vatikan-Verbindung</strong>. In mehreren modernen Nacherzählungen wird behauptet, der Vatikan habe über Mittelsmänner Informationen zu dem Fall weitergegeben, teils sogar an westliche Dienste. Auch David Grusch erwähnte 2023 in Interviews, dass die <strong>Weitergabe von Informationen über den Vatikan</strong> eine Rolle gespielt habe, bevor die USA nach Kriegsende Zugriff auf das Objekt bekommen hätten. Belegt ist das nicht sauber, aber als Verbindungslinie zwischen Rom, Geheimdienstwelt und Nachkriegs-USA ist dieser Punkt pures Mystery-Sprengmaterial.</p>
+
+              <h2>David Grusch und die Rückkehr der alten Akte</h2>
+              <p>Was Magenta aus dem Nerd-Archiv zurück ins Rampenlicht gezogen hat, war die Erwähnung durch <strong>Pentagon-Whistleblower David Grusch</strong>. Er bezeichnete den Fall öffentlich als einen frühen Crash-Recovery-Vorfall eines <strong>nichtmenschlichen Fahrzeugs</strong> und verwies auf Informationen aus klassifizierten Briefings. Seitdem wird Magenta nicht mehr nur als alte italienische UFO-Geschichte gehandelt, sondern als mögliches Vor-Kapitel der modernen UAP-Cover-up-Erzählung.</p>
+
+              <h2>Was für Authentizität spricht und was dagegen</h2>
+              <p>Believer sehen vor allem die Telegramme, den konsistenten Kern der Überlieferung und die politische Plausibilität einer faschistischen Geheimhaltung. Skeptiker halten dagegen: Die Dokumente tauchten erst sehr spät auf, die Herkunft führt auf anonyme Zusendungen zurück, unabhängige Archivbestätigungen fehlen und manche späteren Details wirken stark ausgeschmückt.</p>
+              <ul>
+                <li><strong>Pro Mystery:</strong> plausible Geheimhaltung im faschistischen Staat, wiederkehrende Telegramm-Details, Bezug zu realen italienischen UFO-Akten</li>
+                <li><strong>Contra:</strong> späte Dokumentenherkunft, keine allgemein anerkannte unabhängige Verifikation, starke spätere Mythenbildung</li>
+                <li><strong>Fazit der Akte:</strong> nicht gerichtsfest, aber viel zu hartnäckig, um einfach wegzulachen</li>
+              </ul>
+
+              <h2>Sourkraut-Briefing Fazit</h2>
+              <p>Magenta 1933 ist der Fall, der die ganze Chronologie verschiebt. Vor Roswell. Unter Mussolini. Mit Geheimtelegrammen. Mit angeblicher Bergung. Mit Vatikan-Spur. Und Jahrzehnte später wieder hochgezogen durch David Grusch. Ob hier wirklich der erste geborgene UFO-Crash der Moderne in den Akten schlummert oder ob wir auf eine der zähesten Legenden der Ufologie schauen, ist noch offen. Aber genau das macht Akte 005 so stark: Sie klingt nicht wie ein sauberer Mythos. Sie klingt wie etwas, das zu früh passiert ist und deshalb nie richtig verschwinden konnte.</p>
+            </article>
+
+            <aside class="side">
+              <div class="panel">
+                <h2>Aktenstatus</h2>
+                <div class="tag">Pre-Roswell</div>
+                <div class="tag">Mussolini File</div>
+                <div class="tag">Vatican Link</div>
+                <div class="tag">Grusch Mention</div>
+                <p class="small" style="margin-top:10px;">Die Vorakte zu Roswell, falls an den Magenta-Unterlagen wirklich etwas dran ist.</p>
+              </div>
+
+              <div class="panel">
+                <h2>Schnellakte</h2>
+                <ul>
+                  <li><strong>Vorfall:</strong> 13.06.1933</li>
+                  <li><strong>Ort:</strong> Magenta bei Mailand</li>
+                  <li><strong>Objekt:</strong> scheiben- oder glockenförmig</li>
+                  <li><strong>Maßnahme:</strong> militärische Bergung unter Mussolini</li>
+                  <li><strong>Lagerort laut Legende:</strong> Vergiate / SIAI-Marchetti</li>
+                  <li><strong>Neuzeit-Trigger:</strong> David Grusch, 2023</li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <h2>Bro-Weiterleitungsfaktor</h2>
+                <p>"Das ist der UFO-Crash, der angeblich vor Roswell passiert ist, mit Mussolini, Vatikan und geheimen Telegrammen. Wenn du deinem Kumpel genau einen europäischen Mega-Fall schicken willst, nimm diesen hier."</p>
+              </div>
+
+              <div class="panel">
+                <h2>Quellen / Spurensicherung</h2>
+                <div class="source-list">
+                  <div class="source-item"><a href="https://en.wikipedia.org/wiki/UFO_sightings_in_Italy" target="_blank" rel="noopener noreferrer">Wikipedia: UFO sightings in Italy</a><div class="small">Enthält den Magenta-Komplex, RS/33, Vergiate und den Kontext weiterer italienischer UFO-Meldungen.</div></div>
+                  <div class="source-item"><a href="https://sofmag.com/ufo-crash-magenta-italy-1933/" target="_blank" rel="noopener noreferrer">Soldier of Fortune: The 1933 Magenta Crash Declassified</a><div class="small">Believer-lastige Nacherzählung mit Fokus auf Crash, Bergung, RS/33 und Vatikan-Komponente.</div></div>
+                  <div class="source-item"><a href="https://www.wantedinrome.com/news/the-crash-that-predated-roswell-mussolinis-secret-ufo-files.html" target="_blank" rel="noopener noreferrer">Wanted in Rome: The Secret Crash That Predated Roswell</a><div class="small">Saubere journalistische Zusammenfassung des Falls, inklusive Dokumentenherkunft, Marconi und Grusch-Verweis.</div></div>
+                  <div class="source-item"><a href="https://www.popularmechanics.com/military/research/a44466099/researcher-says-he-has-evidence-of-1933-ufo-crash-in-italy/" target="_blank" rel="noopener noreferrer">Popular Mechanics: A Researcher Says the First UFO Really Crashed in Italy in 1933</a><div class="small">Ordnet Pinotti, Grusch und die breitere UAP-Debatte ein, zugleich klar skeptischer als reine Mystery-Portale.</div></div>
+                  <div class="source-item"><a href="https://www.jstor.org/stable/30038516" target="_blank" rel="noopener noreferrer">Richard Stothers, The Classical Journal (2007): Unidentified Flying Objects in Classical Antiquity</a><div class="small">Akademische Quelle zum langen italienisch-römischen UFO-Erzählraum, oft als Hintergrundreferenz in der Italien-Ufologie zitiert.</div></div>
+                  <div class="source-item"><a href="https://books.google.com/books/about/Mussolini_e_gli_UFO.html?id=2f4uAAAACAAJ" target="_blank" rel="noopener noreferrer">Pinotti &amp; Lissoni: Mussolini e gli UFO (2001)</a><div class="small">Frühe Kernliteratur zur RS/33-Erzählung und zum Magenta-Dossier, wichtig für die Ursprungslinie der modernen Fallgeschichte.</div></div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">Dr. Sourkraut Filez // Agent-Sourkraut // Briefing V9 // Magenta Archive</div>
+  </div>
+
+  <script>
+    const ufo = document.getElementById('ufo');
+    const updateUfo = () => {
+      const y = window.scrollY || 0;
+      const driftY = 90 + y * 0.22;
+      const wobbleX = Math.sin(y / 90) * 18;
+      const tilt = Math.sin(y / 140) * 6;
+      ufo.style.transform = `translate(${wobbleX}px, ${driftY}px) rotate(${tilt}deg)`;
+    };
+    window.addEventListener('scroll', updateUfo, { passive: true });
+    updateUfo();
+  </script>
+  <div style="text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(111,129,111,.3);"><a href="../" style="display: inline-block; padding: 12px 30px; background: #6f9ba8; color: #f2ead9; text-decoration: none; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-weight: bold; border: 2px solid #4d6f79; border-radius: 4px;">← ZURÜCK ZUR LANDINGPAGE</a></div>
+</body>
+</html>
+<!-- Cache bust: 1776416085000000000 -->

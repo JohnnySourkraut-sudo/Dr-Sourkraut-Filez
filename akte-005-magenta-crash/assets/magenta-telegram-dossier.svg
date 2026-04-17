@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" fill="#efe5d1"/>
+  <rect x="58" y="54" width="1084" height="792" rx="18" fill="#f7efde" stroke="#a88969" stroke-width="3"/>
+  <rect x="92" y="94" width="420" height="68" rx="10" fill="#1f231e" opacity="0.92"/>
+  <text x="116" y="137" fill="#f0e0c8" font-family="Courier New, monospace" font-size="32" font-weight="700">RS/33 // TELEGRAMM</text>
+  <g opacity="0.18" stroke="#5f655f">
+    <line x1="96" y1="206" x2="1106" y2="206"/>
+    <line x1="96" y1="254" x2="1106" y2="254"/>
+    <line x1="96" y1="302" x2="1106" y2="302"/>
+    <line x1="96" y1="350" x2="1106" y2="350"/>
+    <line x1="96" y1="398" x2="1106" y2="398"/>
+    <line x1="96" y1="446" x2="1106" y2="446"/>
+    <line x1="96" y1="494" x2="1106" y2="494"/>
+    <line x1="96" y1="542" x2="1106" y2="542"/>
+    <line x1="96" y1="590" x2="1106" y2="590"/>
+    <line x1="96" y1="638" x2="1106" y2="638"/>
+  </g>
+  <text x="100" y="230" fill="#2a2e28" font-family="Courier New, monospace" font-size="29">13 GIUGNO 1933 // MAGENTA // SILENZIO ASSOLUTO</text>
+  <text x="100" y="280" fill="#2a2e28" font-family="Courier New, monospace" font-size="25">OGGETTO DISCOIDALE RECUPERATO IN AREA LOMBARDA</text>
+  <text x="100" y="330" fill="#2a2e28" font-family="Courier New, monospace" font-size="25">INTERDIRE STAMPA // BLOCCARE TESTIMONI // TRASFERIRE</text>
+  <text x="100" y="380" fill="#2a2e28" font-family="Courier New, monospace" font-size="25">HANGAR SIAI-MARCHETTI VERGIATE // PRIORITA MASSIMA</text>
+  <text x="100" y="478" fill="#2a2e28" font-family="Courier New, monospace" font-size="24">ANMERKUNG: SYMBOLISCHE DOSSIER-GRAFIK NACH DEN BEKANNTEN</text>
+  <text x="100" y="518" fill="#2a2e28" font-family="Courier New, monospace" font-size="24">RS/33-TELEGRAMMEN, KEIN ORIGINALDOKUMENT.</text>
+  <g transform="rotate(-14 930 680)">
+    <rect x="770" y="608" width="300" height="124" rx="14" stroke="#8e3d3d" stroke-width="7"/>
+    <text x="814" y="680" fill="#8e3d3d" font-family="Arial, sans-serif" font-size="54" font-weight="800">CLASSIFIED</text>
+  </g>
+  <g transform="translate(760 190)">
+    <ellipse cx="150" cy="78" rx="118" ry="38" fill="#7f8782"/>
+    <ellipse cx="150" cy="52" rx="58" ry="34" fill="#b3d1cd"/>
+    <circle cx="84" cy="88" r="8" fill="#ffd47b"/>
+    <circle cx="150" cy="88" r="8" fill="#ffd47b"/>
+    <circle cx="216" cy="88" r="8" fill="#ffd47b"/>
+  </g>
+  <text x="90" y="786" fill="#6b705f" font-family="Courier New, monospace" font-size="21">DR. SOURKRAUT FILEZ // AKTE 005 // MAGENTA CRASH</text>
+</svg>
