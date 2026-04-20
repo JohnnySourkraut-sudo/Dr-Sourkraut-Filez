@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Sourkraut Filez // Akte 006: Antikythera-Mechanismus</title>
+  <meta name="description" content="Dr. Sourkraut Filez // Akte 006: Der Antikythera-Mechanismus, das faszinierende astronomische Bronze-Gerät aus dem antiken Griechenland, oft als ältester Computer der Welt bezeichnet." />
+  <style>
+    :root {
+      --bg: #0b1110;
+      --bg2: #101716;
+      --sheet: #f2ead9;
+      --sheet2: #e8deca;
+      --sheet3: #dfd4c2;
+      --ink: #1f231e;
+      --muted: #667066;
+      --olive: #6f816f;
+      --accent: #a88969;
+      --amber: #b67a1e;
+      --red: #8e3d3d;
+      --line: rgba(18,24,20,.12);
+      --type: "Courier New", Courier, monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #edf2ee;
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at top left, rgba(182,122,30,.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(168,137,105,.08), transparent 20%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height: 1.72;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0; pointer-events: none; opacity: .08;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), transparent 80%);
+    }
+    .wrap { max-width: 1220px; margin: 0 auto; padding: 28px 18px 90px; position: relative; }
+    .gear {
+      position: fixed;
+      right: 22px;
+      top: 110px;
+      width: 138px;
+      height: 138px;
+      z-index: 60;
+      pointer-events: none;
+      opacity: .9;
+      filter: drop-shadow(0 12px 18px rgba(0,0,0,.45));
+      transition: transform .08s linear;
+    }
+    .hero {
+      background: linear-gradient(180deg, rgba(17,23,21,.94), rgba(22,29,26,.90));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 26px 70px rgba(0,0,0,.34);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .hero::before {
+      content: "TOP SECRET // DR. SOURKRAUT FILEZ // ANTIKYTHERA";
+      position: absolute; top: 18px; right: -80px; transform: rotate(16deg);
+      background: rgba(168,137,105,.14); color: #f0e0c8; border: 1px solid rgba(168,137,105,.25);
+      padding: 10px 90px; letter-spacing: .18em; font-size: 11px; font-weight: 900; font-family: var(--type);
+    }
+    .eyebrow { color: #96a79b; text-transform: uppercase; letter-spacing: .18em; font-size: 12px; font-weight: 900; margin-bottom: 12px; font-family: var(--type); }
+    h1 { margin: 0 0 12px; font-size: clamp(40px, 6vw, 78px); line-height: .95; letter-spacing: -.05em; max-width: 880px; }
+    .sub { font-size: 19px; color: #a8b5ab; max-width: 940px; }
+    .notice { margin-top: 18px; padding: 14px 16px; border-left: 4px solid var(--amber); border-radius: 14px; background: rgba(182,122,30,.08); color: #f3e2bf; font-weight: 700; font-family: var(--type); }
+    .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:22px; }
+    .metric { padding:18px; border-radius:20px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); }
+    .metric small { display:block; margin-bottom:8px; color:#9cad9f; font-size:11px; text-transform:uppercase; letter-spacing:.14em; font-weight:800; font-family: var(--type); }
+    .metric strong { font-size:31px; letter-spacing:-.04em; }
+    .stack { position: relative; margin-top: 30px; padding: 28px 0; }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3, .sheet-main { border-radius: 20px; border: 1px solid var(--line); box-shadow: 0 22px 60px rgba(0,0,0,.22); }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 { position: absolute; left: 50%; transform: translateX(-50%); width: min(1020px, calc(100% - 30px)); background: linear-gradient(180deg, var(--sheet2), var(--sheet3)); }
+    .sheet-bg-1 { top: 26px; height: calc(100% - 40px); transform: translateX(-50%) rotate(-2.4deg); opacity: .68; }
+    .sheet-bg-2 { top: 14px; height: calc(100% - 24px); transform: translateX(-50%) rotate(1.6deg); opacity: .82; }
+    .sheet-bg-3 { top: 6px; height: calc(100% - 12px); transform: translateX(-50%) rotate(-0.8deg); opacity: .90; }
+    .sheet-main {
+      position: relative; z-index: 4; max-width: 1040px; margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.16), transparent 140px), var(--sheet);
+      color: var(--ink); overflow: hidden;
+      box-shadow: 0 22px 60px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.4);
+    }
+    .sheet-main::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .06;
+      background-image: linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .sheet-main::after {
+      content: ""; position: absolute; left: 18px; top: 0; bottom: 0; width: 28px;
+      background: repeating-linear-gradient(90deg, transparent 0px, transparent 6px, rgba(0,0,0,.05) 6px, rgba(0,0,0,.05) 8px);
+      pointer-events: none;
+    }
+    .sheet-inner { position: relative; z-index: 1; padding: 30px 30px 30px 60px; }
+    .briefing-head { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start; border-bottom:1px dashed rgba(0,0,0,.15); padding-bottom:16px; margin-bottom:22px; }
+    .briefing-title { font-family: var(--type); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); font-size: 12px; }
+    .briefing-stamp { font-family: var(--type); color: #7a6a54; border: 2px solid rgba(168,137,105,.45); padding: 8px 12px; border-radius: 999px; font-weight: 900; transform: rotate(-4deg); }
+    .content-grid { display:grid; grid-template-columns: 1.48fr .9fr; gap: 22px; }
+    .article h2, .side h2 { font-size: 26px; margin-top:22px; margin-bottom:12px; letter-spacing: -.03em; }
+    .article h2:first-child { margin-top:0; }
+    .article p { margin: 0 0 16px; }
+    .quote { margin: 18px 0; padding: 16px 18px; border-left: 4px solid var(--amber); background: rgba(182,122,30,.10); border-radius: 14px; font-weight: 600; color: #4b3620; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .panel { background: rgba(111,129,111,.06); border: 1px solid rgba(0,0,0,.10); border-radius: 18px; padding: 18px; margin-bottom: 16px; }
+    .tag { display:inline-block; padding:7px 10px; border-radius:999px; border:1px solid rgba(0,0,0,.12); margin-right:8px; margin-bottom:8px; background:rgba(255,255,255,.42); color:var(--muted); font-size:13px; font-weight:800; font-family: var(--type); }
+    .source-list { display:grid; gap:12px; }
+    .source-item { padding:14px; border-radius:16px; border:1px solid rgba(0,0,0,.10); background:rgba(255,255,255,.32); }
+    a { color: #7a6a54; font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .small { font-size: 14px; color: var(--muted); }
+    .footer { max-width:1040px; margin:18px auto 0; color:#93a195; font-size:14px; text-align:center; }
+    .asset-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0; }
+    .asset-img { border-radius: 14px; border: 1px solid rgba(0,0,0,.12); background: linear-gradient(135deg, rgba(255,255,255,.8), rgba(240,240,235,.6)); overflow: hidden; box-shadow: 0 12px 28px rgba(0,0,0,.12); }
+    .asset-img img, .asset-img svg { width: 100%; height: auto; display: block; }
+    .asset-img img { max-height: 420px; object-fit: cover; }
+    .asset-img .caption { padding: 10px 12px; font-size: 12px; color: var(--muted); font-family: var(--type); background: rgba(255,255,255,.6); border-top: 1px solid rgba(0,0,0,.08); text-align: center; }
+    .data-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:12px; }
+    .data-grid div { padding:10px 12px; border-radius:12px; background:rgba(255,255,255,.42); border:1px solid rgba(0,0,0,.08); font-size:14px; }
+    @media (max-width: 980px) {
+      .metrics, .content-grid, .asset-gallery, .data-grid { grid-template-columns:1fr; }
+      .hero::before, .gear { display:none; }
+      .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 { display:none; }
+      .sheet-main::after { display:none; }
+      .sheet-inner { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <svg class="gear" id="gear" viewBox="0 0 200 200" aria-hidden="true">
+    <defs>
+      <linearGradient id="bronze" x1="0" x2="1">
+        <stop offset="0%" stop-color="#7a6043" />
+        <stop offset="50%" stop-color="#b89263" />
+        <stop offset="100%" stop-color="#5f472e" />
+      </linearGradient>
+    </defs>
+    <g>
+      <circle cx="100" cy="100" r="66" fill="url(#bronze)" opacity=".25" />
+      <g fill="url(#bronze)">
+        <rect x="94" y="8" width="12" height="30" rx="4" />
+        <rect x="94" y="162" width="12" height="30" rx="4" />
+        <rect x="162" y="94" width="30" height="12" rx="4" />
+        <rect x="8" y="94" width="30" height="12" rx="4" />
+        <rect x="145" y="23" width="12" height="30" rx="4" transform="rotate(45 151 38)" />
+        <rect x="145" y="147" width="12" height="30" rx="4" transform="rotate(135 151 162)" />
+        <rect x="43" y="147" width="12" height="30" rx="4" transform="rotate(225 49 162)" />
+        <rect x="43" y="23" width="12" height="30" rx="4" transform="rotate(315 49 38)" />
+      </g>
+      <circle cx="100" cy="100" r="58" fill="none" stroke="url(#bronze)" stroke-width="18" />
+      <circle cx="100" cy="100" r="18" fill="#1f231e" stroke="#caa06d" stroke-width="8" />
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Dr. Sourkraut Filez // Akte 006 // Briefing</div>
+      <h1>Der Antikythera-Mechanismus</h1>
+      <p class="sub">Ein bronzenes Räderwerk aus dem antiken Griechenland, gebaut um etwa <strong>100 v. Chr.</strong>, geborgen aus einem Schiffswrack bei <strong>Antikythera</strong> und heute völlig zurecht als <strong>„ältester Computer der Welt“</strong> gefeiert. Je tiefer man hineinschaut, desto unglaublicher wird es: astronomische Berechnungen, komplexe Zahnräder, mathematische Eleganz und eine technologische Raffinesse, die ihrer Zeit um mehr als ein Jahrtausend voraus war.</p>
+      <div class="notice">Diese Akte ist kein Debunk. Diese Akte ist eine Liebeserklärung an antike Genialität.</div>
+      <div class="metrics">
+        <div class="metric"><small>Genius-Faktor</small><strong>10.0 / 10</strong></div>
+        <div class="metric"><small>Zeitvorsprung</small><strong>1500+ Jahre</strong></div>
+        <div class="metric"><small>WTF-des-Kosmos</small><strong>Maximum</strong></div>
+      </div>
+    </section>
+
+    <section class="stack">
+      <div class="sheet-bg-1"></div>
+      <div class="sheet-bg-2"></div>
+      <div class="sheet-bg-3"></div>
+      <div class="sheet-main">
+        <div class="sheet-inner">
+          <div class="briefing-head">
+            <div>
+              <div class="briefing-title">Field Briefing // Akte 006 // Antikythera-Mechanismus</div>
+              <h2 style="margin:8px 0 0; font-size:34px;">SCIF Briefing zum erstaunlichsten Rätselrad der Antike</h2>
+            </div>
+            <div class="briefing-stamp">REVEALED</div>
+          </div>
+
+          <div class="content-grid">
+            <article class="article">
+              <h2>Zusammenfassung</h2>
+              <p>Stell dir vor, Taucher holen Anfang des 20. Jahrhunderts aus einem antiken Schiffswrack korrodierte Bronze-Fragmente hoch. Erst später merkt man: Das sind keine gewöhnlichen Stücke. Zwischen dem Gestein sitzen Zahnräder. Nicht eins, nicht zwei, sondern ein ganzes System. Genau dort beginnt die Geschichte des <strong>Antikythera-Mechanismus</strong>, eines Geräts aus dem hellenistischen Griechenland, das astronomische Positionen berechnen konnte und damit so verblüffend modern wirkt, dass man beim ersten Blick fast automatisch denkt: Das darf doch für seine Zeit gar nicht möglich gewesen sein.</p>
+
+              <div class="quote">Sourkraut-Notiz: Das Faszinierende ist nicht nur, dass dieses Ding existiert. Das Faszinierende ist, dass Menschen vor über 2000 Jahren so etwas tatsächlich gebaut haben. Aus Bronze. Von Hand. Mit Präzision. Für den Himmel.</div>
+
+              <div class="asset-gallery">
+                <div class="asset-img">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Antikythera_Fragment_A_%28Front%29.webp" alt="Antikythera-Mechanismus Fragment A Vorderseite, Wikimedia Commons" loading="lazy" referrerpolicy="no-referrer" />
+                  <div class="caption">Wikimedia Commons: Fragment A, Vorderseite. Sichtbar ist eines der großen Zahnräder des Mechanismus.</div>
+                </div>
+                <div class="asset-img">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Antikythera_Fragment_A_%28Back%29.webp" alt="Antikythera-Mechanismus Fragment A Rückseite, Wikimedia Commons" loading="lazy" referrerpolicy="no-referrer" />
+                  <div class="caption">Wikimedia Commons: Fragment A, Rückseite. Schon als Korrosionsfragment strahlt das Objekt pure technische Eleganz aus.</div>
+                </div>
+              </div>
+
+              <h2>Was dieses Gerät so unfassbar macht</h2>
+              <p>Der Mechanismus wird oft als <strong>astronomische Rechenmaschine</strong> beschrieben, und genau das trifft den Kern. Über ein fein abgestimmtes System aus bronzenen Zahnrädern konnte das Gerät Bewegungen von Sonne und Mond modellieren, Finsternisse vorhersagen und wahrscheinlich sogar weitere Himmelszyklen anzeigen. Das ist kein nettes Bastelobjekt der Antike, das ist angewandte Hochtechnologie in Miniaturform.</p>
+              <ul>
+                <li><strong>Entstehungszeit:</strong> ungefähr 2. bis frühes 1. Jahrhundert v. Chr., oft grob um <strong>100 v. Chr.</strong> eingeordnet</li>
+                <li><strong>Fundort:</strong> das Schiffswrack von <strong>Antikythera</strong> in Griechenland</li>
+                <li><strong>Material:</strong> Bronze, Zahnräder, Skalen, Inschriften, Holzgehäuse</li>
+                <li><strong>Funktion:</strong> Vorhersage astronomischer Positionen und Zyklen</li>
+                <li><strong>Bedeutung:</strong> komplexer als praktisch jede bekannte Technik der folgenden <strong>1000+ Jahre</strong></li>
+              </ul>
+
+              <h2>Der älteste Computer der Welt</h2>
+              <p>Wenn man heute vom <strong>„ältesten Computer der Welt“</strong> spricht, dann ist das keine billige Schlagzeile, sondern eine erstaunlich treffende Beschreibung. Natürlich war der Antikythera-Mechanismus kein Laptop. Aber er war ein analoges Rechengerät, das Informationen über den Himmel mechanisch modellierte und aus Eingaben konkrete astronomische Ergebnisse erzeugte. Genau dieser Gedanke ist so schön: Rechnen, Vorhersagen, Simulation, alles in Bronze gegossen.</p>
+              <p>Noch beeindruckender wird es, wenn man die historische Lücke betrachtet. Maschinen mit vergleichbarer mechanischer Komplexität tauchen in Europa erst wieder viele Jahrhunderte später auf. Der Mechanismus wirkt deshalb wie eine Botschaft aus einer verlorenen Hochphase antiker Ingenieurskunst.</p>
+
+              <div class="asset-gallery">
+                <div class="asset-img">
+                  <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematische Illustration des Antikythera-Mechanismus">
+                    <rect width="800" height="520" fill="#e7dcc7"/>
+                    <rect x="36" y="36" width="728" height="448" rx="20" fill="#f5eedf" stroke="#bba486" stroke-width="4"/>
+                    <circle cx="230" cy="250" r="120" fill="none" stroke="#8a6a45" stroke-width="28"/>
+                    <circle cx="230" cy="250" r="42" fill="#8a6a45"/>
+                    <circle cx="465" cy="220" r="82" fill="none" stroke="#b67a1e" stroke-width="22"/>
+                    <circle cx="465" cy="220" r="28" fill="#b67a1e"/>
+                    <circle cx="590" cy="325" r="52" fill="none" stroke="#6f816f" stroke-width="16"/>
+                    <circle cx="590" cy="325" r="18" fill="#6f816f"/>
+                    <path d="M350 250 H383 M515 270 L550 300" stroke="#4a4a44" stroke-width="10" stroke-linecap="round"/>
+                    <rect x="94" y="88" width="620" height="32" rx="10" fill="#d9ccb5"/>
+                    <text x="112" y="110" font-family="Courier New, monospace" font-size="22" fill="#6a655d">ANTIKYTHERA // ASTRONOMISCHE RECHENMASCHINE</text>
+                    <text x="420" y="412" font-family="Courier New, monospace" font-size="20" fill="#6a655d">Sonne, Mond, Finsternisse, Kalenderzyklen</text>
+                  </svg>
+                  <div class="caption">Schematische Rekonstruktion: Mehrere Zahnräder arbeiteten zusammen, um Himmelsbewegungen berechenbar zu machen.</div>
+                </div>
+                <div class="asset-img">
+                  <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Zeitleiste Antikythera-Mechanismus">
+                    <rect width="800" height="520" fill="#ece3d0"/>
+                    <line x1="110" y1="260" x2="690" y2="260" stroke="#8e3d3d" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="180" cy="260" r="18" fill="#8e3d3d"/>
+                    <circle cx="400" cy="260" r="18" fill="#b67a1e"/>
+                    <circle cx="620" cy="260" r="18" fill="#6f816f"/>
+                    <text x="126" y="210" font-family="Courier New, monospace" font-size="26" fill="#332d27">ca. 100 v. Chr.</text>
+                    <text x="110" y="320" font-family="Courier New, monospace" font-size="20" fill="#665f56">Bau des Mechanismus</text>
+                    <text x="332" y="210" font-family="Courier New, monospace" font-size="26" fill="#332d27">1901</text>
+                    <text x="298" y="320" font-family="Courier New, monospace" font-size="20" fill="#665f56">Fund im Wrack</text>
+                    <text x="534" y="210" font-family="Courier New, monospace" font-size="26" fill="#332d27">Moderne X-Rays</text>
+                    <text x="520" y="320" font-family="Courier New, monospace" font-size="20" fill="#665f56">Geheimnisse sichtbar</text>
+                    <text x="144" y="418" font-family="Courier New, monospace" font-size="22" fill="#665f56">Zwischen antiker Konstruktion und moderner Entschlüsselung liegen über zwei Jahrtausende Staunen.</text>
+                  </svg>
+                  <div class="caption">Zeitleiste der Faszination: gebaut in der Antike, entdeckt im Meer, verstanden erst mit modernster Bildgebung.</div>
+                </div>
+              </div>
+
+              <h2>Fund im Schiffswrack von Antikythera</h2>
+              <p>Der Name kommt vom Fundort: dem berühmten <strong>Antikythera-Schiffswrack</strong>. Zwischen Statuen, Luxusgütern und anderen Artefakten lag dieses korrodierte Wunderstück verborgen. Dass so ein Gerät auf See unterwegs war, eröffnet direkt die nächste faszinierende Frage: Wer besaß es? Ein Gelehrter? Ein wohlhabender Sammler? Ein Navigator? Ein Mechaniker? Ganz sicher wissen wir es bis heute nicht, und genau diese Lücke macht die Geschichte noch schöner statt kleiner.</p>
+
+              <h2>Moderne X-Ray-Analyse: Der Moment, in dem das Rätsel explodierte</h2>
+              <p>Der große Wow-Moment kam nicht nur beim Fund, sondern bei der modernen Untersuchung. Hochauflösende <strong>Röntgen- und Tomographie-Analysen</strong> machten sichtbar, wie komplex das Innere wirklich ist. Plötzlich erkannte man viel mehr Zahnräder, Inschriften und funktionale Zusammenhänge. Was vorher wie ein geheimnisvoller Klumpen Bronze wirkte, entpuppte sich als ein technisches Meisterwerk mit erstaunlicher mathematischer Tiefe.</p>
+              <p>Diese Forschung hat nicht alle Fragen beantwortet, aber sie hat das Staunen noch vervielfacht. Denn jedes neue Detail bestätigt: Hier haben Menschen vor über 2000 Jahren mit Präzision, Theorie und handwerklicher Brillanz gearbeitet, auf einem Niveau, das man der Epoche lange nicht zugetraut hat.</p>
+
+              <h2>Wofür war der Mechanismus da?</h2>
+              <p>Die wahrscheinlichste Hauptfunktion war die <strong>Vorhersage astronomischer Positionen</strong>. Das Gerät konnte zeigen, wo Sonne und Mond in ihren Zyklen standen, wann Finsternisse zu erwarten waren und welche Kalenderperioden relevant waren. Es war also nicht nur schön, sondern nützlich. Es übersetzte den Kosmos in Mechanik.</p>
+              <p>Und trotzdem bleibt ein Rest Geheimnis. Waren noch mehr Anzeigen vorhanden? Wurden auch die fünf klassischen Planeten berechnet? Welche Schule oder Werkstatt verfügte über dieses Wissen? Genau diese offenen Stellen sind kein Problem, sondern Teil der Magie. Der Mechanismus ist gleichzeitig entschlüsselt und noch immer teilweise rätselhaft.</p>
+
+              <h2>Warum diese Akte so stark ist</h2>
+              <p>Der Antikythera-Mechanismus ist der seltene Fall, bei dem die Realität aufregender ist als jede Verschwörung. Keine Alien-Schrauben, keine erfundenen Dokumente, keine billige Sensation, sondern echte antike Brillanz. Das Objekt zeigt, wie hochentwickelt hellenistische Wissenschaft und Ingenieurskunst tatsächlich waren. Es ist ein Reminder, dass Geschichte oft nicht linear verläuft. Wissen kann aufblühen, verloren gehen und Jahrhunderte später wie eine Offenbarung wieder auftauchen.</p>
+
+              <h2>Sourkraut-Briefing Fazit</h2>
+              <p>Diese Maschine ist ein Wunder aus Bronze. Gebaut im antiken Griechenland, geborgen aus einem Wrack, entziffert mit modernster Technik und immer noch nicht völlig ausgeschöpft. Als <strong>ältester Computer der Welt</strong> ist der Antikythera-Mechanismus nicht nur ein Artefakt, sondern ein Statement: Menschen waren schon vor über 2000 Jahren in der Lage, den Himmel mechanisch zu denken. Und ganz ehrlich, das ist so groß, dass man einfach nur mit offenem Mund davorstehen kann.</p>
+            </article>
+
+            <aside class="side">
+              <div class="panel">
+                <h2>Aktenstatus</h2>
+                <div class="tag">Ancient Greece</div>
+                <div class="tag">World's Oldest Computer</div>
+                <div class="tag">Astronomy Machine</div>
+                <div class="tag">Bronze Gears</div>
+                <p class="small" style="margin-top:10px;">Keine Mythologie nötig. Das echte Objekt ist schon spektakulär genug.</p>
+              </div>
+
+              <div class="panel">
+                <h2>Schnellakte</h2>
+                <ul>
+                  <li><strong>Datierung:</strong> ungefähr 100 v. Chr.</li>
+                  <li><strong>Kulturraum:</strong> hellenistisches Griechenland</li>
+                  <li><strong>Fund:</strong> Schiffswrack bei Antikythera</li>
+                  <li><strong>Mechanik:</strong> komplexe Bronze-Zahnräder</li>
+                  <li><strong>Zweck:</strong> astronomische Berechnungen</li>
+                  <li><strong>Status:</strong> teilweise entschlüsselt, teilweise weiterhin rätselhaft</li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <h2>Warum alle ausrasten</h2>
+                <p>Weil dieses Gerät so wirkt, als hätte jemand Uhrmacherkunst, Mathematik und Himmelsbeobachtung 1500 Jahre zu früh zusammengeführt. Und dann im Meer versenkt.</p>
+              </div>
+
+              <div class="panel">
+                <h2>Kernpunkte</h2>
+                <div class="data-grid">
+                  <div><strong>37+</strong><br />vermutete Zahnräder</div>
+                  <div><strong>X-Ray</strong><br />machte Innenleben lesbar</div>
+                  <div><strong>Shipwreck</strong><br />rettete das Rätsel</div>
+                  <div><strong>1000+ Jahre</strong><br />bis Technik wieder ähnlich komplex wurde</div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <h2>Quellen / Spurensicherung</h2>
+                <div class="source-list">
+                  <div class="source-item"><a href="https://en.wikipedia.org/wiki/Antikythera_mechanism" target="_blank" rel="noopener noreferrer">Wikipedia: Antikythera mechanism</a><div class="small">Überblick zu Fund, Datierung, Funktionsweise, Zahnrädern, X-Ray-Forschung und historischer Einordnung.</div></div>
+                  <div class="source-item"><a href="https://antikythera-mechanism.namuseum.gr/en/" target="_blank" rel="noopener noreferrer">National Archaeological Museum / National Hellenic Museum resource: The Mysteries of the Mechanism of Antikythera</a><div class="small">Museale Einführung mit Fokus auf Rekonstruktion, Forschung und kulturhistorische Bedeutung.</div></div>
+                  <div class="source-item"><a href="https://www.bbc.com/news/science-environment-56377567" target="_blank" rel="noopener noreferrer">BBC: Scientists unlock mysteries of world's oldest 'computer'</a><div class="small">Populärwissenschaftliche Einordnung der neueren Rekonstruktionsarbeit und der enormen mechanischen Raffinesse.</div></div>
+                  <div class="source-item"><a href="https://www.britannica.com/topic/Antikythera-mechanism" target="_blank" rel="noopener noreferrer">Britannica: Antikythera mechanism</a><div class="small">Sauberer Referenzartikel zum historischen Kontext und zur Bedeutung als antikes astronomisches Instrument.</div></div>
+                  <div class="source-item"><a href="https://www.scientificamerican.com/article/an-ancient-greek-astronomical-calculation-machine-reveals-new-secrets/" target="_blank" rel="noopener noreferrer">Scientific American: An Ancient Greek Astronomical Calculation Machine Reveals New Secrets</a><div class="small">Erklärt, warum neue Untersuchungen die Komplexität und Präzision des Mechanismus weiter verstärken.</div></div>
+                  <div class="source-item"><a href="https://www.nature.com/articles/s41598-021-84310-w" target="_blank" rel="noopener noreferrer">Nature / Scientific Reports: A Model of the Cosmos in the ancient Greek Antikythera Mechanism</a><div class="small">Fachartikel zur kosmologischen Modellierung und zu Rekonstruktionsansätzen des Geräts.</div></div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">Dr. Sourkraut Filez // Agent-Sourkraut // Briefing V9 // Antikythera Archive</div>
+  </div>
+
+  <script>
+    const gear = document.getElementById('gear');
+    const updateGear = () => {
+      const y = window.scrollY || 0;
+      const driftY = 90 + y * 0.2;
+      const spin = y * 0.12;
+      const wobbleX = Math.sin(y / 120) * 12;
+      gear.style.transform = `translate(${wobbleX}px, ${driftY}px) rotate(${spin}deg)`;
+    };
+    window.addEventListener('scroll', updateGear, { passive: true });
+    updateGear();
+  </script>
+  <div style="text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(111,129,111,.3);"><a href="../" style="display: inline-block; padding: 12px 30px; background: #6f9ba8; color: #f2ead9; text-decoration: none; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-weight: bold; border: 2px solid #4d6f79; border-radius: 4px;">← ZURÜCK ZUR LANDINGPAGE</a></div>
+</body>
+</html>
