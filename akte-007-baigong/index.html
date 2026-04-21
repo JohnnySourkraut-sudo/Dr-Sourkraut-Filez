@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Sourkraut Filez // Akte 007: Baigong Pipes</title>
+  <meta name="description" content="Dr. Sourkraut Filez // Akte 007: Die Baigong Pipes in Qinghai, China. V9-Dossier-Look über rätselhafte Rohrstrukturen im Fels, zwischen Geologie, Legende und Alien-Spekulation." />
+  <style>
+    :root {
+      --bg: #0b1110;
+      --bg2: #101716;
+      --sheet: #f2ead9;
+      --sheet2: #e8deca;
+      --sheet3: #dfd4c2;
+      --ink: #1f231e;
+      --muted: #667066;
+      --olive: #6f816f;
+      --accent: #a88969;
+      --amber: #b67a1e;
+      --red: #8e3d3d;
+      --line: rgba(18,24,20,.12);
+      --type: "Courier New", Courier, monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #edf2ee;
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at top left, rgba(111,129,111,.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(182,122,30,.08), transparent 20%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height: 1.72;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0; pointer-events: none; opacity: .08;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), transparent 80%);
+    }
+    .wrap { max-width: 1220px; margin: 0 auto; padding: 28px 18px 90px; position: relative; }
+    .artifact {
+      position: fixed;
+      right: 22px;
+      top: 110px;
+      width: 148px;
+      height: 148px;
+      z-index: 60;
+      pointer-events: none;
+      opacity: .95;
+      filter: drop-shadow(0 12px 18px rgba(0,0,0,.45));
+      transition: transform .08s linear;
+    }
+    .hero {
+      background: linear-gradient(180deg, rgba(17,23,21,.94), rgba(22,29,26,.90));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 26px 70px rgba(0,0,0,.34);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .hero::before {
+      content: "TOP SECRET // DR. SOURKRAUT FILEZ // BAIGONG";
+      position: absolute; top: 18px; right: -84px; transform: rotate(16deg);
+      background: rgba(168,137,105,.14); color: #f0e0c8; border: 1px solid rgba(168,137,105,.25);
+      padding: 10px 90px; letter-spacing: .18em; font-size: 11px; font-weight: 900; font-family: var(--type);
+    }
+    .eyebrow { color: #96a79b; text-transform: uppercase; letter-spacing: .18em; font-size: 12px; font-weight: 900; margin-bottom: 12px; font-family: var(--type); }
+    h1 { margin: 0 0 12px; font-size: clamp(42px, 6vw, 82px); line-height: .95; letter-spacing: -.05em; max-width: 860px; }
+    .sub { font-size: 19px; color: #a8b5ab; max-width: 950px; }
+    .notice { margin-top: 18px; padding: 14px 16px; border-left: 4px solid var(--amber); border-radius: 14px; background: rgba(182,122,30,.08); color: #f3e2bf; font-weight: 700; font-family: var(--type); }
+    .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:22px; }
+    .metric { padding:18px; border-radius:20px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); }
+    .metric small { display:block; margin-bottom:8px; color:#9cad9f; font-size:11px; text-transform:uppercase; letter-spacing:.14em; font-weight:800; font-family: var(--type); }
+    .metric strong { font-size:31px; letter-spacing:-.04em; }
+    .stack { position: relative; margin-top: 30px; padding: 28px 0; }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3, .sheet-main { border-radius: 20px; border: 1px solid var(--line); box-shadow: 0 22px 60px rgba(0,0,0,.22); }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 { position: absolute; left: 50%; transform: translateX(-50%); width: min(1020px, calc(100% - 30px)); background: linear-gradient(180deg, var(--sheet2), var(--sheet3)); }
+    .sheet-bg-1 { top: 26px; height: calc(100% - 40px); transform: translateX(-50%) rotate(-2.4deg); opacity: .68; }
+    .sheet-bg-2 { top: 14px; height: calc(100% - 24px); transform: translateX(-50%) rotate(1.6deg); opacity: .82; }
+    .sheet-bg-3 { top: 6px; height: calc(100% - 12px); transform: translateX(-50%) rotate(-0.8deg); opacity: .90; }
+    .sheet-main {
+      position: relative; z-index: 4; max-width: 1040px; margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.16), transparent 140px), var(--sheet);
+      color: var(--ink); overflow: hidden;
+      box-shadow: 0 22px 60px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.4);
+    }
+    .sheet-main::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .06;
+      background-image: linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .sheet-main::after {
+      content: ""; position: absolute; left: 18px; top: 0; bottom: 0; width: 28px;
+      background: repeating-linear-gradient(90deg, transparent 0px, transparent 6px, rgba(0,0,0,.05) 6px, rgba(0,0,0,.05) 8px);
+      pointer-events: none;
+    }
+    .sheet-inner { position: relative; z-index: 1; padding: 30px 30px 30px 60px; }
+    .briefing-head { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start; border-bottom:1px dashed rgba(0,0,0,.15); padding-bottom:16px; margin-bottom:22px; }
+    .briefing-title { font-family: var(--type); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); font-size: 12px; }
+    .briefing-stamp { font-family: var(--type); color: #7a6a54; border: 2px solid rgba(168,137,105,.45); padding: 8px 12px; border-radius: 999px; font-weight: 900; transform: rotate(-4deg); }
+    .content-grid { display:grid; grid-template-columns: 1.48fr .9fr; gap: 22px; }
+    .article h2, .side h2 { font-size: 26px; margin-top:22px; margin-bottom:12px; letter-spacing: -.03em; }
+    .article h2:first-child { margin-top:0; }
+    .article p { margin: 0 0 16px; }
+    .quote { margin: 18px 0; padding: 16px 18px; border-left: 4px solid var(--amber); background: rgba(182,122,30,.10); border-radius: 14px; font-weight: 600; color: #4b3620; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .panel { background: rgba(111,129,111,.06); border: 1px solid rgba(0,0,0,.10); border-radius: 18px; padding: 18px; margin-bottom: 16px; }
+    .tag { display:inline-block; padding:7px 10px; border-radius:999px; border:1px solid rgba(0,0,0,.12); margin-right:8px; margin-bottom:8px; background:rgba(255,255,255,.42); color:var(--muted); font-size:13px; font-weight:800; font-family: var(--type); }
+    .source-list { display:grid; gap:12px; }
+    .source-item { padding:14px; border-radius:16px; border:1px solid rgba(0,0,0,.10); background:rgba(255,255,255,.32); }
+    a { color: #7a6a54; font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .small { font-size: 14px; color: var(--muted); }
+    .footer { max-width:1040px; margin:18px auto 0; color:#93a195; font-size:14px; text-align:center; }
+    .asset-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0; }
+    .asset-img { border-radius: 14px; border: 1px solid rgba(0,0,0,.12); background: linear-gradient(135deg, rgba(255,255,255,.8), rgba(240,240,235,.6)); overflow: hidden; box-shadow: 0 12px 28px rgba(0,0,0,.12); }
+    .asset-img img, .asset-img svg { width: 100%; height: auto; display: block; }
+    .asset-img .caption { padding: 10px 12px; font-size: 12px; color: var(--muted); font-family: var(--type); background: rgba(255,255,255,.6); border-top: 1px solid rgba(0,0,0,.08); text-align: center; }
+    .data-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:12px; }
+    .data-grid div { padding:10px 12px; border-radius:12px; background:rgba(255,255,255,.42); border:1px solid rgba(0,0,0,.08); font-size:14px; }
+    @media (max-width: 980px) {
+      .metrics, .content-grid, .asset-gallery, .data-grid { grid-template-columns:1fr; }
+      .hero::before, .artifact { display:none; }
+      .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 { display:none; }
+      .sheet-main::after { display:none; }
+      .sheet-inner { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <svg class="artifact" id="artifact" viewBox="0 0 200 200" aria-hidden="true">
+    <defs>
+      <linearGradient id="pipeMetal" x1="0" x2="1">
+        <stop offset="0%" stop-color="#64584d" />
+        <stop offset="50%" stop-color="#aa8c6d" />
+        <stop offset="100%" stop-color="#4e463e" />
+      </linearGradient>
+    </defs>
+    <circle cx="100" cy="100" r="72" fill="rgba(242,234,217,.14)" />
+    <path d="M42 132 C68 96, 86 70, 112 36" stroke="url(#pipeMetal)" stroke-width="18" stroke-linecap="round" fill="none" />
+    <path d="M84 150 C108 122, 126 98, 152 56" stroke="url(#pipeMetal)" stroke-width="12" stroke-linecap="round" fill="none" opacity=".9" />
+    <path d="M54 70 C84 86, 112 104, 148 124" stroke="#7b6756" stroke-width="8" stroke-linecap="round" fill="none" opacity=".8" />
+    <circle cx="44" cy="133" r="14" fill="#d4c1a7" stroke="#6a5a4d" stroke-width="6" />
+    <circle cx="84" cy="151" r="10" fill="#d4c1a7" stroke="#6a5a4d" stroke-width="5" />
+    <circle cx="152" cy="55" r="8" fill="#d4c1a7" stroke="#6a5a4d" stroke-width="4" />
+  </svg>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Dr. Sourkraut Filez // Akte 007 // Briefing</div>
+      <h1>Die Baigong Pipes</h1>
+      <p class="sub">Im trockenen Hochland von <strong>Qinghai in China</strong>, rund 40 Kilometer südwestlich von <strong>Delingha</strong> in der <strong>Haixi-Region</strong>, liegen Rohrstrukturen im Fels, an Höhlenwänden und sogar nahe eines Salzsees. Manche sehen darin Spuren uralter Technik, andere schlicht eine bizarre Laune der Geologie. Genau deshalb ist Baigong so stark: nicht weil alles klar ist, sondern weil bis heute nicht alles sauber auf einen Satz heruntergebrochen werden kann.</p>
+      <div class="notice">Diese Akte bleibt bewusst zwischen Staunen und Skepsis. Zu viele Behauptungen sind aufgeblasen, zu viele Details aber auch zu seltsam, um sie einfach wegzuwischen.</div>
+      <div class="metrics">
+        <div class="metric"><small>Rätsel-Faktor</small><strong>9.1 / 10</strong></div>
+        <div class="metric"><small>Geologie vs. Legende</small><strong>50 / 50</strong></div>
+        <div class="metric"><small>Bro-Weiterleitungsimpuls</small><strong>Extrem hoch</strong></div>
+      </div>
+    </section>
+
+    <section class="stack">
+      <div class="sheet-bg-1"></div>
+      <div class="sheet-bg-2"></div>
+      <div class="sheet-bg-3"></div>
+      <div class="sheet-main">
+        <div class="sheet-inner">
+          <div class="briefing-head">
+            <div>
+              <div class="briefing-title">Field Briefing // Akte 007 // Baigong Pipes</div>
+              <h2 style="margin:8px 0 0; font-size:34px;">SCIF Briefing zu Chinas rätselhaftesten Rohren im Berg</h2>
+            </div>
+            <div class="briefing-stamp">UNRESOLVED</div>
+          </div>
+
+          <div class="content-grid">
+            <article class="article">
+              <h2>Zusammenfassung</h2>
+              <p>Die <strong>Baigong Pipes</strong>, auch als <strong>Delingha Pipes</strong> bezeichnet, gehören zu den kuriosesten Fundgeschichten aus der modernen Mystery-Folklore Chinas. Berichte sprechen von <strong>metallisch wirkenden Röhren</strong> in und an einer Höhle von <strong>Mount Baigong</strong>, plus weiteren Strukturen am Ufer eines nahen <strong>Salzsees</strong>. Manche Röhren sollen dick sein, andere dünn wie Strohhalme, wieder andere direkt im Gestein verschwinden. Dazu kommen Altersangaben von <strong>3000 Jahren</strong>, <strong>deutlich älter</strong> oder sogar völlig absurden prähistorischen Datierungen, je nachdem, wer die Story erzählt.</p>
+
+              <div class="quote">Sourkraut-Notiz: Baigong ist einer dieser Fälle, bei denen schon das Rohmaterial spannend genug ist. Man braucht die Alien-Keule eigentlich gar nicht, um hier hängen zu bleiben.</div>
+
+              <div class="asset-gallery">
+                <div class="asset-img">
+                  <img src="./assets/baigong-pipe-photo-1.jpg" alt="Foto der Höhle von Mount Baigong mit sichtbaren Röhrenstrukturen" loading="lazy" />
+                  <div class="caption">Schematische Darstellung der berühmten Höhle: Im Zentrum der Erzählung stehen Rohrformen, die aus Fels und Höhlenwand herauslaufen sollen. Foto: Xa Luan.</div>
+                </div>
+                <div class="asset-img">
+                  <img src="./assets/baigong-pipe-photo-2.jpg" alt="Foto vom Seeufer bei Baigong mit pipe-like features im Umfeld" loading="lazy" />
+                  <div class="caption">Auch abseits der Höhle werden pipe-like features beschrieben, besonders in Richtung des nahen Salzsees. Foto: Atlas Obscura.</div>
+                </div>
+              </div>
+
+              <h2>Was über den Ort halbwegs gesichert ist</h2>
+              <p>Der Schauplatz liegt in der <strong>Haixi Mongol and Tibetan Autonomous Prefecture</strong> in der Provinz <strong>Qinghai</strong>, in einer trockenen, geologisch eigenwilligen Landschaft. In populären Berichten tauchen meist <strong>drei Höhlen</strong> auf, von denen heute nur die größte zugänglich sein soll. Von dort aus sollen Rohrformen Richtung Ufer eines Salzsees laufen. Beschrieben werden <strong>verschiedene Größen und Konfigurationen</strong>, von größeren Öffnungen mit mehreren Zentimetern Durchmesser bis zu sehr feinen Röhrchen, die wie Wurzeln oder mineralische Adern wirken.</p>
+              <ul>
+                <li><strong>Ort:</strong> Mount Baigong, nahe Delingha, Haixi-Region, Qinghai, China</li>
+                <li><strong>Kontext:</strong> Höhle, Felswand, Uferzone und Seeumfeld</li>
+                <li><strong>Materialwirkung:</strong> rostig, eisenhaltig, metallisch wirkend</li>
+                <li><strong>Größen:</strong> von dünnen Röhrchen bis zu deutlich breiteren Öffnungen</li>
+                <li><strong>Populäre Datierung:</strong> oft 3000+ Jahre, teils wesentlich älter behauptet</li>
+              </ul>
+
+              <h2>Warum die Sache überhaupt so eskaliert ist</h2>
+              <p>Der Fund wurde Anfang der 2000er international bekannt, nachdem chinesische Medien über die seltsamen Strukturen berichteten. Daraus wuchs blitzschnell eine perfekte Mystery-Erzählung: abgelegene Region, Höhle im Berg, Röhren im Fels, ein Salzsee in Reichweite und angebliche Materialanalysen, die nicht sofort jeder versteht. Genau aus diesem Cocktail entstanden dann die ganz großen Deutungen.</p>
+
+              <h2>Die große Frage: Technik oder Natur?</h2>
+              <p>Hier teilen sich die Lager. <strong>Believer</strong> sagen: Das sieht aus wie ein Leitungssystem. Wenn Röhren in einem Berg stecken und Richtung See verlaufen, könnte das auf <strong>antike Ingenieurskunst</strong> oder sogar auf eine nichtmenschliche Konstruktion hindeuten. Manche Versionen machen aus Baigong fast schon eine alte Basis oder einen vorgeschichtlichen Industrieplatz.</p>
+              <p><strong>Skeptiker</strong> halten dagegen: Pipe-like features sind in der Geologie nichts Magisches. Eisenhaltige Konkretionen, mineralisierte Wurzelkanäle, sedimentäre Füllungen oder andere natürliche Prozesse können Formen erzeugen, die verblüffend technisch aussehen. Gerade wenn Berichte von <strong>Siliziumdioxid, Calciumoxid und Eisenoxid</strong> sprechen, ist das nicht automatisch Beweis für verarbeitete Metallrohre, sondern oft eher ein Hinweis auf natürliche mineralische Zusammensetzung.</p>
+
+              <div class="asset-gallery">
+                <div class="asset-img">
+                  <img src="./assets/baigong-pipe-photo-1.jpg" alt="Foto der Baigong Pipes als Referenz zur Debatte zwischen Technik- und Geologie-Hypothese" loading="lazy" />
+                  <div class="caption">Die Debatte in einem Bild: Wirkt es wie Infrastruktur, oder nur wie Infrastruktur? Foto: Xa Luan.</div>
+                </div>
+                <div class="asset-img">
+                  <img src="./assets/baigong-pipe-photo-2.jpg" alt="Foto der Baigong Pipes als Referenz zur späteren Debatte und Einordnung" loading="lazy" />
+                  <div class="caption">Moderne Analysen haben das Rätsel nicht beendet, sondern eher in neue Richtungen verschoben. Foto: Atlas Obscura.</div>
+                </div>
+              </div>
+
+              <h2>Was moderne Analysen nahelegen</h2>
+              <p>Mehrere spätere Berichte brachten eine deutlich nüchternere Möglichkeit ins Spiel: Einige der Rohrformen könnten auf <strong>fossile Bäume, Wurzeln oder pflanzliches Material</strong> zurückgehen, das mineralisiert wurde. Das wäre eine elegante Erklärung dafür, warum die Strukturen zugleich organisch und technisch wirken. Andere Meldungen erwähnten wiederum <strong>erhöhte Radioaktivität</strong> in Teilen der Formation, was die Mystery-Szene natürlich sofort aufgesaugt hat, geologisch aber ebenfalls nicht automatisch unnatürlich sein muss.</p>
+              <p>Mit anderen Worten: Die modernen Debatten haben die Alien-Hypothese nicht bestätigt, aber sie haben auch nicht jeden visuellen Eindruck banal gemacht. Es bleibt ein Grenzfall zwischen spektakulärer Fehlinterpretation und echter geologischer Kuriosität.</p>
+
+              <h2>Die Altersfrage ist besonders heikel</h2>
+              <p>In populären Artikeln taucht oft die Behauptung auf, die Baigong Pipes seien <strong>mindestens 3000 Jahre alt</strong>. In einigen wilden Versionen wird sogar mit noch viel älteren Zahlen hantiert. Genau hier ist Vorsicht nötig. Die Story ist älter und größer geworden, als die belastbaren Daten hergeben. Für diese Akte gilt deshalb: <strong>3000+ Jahre</strong> ist Teil der überlieferten Erzählung, aber keine sauber abgeschlossene, international anerkannte Datierung im Sinne eines geologischen Schlussurteils.</p>
+
+              <h2>Warum der Fall trotz Skepsis so kleben bleibt</h2>
+              <p>Weil Baigong visuell brutal gut funktioniert. Ein Berg. Eine Höhle. „Metallrohre“ im Fels. Ein See daneben. Unterschiedliche Größen und Linien, die fast wie Planung aussehen. Selbst wenn die natürliche Erklärung am Ende die stärkere ist, bleibt die Szene stark genug, um das Gehirn kurz auf Technik zu schalten. Und genau an dieser Stelle lebt die Akte.</p>
+
+              <h2>Sourkraut-Briefing Fazit</h2>
+              <p>Die Baigong Pipes sind weder ein sauber bewiesener Alien-Bau noch ein Fall, den man mit einem müden Schulterzucken komplett entsorgen sollte. Wahrscheinlich sprechen die stärksten Hinweise eher für <strong>ungewöhnliche natürliche Formationen</strong>, vielleicht mit fossilen oder mineralischen Prozessen im Hintergrund. Aber die Kombination aus Lage, Form, Größe und Legendenbildung macht Baigong zu einem jener Orte, an denen Zweifel nicht langweilig, sondern verdammt produktiv werden. Und genau deshalb gehört dieser Fall in die Akten.</p>
+            </article>
+
+            <aside class="side">
+              <div class="panel">
+                <h2>Aktenstatus</h2>
+                <div class="tag">China</div>
+                <div class="tag">Haixi Region</div>
+                <div class="tag">Pipe-like Features</div>
+                <div class="tag">Geology vs. Mystery</div>
+                <p class="small" style="margin-top:10px;">Ein Paradefall dafür, wie schnell Naturformen nach verlorener Technologie aussehen können.</p>
+              </div>
+
+              <div class="panel">
+                <h2>Schnellakte</h2>
+                <ul>
+                  <li><strong>Ort:</strong> Mount Baigong, nahe Delingha</li>
+                  <li><strong>Region:</strong> Haixi, Qinghai, China</li>
+                  <li><strong>Setting:</strong> Höhlenfront, Berg, Salzsee</li>
+                  <li><strong>Formen:</strong> Röhren in mehreren Durchmessern</li>
+                  <li><strong>Theorien:</strong> Alienbau, antike Technik, Geologie</li>
+                  <li><strong>Status:</strong> teilweise erklärt, nie ganz entzaubert</li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <h2>Warum Leute ausrasten</h2>
+                <p>Weil fast alles an diesem Fall wie ein Set-up für eine versiegelte Vorzeit-Anlage klingt. Und weil die Formensprache des Gesteins hier ausnahmsweise wirklich wie Infrastruktur cosplayt.</p>
+              </div>
+
+              <div class="panel">
+                <h2>Kernpunkte</h2>
+                <div class="data-grid">
+                  <div><strong>3 Höhlen</strong><br />tauchen in vielen Berichten auf</div>
+                  <div><strong>80 m</strong><br />bis zum Seeufer in manchen Beschreibungen</div>
+                  <div><strong>3000+</strong><br />Jahre in populären Datierungen</div>
+                  <div><strong>Mehrere Größen</strong><br />von dünn bis deutlich breit</div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <h2>Quellen / Spurensicherung</h2>
+                <div class="source-list">
+                  <div class="source-item"><a href="https://en.wikipedia.org/wiki/Baigong_pipes" target="_blank" rel="noopener noreferrer">Wikipedia: Baigong pipes</a><div class="small">Grundlage zu Ort, Höhlen, See, Materialberichten und späteren Deutungen.</div></div>
+                  <div class="source-item"><a href="https://www.atlasobscura.com/places/baigong-pipes" target="_blank" rel="noopener noreferrer">Atlas Obscura: Baigong Pipes</a><div class="small">Mystery-orientierte Ortsbeschreibung, die zeigt, warum der Platz weltweit so oft weitererzählt wird.</div></div>
+                  <div class="source-item"><a href="https://www.iflscience.com/search?q=baigong" target="_blank" rel="noopener noreferrer">IFLScience Suche: Baigong</a><div class="small">Praktischer Einstiegspunkt, falls dort aktuell ein Baigong-Artikel oder Archivtreffer verfügbar ist.</div></div>
+                  <div class="source-item"><a href="https://explorersweb.com/?s=baigong" target="_blank" rel="noopener noreferrer">Explorersweb Suche: Baigong</a><div class="small">Nützlich für Reise-, Expeditions- oder Mystery-Bezüge rund um Delingha und die Qinghai-Region.</div></div>
+                  <div class="source-item"><a href="https://medium.com/search?q=baigong%20pipes" target="_blank" rel="noopener noreferrer">Medium Suche: Baigong Pipes</a><div class="small">Sammlung von Essays und Nacherzählungen, oft stark believer-lastig, aber gut zum Vergleich der Story-Schichten.</div></div>
+                  <div class="source-item"><a href="https://skeptoid.com/episodes/181" target="_blank" rel="noopener noreferrer">Skeptoid: The Baigong Pipes</a><div class="small">Skeptische Einordnung, besonders hilfreich gegen überdrehte Alien-Gewissheiten.</div></div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">Dr. Sourkraut Filez // Agent-Sourkraut // Briefing V9 // Baigong Archive</div>
+  </div>
+
+  <script>
+    const artifact = document.getElementById('artifact');
+    const updateArtifact = () => {
+      const y = window.scrollY || 0;
+      const driftY = 86 + y * 0.18;
+      const spin = Math.sin(y / 160) * 8;
+      const wobbleX = Math.cos(y / 130) * 12;
+      artifact.style.transform = `translate(${wobbleX}px, ${driftY}px) rotate(${spin}deg)`;
+    };
+    window.addEventListener('scroll', updateArtifact, { passive: true });
+    updateArtifact();
+  </script>
+  <div style="text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(111,129,111,.3);"><a href="../" style="display: inline-block; padding: 12px 30px; background: #6f9ba8; color: #f2ead9; text-decoration: none; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-weight: bold; border: 2px solid #4d6f79; border-radius: 4px;">← ZURÜCK ZUR LANDINGPAGE</a></div>
+</body>
+</html>
