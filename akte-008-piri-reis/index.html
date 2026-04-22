@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Sourkraut Filez // Akte 008: Die Piri-Reis-Karte</title>
+  <meta name="description" content="Dr. Sourkraut Filez // Akte 008: Die Piri-Reis-Karte von 1513. Ein V9-Dossier über osmanische Kartografie, die Amerika-Frage, die Antarktis-Kontroverse und das faszinierende Spannungsfeld zwischen Forschung und Mystery." />
+  <style>
+    :root {
+      --bg: #0b1110;
+      --bg2: #101716;
+      --sheet: #f2ead9;
+      --sheet2: #e8deca;
+      --sheet3: #dfd4c2;
+      --ink: #1f231e;
+      --muted: #667066;
+      --olive: #6f816f;
+      --accent: #a88969;
+      --amber: #b67a1e;
+      --red: #8e3d3d;
+      --line: rgba(18,24,20,.12);
+      --type: "Courier New", Courier, monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #edf2ee;
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at top left, rgba(168,137,105,.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(182,122,30,.08), transparent 20%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height: 1.72;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0; pointer-events: none; opacity: .08;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), transparent 80%);
+    }
+    .wrap { max-width: 1220px; margin: 0 auto; padding: 28px 18px 90px; position: relative; }
+    .compass {
+      position: fixed;
+      right: 22px;
+      top: 110px;
+      width: 144px;
+      height: 144px;
+      z-index: 60;
+      pointer-events: none;
+      opacity: .94;
+      filter: drop-shadow(0 12px 18px rgba(0,0,0,.45));
+      transition: transform .08s linear;
+    }
+    .hero {
+      background: linear-gradient(180deg, rgba(17,23,21,.94), rgba(22,29,26,.90));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 26px 70px rgba(0,0,0,.34);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .hero::before {
+      content: "TOP SECRET // DR. SOURKRAUT FILEZ // PIRI REIS";
+      position: absolute; top: 18px; right: -84px; transform: rotate(16deg);
+      background: rgba(168,137,105,.14); color: #f0e0c8; border: 1px solid rgba(168,137,105,.25);
+      padding: 10px 90px; letter-spacing: .18em; font-size: 11px; font-weight: 900; font-family: var(--type);
+    }
+    .eyebrow { color: #96a79b; text-transform: uppercase; letter-spacing: .18em; font-size: 12px; font-weight: 900; margin-bottom: 12px; font-family: var(--type); }
+    h1 { margin: 0 0 12px; font-size: clamp(42px, 6vw, 82px); line-height: .95; letter-spacing: -.05em; max-width: 900px; }
+    .sub { font-size: 19px; color: #a8b5ab; max-width: 950px; }
+    .notice { margin-top: 18px; padding: 14px 16px; border-left: 4px solid var(--amber); border-radius: 14px; background: rgba(182,122,30,.08); color: #f3e2bf; font-weight: 700; font-family: var(--type); }
+    .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:22px; }
+    .metric { padding:18px; border-radius:20px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); }
+    .metric small { display:block; margin-bottom:8px; color:#9cad9f; font-size:11px; text-transform:uppercase; letter-spacing:.14em; font-weight:800; font-family: var(--type); }
+    .metric strong { font-size:31px; letter-spacing:-.04em; }
+    .stack { position: relative; margin-top: 30px; padding: 28px 0; }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3, .sheet-main { border-radius: 20px; border: 1px solid var(--line); box-shadow: 0 22px 60px rgba(0,0,0,.22); }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 { position: absolute; left: 50%; transform: translateX(-50%); width: min(1020px, calc(100% - 30px)); background: linear-gradient(180deg, var(--sheet2), var(--sheet3)); }
+    .sheet-bg-1 { top: 26px; height: calc(100% - 40px); transform: translateX(-50%) rotate(-2.4deg); opacity: .68; }
+    .sheet-bg-2 { top: 14px; height: calc(100% - 24px); transform: translateX(-50%) rotate(1.6deg); opacity: .82; }
+    .sheet-bg-3 { top: 6px; height: calc(100% - 12px); transform: translateX(-50%) rotate(-0.8deg); opacity: .90; }
+    .sheet-main {
+      position: relative; z-index: 4; max-width: 1040px; margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.16), transparent 140px), var(--sheet);
+      color: var(--ink); overflow: hidden;
+      box-shadow: 0 22px 60px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.4);
+    }
+    .sheet-main::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .06;
+      background-image: linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .sheet-main::after {
+      content: ""; position: absolute; left: 18px; top: 0; bottom: 0; width: 28px;
+      background: repeating-linear-gradient(90deg, transparent 0px, transparent 6px, rgba(0,0,0,.05) 6px, rgba(0,0,0,.05) 8px);
+      pointer-events: none;
+    }
+    .sheet-inner { position: relative; z-index: 1; padding: 30px 30px 30px 60px; }
+    .briefing-head { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start; border-bottom:1px dashed rgba(0,0,0,.15); padding-bottom:16px; margin-bottom:22px; }
+    .briefing-title { font-family: var(--type); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); font-size: 12px; }
+    .briefing-stamp { font-family: var(--type); color: #7a6a54; border: 2px solid rgba(168,137,105,.45); padding: 8px 12px; border-radius: 999px; font-weight: 900; transform: rotate(-4deg); }
+    .content-grid { display:grid; grid-template-columns: 1.48fr .9fr; gap: 22px; }
+    .article h2, .side h2 { font-size: 26px; margin-top:22px; margin-bottom:12px; letter-spacing: -.03em; }
+    .article h2:first-child { margin-top:0; }
+    .article p { margin: 0 0 16px; }
+    .quote { margin: 18px 0; padding: 16px 18px; border-left: 4px solid var(--amber); background: rgba(182,122,30,.10); border-radius: 14px; font-weight: 600; color: #4b3620; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .panel { background: rgba(111,129,111,.06); border: 1px solid rgba(0,0,0,.10); border-radius: 18px; padding: 18px; margin-bottom: 16px; }
+    .tag { display:inline-block; padding:7px 10px; border-radius:999px; border:1px solid rgba(0,0,0,.12); margin-right:8px; margin-bottom:8px; background:rgba(255,255,255,.42); color:var(--muted); font-size:13px; font-weight:800; font-family: var(--type); }
+    .source-list { display:grid; gap:12px; }
+    .source-item { padding:14px; border-radius:16px; border:1px solid rgba(0,0,0,.10); background:rgba(255,255,255,.32); }
+    a { color: #7a6a54; font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .small { font-size: 14px; color: var(--muted); }
+    .footer { max-width:1040px; margin:18px auto 0; color:#93a195; font-size:14px; text-align:center; }
+    .asset-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0; }
+    .asset-img { border-radius: 14px; border: 1px solid rgba(0,0,0,.12); background: linear-gradient(135deg, rgba(255,255,255,.8), rgba(240,240,235,.6)); overflow: hidden; box-shadow: 0 12px 28px rgba(0,0,0,.12); }
+    .asset-img img { width: 100%; height: auto; display: block; }
+    .asset-img .caption { padding: 10px 12px; font-size: 12px; color: var(--muted); font-family: var(--type); background: rgba(255,255,255,.6); border-top: 1px solid rgba(0,0,0,.08); text-align: center; }
+    .data-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:12px; }
+    .data-grid div { padding:10px 12px; border-radius:12px; background:rgba(255,255,255,.42); border:1px solid rgba(0,0,0,.08); font-size:14px; }
+    @media (max-width: 980px) {
+      .metrics, .content-grid, .asset-gallery, .data-grid { grid-template-columns:1fr; }
+      .hero::before, .compass { display:none; }
+      .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 { display:none; }
+      .sheet-main::after { display:none; }
+      .sheet-inner { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <svg class="compass" id="compass" viewBox="0 0 200 200" aria-hidden="true">
+    <defs>
+      <linearGradient id="needle" x1="0" x2="1">
+        <stop offset="0%" stop-color="#6b4b30" />
+        <stop offset="50%" stop-color="#c1945a" />
+        <stop offset="100%" stop-color="#5f472e" />
+      </linearGradient>
+    </defs>
+    <circle cx="100" cy="100" r="74" fill="rgba(242,234,217,.14)" stroke="rgba(220,202,176,.2)" stroke-width="8"/>
+    <circle cx="100" cy="100" r="52" fill="none" stroke="rgba(220,202,176,.28)" stroke-width="3"/>
+    <path d="M100 30 L120 100 L100 170 L80 100 Z" fill="url(#needle)"/>
+    <path d="M100 50 L108 100 L100 150 L92 100 Z" fill="#1f231e" opacity=".72"/>
+    <circle cx="100" cy="100" r="10" fill="#f2ead9" stroke="#7a6a54" stroke-width="4"/>
+  </svg>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Dr. Sourkraut Filez // Akte 008 // Briefing</div>
+      <h1>Die Piri-Reis-Karte</h1>
+      <p class="sub">Ein echter osmanischer Kartenfund aus dem Jahr <strong>1513</strong>, gezeichnet vom Admiral <strong>Piri Reis</strong>, wiederentdeckt im Topkapı-Palast und bis heute eines der härtesten Rätsel der Kartografie. Sie zeigt Teile von <strong>Europa, Afrika und Amerika</strong>, wirkt in manchen Bereichen verblüffend präzise und hat jene legendäre Debatte ausgelöst, ob ihr südlicher Rand nur Südamerika verzieht oder tatsächlich etwas zeigt, das viele als <strong>Antarktis vor dem Eis</strong> lesen wollen.</p>
+      <div class="notice">Diese Akte bleibt bewusst balanciert: Historiker und Kartografie-Experten liefern starke Erklärungen, Mystery-Theoretiker liefern die große Gänsehautfrage. Und ja, das ist rätselhaft.</div>
+      <div class="metrics">
+        <div class="metric"><small>Rätsel-Faktor</small><strong>9.4 / 10</strong></div>
+        <div class="metric"><small>Entstehungsjahr</small><strong>1513</strong></div>
+        <div class="metric"><small>Historischer Status</small><strong>Echt & erhalten</strong></div>
+      </div>
+    </section>
+
+    <section class="stack">
+      <div class="sheet-bg-1"></div>
+      <div class="sheet-bg-2"></div>
+      <div class="sheet-bg-3"></div>
+      <div class="sheet-main">
+        <div class="sheet-inner">
+          <div class="briefing-head">
+            <div>
+              <div class="briefing-title">Field Briefing // Akte 008 // Piri-Reis-Karte</div>
+              <h2 style="margin:8px 0 0; font-size:34px;">SCIF Briefing zu einer Weltkarte, die ihre Zeit zu überholen scheint</h2>
+            </div>
+            <div class="briefing-stamp">CONTESTED</div>
+          </div>
+
+          <div class="content-grid">
+            <article class="article">
+              <h2>Zusammenfassung</h2>
+              <p>Die <strong>Piri-Reis-Karte</strong> ist kein Internet-Hoax, keine moderne Fälschung und kein nebulöses Hörensagen. Sie ist ein realer, heute nur teilweise erhaltener Kartenfund auf Gazellenhaut, zusammengestellt vom osmanischen Admiral und Kartografen <strong>Piri Reis</strong>. Der überlieferte Fragmentteil wurde 1929 im <strong>Topkapı-Palast</strong> wiederentdeckt und sorgte sofort für Aufsehen, weil er den Atlantikraum und die Küsten Südamerikas erstaunlich detailliert darstellt, obwohl diese Weltregion aus europäischer Sicht gerade erst kartografisch erschlossen wurde.</p>
+
+              <div class="quote">Sourkraut-Notiz: Genau deshalb hält sich der Fall so hartnäckig. Wir reden hier nicht über Fantasie, sondern über ein echtes Artefakt, das gleichzeitig solide historisch greifbar und herrlich unbequem bleibt.</div>
+
+              <div class="asset-gallery">
+                <div class="asset-img">
+                  <img src="./assets/piri-reis-map-full.jpg" alt="Historische Fotografie des erhaltenen Fragments der Piri-Reis-Karte von 1513" loading="lazy" />
+                  <div class="caption">Wikimedia Commons: Das erhaltene Fragment der Piri-Reis-Karte von 1513. Zu sehen sind Europa, Westafrika, der Atlantik und große Teile der amerikanischen Küsten.</div>
+                </div>
+                <div class="asset-img">
+                  <img src="./assets/piri-reis-map-detail-south.jpg" alt="Detailaufnahme des südlichen Bereichs der Piri-Reis-Karte mit Südamerika und dem umstrittenen unteren Küstenverlauf" loading="lazy" />
+                  <div class="caption">Detailausschnitt des unteren Kartenbereichs. Genau hier entzündet sich die berühmte Debatte: verzogenes Südamerika oder Stoff für die Antarktis-These?</div>
+                </div>
+              </div>
+
+              <h2>Was historisch ziemlich gut gesichert ist</h2>
+              <p>Piri Reis datierte die Karte selbst auf <strong>1513</strong>. In ihren Inschriften erklärt er, dass er mehrere ältere Vorlagen zusammengeführt habe, darunter portugiesische Karten, arabische Materialien, klassische geografische Traditionen und sogar eine Karte von <strong>Christoph Kolumbus</strong>, die heute als verloren gilt. Genau dieser Punkt macht die Karte auch historisch so wertvoll: Sie ist nicht nur ein Einzelwerk, sondern vermutlich ein Fenster in eine inzwischen verschwundene Kartenüberlieferung.</p>
+              <ul>
+                <li><strong>Urheber:</strong> Piri Reis, osmanischer Admiral und Kartograf</li>
+                <li><strong>Datum:</strong> 1513</li>
+                <li><strong>Material:</strong> Gazellenhaut-Pergament</li>
+                <li><strong>Aufbewahrung:</strong> Topkapı-Palast / Istanbul</li>
+                <li><strong>Wiederentdeckt:</strong> 1929</li>
+                <li><strong>Besonderheit:</strong> nur ungefähr ein Drittel der ursprünglichen Karte ist erhalten</li>
+              </ul>
+
+              <h2>Warum sie so früh so gut aussieht</h2>
+              <p>Für viele Fachleute ist die wichtigste Erklärung keine Magie, sondern <strong>kluge Kompilation</strong>. Piri Reis war kein isolierter Geniekünstler im luftleeren Raum. Er arbeitete in einem maritimen Netzwerk, in dem osmanische, iberische, arabische und mediterrane Wissensströme zusammenliefen. Wenn man gute Küstenportolane, Reiseberichte und ältere Kartenquellen kombiniert, kann plötzlich ein Kartenbild entstehen, das seiner Zeit weit voraus wirkt.</p>
+              <p>Trotzdem bleibt die Präzision in einigen Bereichen bemerkenswert. Vor allem die atlantischen Distanzen, die westafrikanische Küste und Teile Brasiliens sehen für 1513 beeindruckend aus. Das heißt nicht automatisch, dass dort geheime Satellitendaten verborgen sind. Es heißt aber sehr wohl: <strong>Die Kartografie der frühen Neuzeit war leistungsfähiger, vernetzter und raffinierter, als populäre Vereinfachungen oft annehmen.</strong></p>
+
+              <div class="asset-gallery">
+                <div class="asset-img">
+                  <img src="./assets/piri-reis-map-detail-ship.jpg" alt="Detailfoto eines Schiffes auf der Piri-Reis-Karte" loading="lazy" />
+                  <div class="caption">Ein reales Detail aus dem Kartenfragment. Die Illustrationen zeigen, dass dieses Objekt nicht nur Navigationswerkzeug, sondern auch kulturelles Bilddokument war.</div>
+                </div>
+                <div class="asset-img">
+                  <img src="./assets/piri-reis-map-full.jpg" alt="Gesamtansicht des Kartenfragments als Referenz für die kartografische Debatte" loading="lazy" />
+                  <div class="caption">Die Karte als Ganzes erinnert daran, dass wir nur einen Rest sehen. Viele Debatten drehen sich also auch um das, was fehlt.</div>
+                </div>
+              </div>
+
+              <h2>Die große Antarktis-Frage</h2>
+              <p>Jetzt zum Teil, wegen dem die Karte ihren Legendenstatus bekommen hat: Der südliche Küstenverlauf am unteren Rand wurde im 20. Jahrhundert von manchen Autoren als <strong>eisfreie Antarktis</strong> interpretiert, teils konkret als Queen Maud Land. Die Behauptung lautete, die Karte zeige eine Küste, die offiziell erst Jahrhunderte später entdeckt wurde, und zwar sogar vor moderner Eisbedeckung. Das ist natürlich Mystery-Gold.</p>
+              <p>Der wissenschaftliche Mainstream ist hier deutlich skeptischer. Viele Historiker und Kartografie-Forscher halten den umstrittenen Abschnitt eher für eine <strong>verzogene, verlängerte oder falsch zusammengesetzte Südküste Südamerikas</strong>, möglicherweise beeinflusst durch unvollständige portugiesische Vorlagen, Projektionseffekte oder die Notwendigkeit, verschiedene Küstensegmente auf einem Portolan-Gerüst zusammenzuziehen. Kurz: Die Antarktis-Deutung ist spektakulär, aber keineswegs Konsens.</p>
+
+              <h2>Skeptische Lesart vs. Mystery-Lesart</h2>
+              <p><strong>Die skeptische Seite</strong> sagt: Ja, die Karte ist außergewöhnlich, aber erklärbar. Portolane können Küsten erstaunlich präzise abbilden, ohne modernes Längenmaß. Die Karibik ist auf der Piri-Reis-Karte gerade nicht fehlerfrei, Inseln und Konturen sind teils seltsam kombiniert, und genau das spricht eher für eine kreative Zusammenstellung alter Quellen als für verlorene Superzivilisationen.</p>
+              <p><strong>Die Mystery-Seite</strong> kontert: Gerade die Mischung aus Treffern und bizarren Elementen macht den Fall spannend. Wenn einige Küstenlinien so gut sind, warum sollte man nicht zumindest offenlassen, dass sehr alte, heute verlorene Vorlagen im Umlauf waren? Vielleicht nicht Atlantis mit Lasertechnik, aber womöglich eine Kartentradition, deren Reichweite wir unterschätzen.</p>
+
+              <div class="quote">Das faire Fazit lautet nicht: "Alles erklärt" oder "alles paranormal". Es lautet: Diese Karte ist ein reales historisches Rätsel mit echter Quellenbasis. Und genau deshalb wirkt sie so stark.</div>
+
+              <h2>Was moderne Analysen beitragen</h2>
+              <p>Neuere Arbeiten aus der Kartografiegeschichte, digitale Vergleiche und geometrische Analysen versuchen, die Piri-Reis-Karte nicht bloß als Kuriosität, sondern als <strong>komplexes Mosaik unterschiedlicher Quellen</strong> zu lesen. Dabei zeigt sich oft, dass einzelne Segmente stärker sind als das Gesamtbild. Das spricht dafür, dass Piri Reis Material mit verschiedener Qualität und vielleicht sogar unterschiedlicher Projektion kombinierte. Für Historiker ist das hochinteressant, weil es die Karte von einer isolierten Sensation zu einem Knotenpunkt globalen Wissensaustauschs macht.</p>
+              <p>Und trotzdem bleibt Platz fürs Staunen. Denn auch wenn die nüchterne Erklärung häufig die bessere ist, verschwindet die Faszination nicht. Im Gegenteil: Dass eine osmanische Karte von 1513 in so vielen Details immer noch Debatten lostritt, ist bereits sensationell genug.</p>
+
+              <h2>Sourkraut-Briefing Fazit</h2>
+              <p>Die Piri-Reis-Karte ist am stärksten, wenn man sie weder kleinredet noch überdreht. Sie ist ein <strong>echtes Artefakt</strong>, historisch bedeutend, visuell großartig und intellektuell gefährlich genug, um bis heute Diskussionen auszulösen. Zeigt sie wirklich Antarktis ohne Eis? Wahrscheinlich nicht, wenn man der Mehrheitsmeinung der Forschung folgt. Ist die Sache damit langweilig? Überhaupt nicht. Denn das eigentliche Rätsel ist vielleicht noch besser: <strong>Wie viel präzises, verlorenes Kartenwissen zirkulierte um 1500 bereits zwischen Kulturen, Imperien und Seefahrern?</strong> Genau dort wird die Akte richtig stark.</p>
+            </article>
+
+            <aside class="side">
+              <div class="panel">
+                <h2>Aktenstatus</h2>
+                <div class="tag">1513</div>
+                <div class="tag">Ottoman Empire</div>
+                <div class="tag">Kartografie</div>
+                <div class="tag">Americas</div>
+                <div class="tag">Antarktis-Debatte</div>
+                <p class="small" style="margin-top:10px;">Ein Paradefall dafür, wie aus echter Geschichtsforschung und echter Seltsamkeit gemeinsam Legenden entstehen.</p>
+              </div>
+
+              <div class="panel">
+                <h2>Schnellakte</h2>
+                <ul>
+                  <li><strong>Name:</strong> Piri-Reis-Karte</li>
+                  <li><strong>Kartograf:</strong> Piri Reis</li>
+                  <li><strong>Jahr:</strong> 1513</li>
+                  <li><strong>Entdeckt:</strong> 1929 wiedergefunden</li>
+                  <li><strong>Material:</strong> Gazellenhaut</li>
+                  <li><strong>Kontroverse:</strong> Südamerika oder Antarktis?</li>
+                </ul>
+                <div class="data-grid">
+                  <div><strong>Status:</strong> historisch echt</div>
+                  <div><strong>Konsens:</strong> Antarktis-These umstritten</div>
+                  <div><strong>Stärke:</strong> Quellenkompilation</div>
+                  <div><strong>Vibe:</strong> maximal rätselhaft</div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <h2>Warum Fachleute vorsichtig sind</h2>
+                <p class="small">Weil frühe Karten fast nie wie moderne Satellitenkarten gelesen werden dürfen. Projektion, Verzerrung, Quellenmix und symbolische Elemente spielen riesige Rollen. Genau das macht die Karte schwerer, aber auch spannender.</p>
+              </div>
+
+              <div class="panel">
+                <h2>Quellen & Weiterklicken</h2>
+                <div class="source-list">
+                  <div class="source-item">
+                    <a href="https://en.wikipedia.org/wiki/Piri_Reis_map" target="_blank" rel="noopener noreferrer">Wikipedia: Piri Reis map</a>
+                    <div class="small">Guter Überblick zu Entstehung, Inschriften, Wiederentdeckung und Forschungslage.</div>
+                  </div>
+                  <div class="source-item">
+                    <a href="https://www.1001inventions.com/piri-reis-map/" target="_blank" rel="noopener noreferrer">1001 Inventions: Piri Reis' Map</a>
+                    <div class="small">Populärwissenschaftlicher Zugang zur Bedeutung des osmanischen Kartografen.</div>
+                  </div>
+                  <div class="source-item">
+                    <a href="https://www.discoveryuk.com/mysteries/what-is-the-piri-reis-map/" target="_blank" rel="noopener noreferrer">Discovery UK: What Is the Piri Reis Map?</a>
+                    <div class="small">Oft zitierter populärer Mystery-Einstieg, aktuell schwer archiviert, aber als Referenz in der Debatte präsent.</div>
+                  </div>
+                  <div class="source-item">
+                    <a href="https://blog.geogarage.com/2026/04/the-ghost-of-columbus-and-impossible.html" target="_blank" rel="noopener noreferrer">GeoGarage: The ghost of Columbus and the Impossible geometry of the Piri Reis map</a>
+                    <div class="small">Kartografisch inspirierter Blogbeitrag zur Genauigkeits- und Mosaik-Debatte.</div>
+                  </div>
+                  <div class="source-item">
+                    <a href="https://brill.com/display/book/9789004235013/B9789004235013_006.xml" target="_blank" rel="noopener noreferrer">Karen Pinto, Brill: Searchin' His Eyes, Lookin' for Traces</a>
+                    <div class="small">Akademischer Kontext zur osmanischen Kartenkultur und zur Interpretation des Piri-Reis-Materials.</div>
+                  </div>
+                  <div class="source-item">
+                    <a href="https://books.google.de/books?id=BRmODwAAQBAJ" target="_blank" rel="noopener noreferrer">Gregory C. McIntosh: The Piri Reis Map of 1513</a>
+                    <div class="small">Standardwerk zur Quellenkritik, Geometrie und Columbus-Frage.</div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(111,129,111,.3);"><a href="../" style="display: inline-block; padding: 12px 30px; background: #6f9ba8; color: #f2ead9; text-decoration: none; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-weight: bold; border: 2px solid #4d6f79; border-radius: 4px;">← ZURÜCK ZUR LANDINGPAGE</a></div>
+
+    <div class="footer">Dr. Sourkraut Filez // Akte 008 // Piri Reis // Stand: recherchierte, balancierte Mystery-Akte mit realen historischen Bildquellen.</div>
+  </div>
+
+  <script>
+    const compass = document.getElementById('compass');
+    window.addEventListener('scroll', () => {
+      if (!compass) return;
+      compass.style.transform = `rotate(${window.scrollY * 0.06}deg)`;
+    }, { passive: true });
+  </script>
+</body>
+</html>
