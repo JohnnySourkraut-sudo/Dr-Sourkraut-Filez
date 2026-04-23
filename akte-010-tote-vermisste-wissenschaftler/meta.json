@@ -1,0 +1,22 @@
+{
+  "id": "akte-010-tote-vermisste-wissenschaftler",
+  "title": "Akte 010 – Die toten und vermissten Wissenschaftler",
+  "slug": "akte-010-tote-vermisste-wissenschaftler",
+  "category": "Current Mystery",
+  "location": "USA / New Mexico / California / sensitive research sites",
+  "era": "2022–2026",
+  "mystery_score": 9.6,
+  "summary": "Eine aktuelle Großakte über Todes- und Vermisstenfälle in sensiblen Nuklear-, Raumfahrt- und UAP-nahen Umfeldern — mit realem Nachrichtenkern und maximaler Mystery-Aufladung.",
+  "status": "draft-ready",
+  "assets": [
+    "assets/william-mccasland.jpg",
+    "assets/los-alamos-aerial.jpg"
+  ],
+  "sources": [
+    "https://arstechnica.com/tech-policy/2026/04/tabloid-reports-linking-10-missing-and-dead-scientists-spur-fbi-probe/",
+    "https://www.cbsnews.com/news/deaths-disappearances-scientists-staff-government-labs/",
+    "https://www.foxnews.com/politics/missing-scientists-probe-sparked-after-ufo-general-disappeared-republican-lawmaker-reveals",
+    "https://commons.wikimedia.org/wiki/File:William_McCasland.jpg",
+    "https://commons.wikimedia.org/wiki/File:Los_Alamos_aerial_view.jpeg"
+  ]
+}
