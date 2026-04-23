@@ -1,0 +1,20 @@
+{
+  "id": "akte-010-sajama-linien",
+  "title": "Akte 010 – Die Sajama-Linien",
+  "slug": "akte-010-sajama-linien",
+  "category": "Ancient Mystery",
+  "location": "Sajama-Region, Bolivien",
+  "era": "über 3.000 Jahre Nutzungsgeschichte",
+  "mystery_score": 9.1,
+  "summary": "Ein gigantisches Netz aus nahezu perfekt geraden Linien im bolivianischen Altiplano, größer als Nazca und bis heute nur teilweise verstanden.",
+  "status": "draft-ready",
+  "assets": [
+    "assets/sajama-map.jpg",
+    "assets/sajama-iss-view.jpg"
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Sajama_Lines",
+    "https://commons.wikimedia.org/wiki/File:Sajama_Linien_Karte.jpg",
+    "https://commons.wikimedia.org/wiki/File:ISS025-E-13914_-_View_of_Bolivia.jpg"
+  ]
+}

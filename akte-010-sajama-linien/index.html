@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Sourkraut Filez // Akte 010: Die Sajama-Linien</title>
+  <meta name="description" content="Dr. Sourkraut Filez // Akte 010: Die Sajama-Linien in Bolivien. Ein V9-Dossier über kilometerlange Geoglyphen, heilige Wege am Nevado Sajama und die Frage, warum diese Linien bis heute so unfassbar gerade wirken." />
+  <style>
+    :root {
+      --bg: #0b1110;
+      --bg2: #101716;
+      --sheet: #f2ead9;
+      --sheet2: #e8deca;
+      --sheet3: #dfd4c2;
+      --ink: #1f231e;
+      --muted: #667066;
+      --olive: #6f816f;
+      --accent: #a88969;
+      --amber: #b67a1e;
+      --red: #8e3d3d;
+      --line: rgba(18,24,20,.12);
+      --type: "Courier New", Courier, monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #edf2ee;
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at top left, rgba(168,137,105,.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(182,122,30,.08), transparent 20%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height: 1.72;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0; pointer-events: none; opacity: .08;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), transparent 80%);
+    }
+    .wrap { max-width: 1220px; margin: 0 auto; padding: 28px 18px 90px; position: relative; }
+    .compass {
+      position: fixed;
+      right: 22px;
+      top: 110px;
+      width: 144px;
+      height: 144px;
+      z-index: 60;
+      pointer-events: none;
+      opacity: .94;
+      filter: drop-shadow(0 12px 18px rgba(0,0,0,.45));
+      transition: transform .08s linear;
+    }
+    .hero {
+      background: linear-gradient(180deg, rgba(17,23,21,.94), rgba(22,29,26,.90));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 26px 70px rgba(0,0,0,.34);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .hero::before {
+      content: "TOP SECRET // DR. SOURKRAUT FILEZ // SAJAMA";
+      position: absolute; top: 18px; right: -84px; transform: rotate(16deg);
+      background: rgba(168,137,105,.14); color: #f0e0c8; border: 1px solid rgba(168,137,105,.25);
+      padding: 10px 90px; letter-spacing: .18em; font-size: 11px; font-weight: 900; font-family: var(--type);
+    }
+    .eyebrow { color: #96a79b; text-transform: uppercase; letter-spacing: .18em; font-size: 12px; font-weight: 900; margin-bottom: 12px; font-family: var(--type); }
+    h1 { margin: 0 0 12px; font-size: clamp(42px, 6vw, 82px); line-height: .95; letter-spacing: -.05em; max-width: 900px; }
+    .sub { font-size: 19px; color: #a8b5ab; max-width: 950px; }
+    .notice { margin-top: 18px; padding: 14px 16px; border-left: 4px solid var(--amber); border-radius: 14px; background: rgba(182,122,30,.08); color: #f3e2bf; font-weight: 700; font-family: var(--type); }
+    .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:22px; }
+    .metric { padding:18px; border-radius:20px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); }
+    .metric small { display:block; margin-bottom:8px; color:#9cad9f; font-size:11px; text-transform:uppercase; letter-spacing:.14em; font-weight:800; font-family: var(--type); }
+    .metric strong { font-size:31px; letter-spacing:-.04em; }
+    .stack { position: relative; margin-top: 30px; padding: 28px 0; }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3, .sheet-main { border-radius: 20px; border: 1px solid var(--line); box-shadow: 0 22px 60px rgba(0,0,0,.22); }
+    .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 { position: absolute; left: 50%; transform: translateX(-50%); width: min(1020px, calc(100% - 30px)); background: linear-gradient(180deg, var(--sheet2), var(--sheet3)); }
+    .sheet-bg-1 { top: 26px; height: calc(100% - 40px); transform: translateX(-50%) rotate(-2.4deg); opacity: .68; }
+    .sheet-bg-2 { top: 14px; height: calc(100% - 24px); transform: translateX(-50%) rotate(1.6deg); opacity: .82; }
+    .sheet-bg-3 { top: 6px; height: calc(100% - 12px); transform: translateX(-50%) rotate(-0.8deg); opacity: .90; }
+    .sheet-main {
+      position: relative; z-index: 4; max-width: 1040px; margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,.16), transparent 140px), var(--sheet);
+      color: var(--ink); overflow: hidden;
+      box-shadow: 0 22px 60px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.4);
+    }
+    .sheet-main::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .06;
+      background-image: linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .sheet-main::after {
+      content: ""; position: absolute; left: 18px; top: 0; bottom: 0; width: 28px;
+      background: repeating-linear-gradient(90deg, transparent 0px, transparent 6px, rgba(0,0,0,.05) 6px, rgba(0,0,0,.05) 8px);
+      pointer-events: none;
+    }
+    .sheet-inner { position: relative; z-index: 1; padding: 30px 30px 30px 60px; }
+    .briefing-head { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start; border-bottom:1px dashed rgba(0,0,0,.15); padding-bottom:16px; margin-bottom:22px; }
+    .briefing-title { font-family: var(--type); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); font-size: 12px; }
+    .briefing-stamp { font-family: var(--type); color: #7a6a54; border: 2px solid rgba(168,137,105,.45); padding: 8px 12px; border-radius: 999px; font-weight: 900; transform: rotate(-4deg); }
+    .content-grid { display:grid; grid-template-columns: 1.48fr .9fr; gap: 22px; }
+    .article h2, .side h2 { font-size: 26px; margin-top:22px; margin-bottom:12px; letter-spacing: -.03em; }
+    .article h2:first-child { margin-top:0; }
+    .article p { margin: 0 0 16px; }
+    .quote { margin: 18px 0; padding: 16px 18px; border-left: 4px solid var(--amber); background: rgba(182,122,30,.10); border-radius: 14px; font-weight: 600; color: #4b3620; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+    .panel { background: rgba(111,129,111,.06); border: 1px solid rgba(0,0,0,.10); border-radius: 18px; padding: 18px; margin-bottom: 16px; }
+    .tag { display:inline-block; padding:7px 10px; border-radius:999px; border:1px solid rgba(0,0,0,.12); margin-right:8px; margin-bottom:8px; background:rgba(255,255,255,.42); color:var(--muted); font-size:13px; font-weight:800; font-family: var(--type); }
+    .source-list { display:grid; gap:12px; }
+    .source-item { padding:14px; border-radius:16px; border:1px solid rgba(0,0,0,.10); background:rgba(255,255,255,.32); }
+    a { color: #7a6a54; font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .small { font-size: 14px; color: var(--muted); }
+    .footer { max-width:1040px; margin:18px auto 0; color:#93a195; font-size:14px; text-align:center; }
+    .asset-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0; }
+    .asset-img { border-radius: 14px; border: 1px solid rgba(0,0,0,.12); background: linear-gradient(135deg, rgba(255,255,255,.8), rgba(240,240,235,.6)); overflow: hidden; box-shadow: 0 12px 28px rgba(0,0,0,.12); }
+    .asset-img img { width: 100%; height: auto; display: block; }
+    .asset-img .caption { padding: 10px 12px; font-size: 12px; color: var(--muted); font-family: var(--type); background: rgba(255,255,255,.6); border-top: 1px solid rgba(0,0,0,.08); text-align: center; }
+    .data-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:12px; }
+    .data-grid div { padding:10px 12px; border-radius:12px; background:rgba(255,255,255,.42); border:1px solid rgba(0,0,0,.08); font-size:14px; }
+    @media (max-width: 980px) {
+      .metrics, .content-grid, .asset-gallery, .data-grid { grid-template-columns:1fr; }
+      .hero::before, .compass { display:none; }
+      .sheet-bg-1, .sheet-bg-2, .sheet-bg-3 { display:none; }
+      .sheet-main::after { display:none; }
+      .sheet-inner { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <svg class="compass" id="compass" viewBox="0 0 200 200" aria-hidden="true">
+    <defs>
+      <linearGradient id="needle" x1="0" x2="1">
+        <stop offset="0%" stop-color="#6b4b30" />
+        <stop offset="50%" stop-color="#c1945a" />
+        <stop offset="100%" stop-color="#5f472e" />
+      </linearGradient>
+    </defs>
+    <circle cx="100" cy="100" r="74" fill="rgba(242,234,217,.14)" stroke="rgba(220,202,176,.2)" stroke-width="8"/>
+    <circle cx="100" cy="100" r="52" fill="none" stroke="rgba(220,202,176,.28)" stroke-width="3"/>
+    <path d="M100 30 L120 100 L100 170 L80 100 Z" fill="url(#needle)"/>
+    <path d="M100 50 L108 100 L100 150 L92 100 Z" fill="#1f231e" opacity=".72"/>
+    <circle cx="100" cy="100" r="10" fill="#f2ead9" stroke="#7a6a54" stroke-width="4"/>
+  </svg>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Dr. Sourkraut Filez // Akte 010 // Briefing</div>
+      <h1>Die Sajama-Linien</h1>
+      <p class="sub">Mitten im bolivianischen Altiplano, rund um den <strong>Nevado Sajama</strong>, zieht sich ein riesiges Netz aus nahezu perfekt geraden Linien über die Landschaft. Tausende Wege, kilometerlang, über Hügel, Ebenen und Hindernisse hinweg — so groß, dass man ihre wahre Form erst aus der Luft richtig begreift. Für viele ist das der <strong>Nazca-Moment Boliviens</strong>, nur viel größer und vielleicht sogar noch rätselhafter.</p>
+      <div class="notice">Die stärkste Lesart dieser Akte: kein billiger Alien-Meme-Stoff, sondern ein echtes archäologisches Mysterium. Menschen haben das gebaut — aber warum so gigantisch, so ausdauernd und so schnurgerade?</div>
+      <div class="metrics">
+        <div class="metric"><small>Rätsel-Faktor</small><strong>9.1 / 10</strong></div>
+        <div class="metric"><small>Alter</small><strong>> 3.000 Jahre</strong></div>
+        <div class="metric"><small>Ausdehnung</small><strong>22.525 km²</strong></div>
+      </div>
+    </section>
+
+    <section class="stack">
+      <div class="sheet-bg-1"></div>
+      <div class="sheet-bg-2"></div>
+      <div class="sheet-bg-3"></div>
+      <div class="sheet-main">
+        <div class="sheet-inner">
+          <div class="briefing-head">
+            <div>
+              <div class="briefing-title">Field Briefing // Akte 010 // Sajama-Linien</div>
+              <h2 style="margin:8px 0 0; font-size:34px;">SCIF Briefing zu Boliviens gewaltigem Linien-Netz im Schatten eines Vulkans</h2>
+            </div>
+            <div class="briefing-stamp">UNRESOLVED</div>
+          </div>
+
+          <div class="content-grid">
+            <article class="article">
+              <h2>Zusammenfassung</h2>
+              <p>Die <strong>Sajama-Linien</strong> gehören zu den eindrucksvollsten und am wenigsten bekannten Geoglyphen der Welt. Im Westen Boliviens bilden sie ein gigantisches Netz aus schnurgeraden Schneisen, die durch das Abtragen dunkler Oberflächenmaterialien entstanden und die hellere Erde darunter freilegen. Anders als die berühmten Nazca-Figuren zeigen die Sajama-Linien keine Tiere oder Symbole, sondern vor allem eines: <strong>Richtung, Wiederholung und fast schon unmenschliche Geradlinigkeit</strong>.</p>
+
+              <div class="quote">Sourkraut-Notiz: Genau hier wird’s geil. Die Linien sehen nicht aus wie Kritzeleien. Sie wirken wie Absicht in Reinform — als hätte jemand die Landschaft selbst in ein gigantisches Ordnungssystem verwandelt.</div>
+
+              <div class="asset-gallery">
+                <div class="asset-img">
+                  <img src="./assets/sajama-iss-view.jpg" alt="ISS-Aufnahme der Landschaft um Sajama in Bolivien mit sichtbaren linearen Strukturen" loading="lazy" />
+                  <div class="caption">Wikimedia Commons / NASA: Blick aus der ISS auf die Region um Sajama. Erst aus der Höhe wird klar, wie groß und systematisch diese Landschaft strukturiert ist.</div>
+                </div>
+                <div class="asset-img">
+                  <img src="./assets/sajama-map.jpg" alt="Karte der Sajama-Linien in Bolivien" loading="lazy" />
+                  <div class="caption">Wikimedia Commons: Kartendarstellung der Sajama-Linien. Das Netz wirkt weniger wie ein einzelnes Monument und mehr wie eine ganze gedachte Landschaft.</div>
+                </div>
+              </div>
+
+              <h2>Was über die Linien gesichert ist</h2>
+              <p>Die Linien liegen in der Region um den <strong>Nevado Sajama</strong> im bolivianischen Altiplano. Forschungen und Dokumentationen beschreiben ein Netz, das sich über ungefähr <strong>22.525 Quadratkilometer</strong> erstreckt — also eine Fläche, die die Nazca-Linien deutlich übertrifft. Ihre Gesamtstrecke wird auf rund <strong>16.000 Kilometer</strong> geschätzt. Einige einzelne Linien ziehen sich zehn oder zwanzig Kilometer weit und bleiben dabei bemerkenswert gerade, obwohl das Terrain keineswegs perfekt eben ist.</p>
+              <ul>
+                <li><strong>Ort:</strong> westliches Bolivien / Altiplano / Region Sajama</li>
+                <li><strong>Form:</strong> tausende fast perfekt gerade Bodenlinien</li>
+                <li><strong>Technik:</strong> dunkle Vegetation und Oberflächenmaterial entfernt, hellerer Untergrund freigelegt</li>
+                <li><strong>Alter:</strong> Nutzung und Entstehung über mehr als 3.000 Jahre vermutet</li>
+                <li><strong>Dimension:</strong> ca. 22.525 km² / rund 16.000 km Linienlänge</li>
+                <li><strong>Status:</strong> echtes archäologisches Kultur- und Rituallandschafts-Rätsel</li>
+              </ul>
+
+              <h2>Warum diese Geradlinigkeit so irritiert</h2>
+              <p>Fast jede Person, die erstmals Luftbilder der Sajama-Linien sieht, hat denselben Gedanken: <strong>Wie kriegt man das ohne moderne Vermessung so hin?</strong> Die Linien laufen nicht einfach zufällig von Dorf zu Dorf. Sie durchqueren die Landschaft über lange Strecken, schneiden Hügel und Senken und behalten dabei eine Präzision, die man intuitiv eher mit moderner Planung verbindet.</p>
+              <p>Natürlich ist das kein Beweis für verlorene Hochtechnologie. Aber es ist ein echter Grund zum Staunen. Denn selbst wenn man annimmt, dass lokale Gemeinschaften diese Wege mit Landmarken, Blickachsen und ritueller Wiederholung anlegten, bleibt die schiere Masse des Systems extrem beeindruckend. Das ist keine Einzelspur. Das ist ein <strong>gigantisches, kollektiv gepflegtes Landschaftsprojekt</strong>.</p>
+
+              <h2>Die starke archäologische Lesart</h2>
+              <p>Viele Forschende deuten die Sajama-Linien als Teil einer <strong>heiligen und sozialen Infrastruktur</strong>. Entlang des Netzes finden sich Hinweise auf <strong>wak’as</strong> (heilige Orte), <strong>chullpas</strong> (Grabtürme), Siedlungen und Wegpunkte. Die Linien könnten also über Jahrhunderte als Pilgerpfade, Prozessionswege, territoriale Marker oder als Verbindungen zwischen spirituell bedeutsamen Orten genutzt worden sein.</p>
+              <p>Diese Erklärung ist stark, weil sie die Linien nicht als isoliertes Wunder behandelt, sondern als Ausdruck einer Landschaft, die religiös gelesen und praktisch begangen wurde. Und trotzdem löst das nicht alles. Denn auch wenn wir das <em>Warum</em> grob erfassen, bleibt das <em>Wie genau</em> bei dieser Größe faszinierend offen.</p>
+
+              <div class="asset-gallery">
+                <div class="asset-img">
+                  <img src="./assets/sajama-map.jpg" alt="Darstellung des weit verzweigten Sajama-Netzes" loading="lazy" />
+                  <div class="caption">Das Netz zeigt, warum einfache Begriffe wie „Pfad“ fast zu klein wirken. Es ist eher eine geschriebene Topografie.</div>
+                </div>
+                <div class="asset-img">
+                  <img src="./assets/sajama-iss-view.jpg" alt="Landschaftsperspektive der Sajama-Region aus dem All" loading="lazy" />
+                  <div class="caption">Gerade aus der Distanz entsteht die Gänsehautfrage: Für wen oder wofür musste dieses Muster in solcher Dimension sichtbar sein?</div>
+                </div>
+              </div>
+
+              <h2>Mystery-Lesart: Landschaft als Signal</h2>
+              <p>Und jetzt kommt die Sourkraut-Seite der Akte. Wenn ein System über Jahrtausende hinweg in die Erde geschrieben wird, riesige Flächen überzieht und erst aus erhöhter Perspektive wirklich als Ganzes lesbar wird, dann öffnet das automatisch die Tür für spekulativere Fragen. Waren diese Linien nur für Menschen gedacht? Oder auch für Götter, Ahnen, Berge, Sterne — oder für etwas, das <strong>von oben</strong> blickt?</p>
+              <p>Gerade weil die Sajama-Linien nicht wie figürliche Kunst, sondern wie absichtsvolle Ausrichtung wirken, laden sie zu Deutungen als <strong>rituelles Navigationssystem</strong>, als kosmische Ordnung oder als gewaltige Signatur einer spirituell codierten Landschaft ein. Das klingt wild, aber es ist nicht völlig aus der Luft gegriffen: In den Anden waren Berge, Richtungen und heilige Orte eng mit Weltbild und Ritual verbunden.</p>
+
+              <div class="quote">Die beste Mystery-Frage lautet hier nicht „Aliens oder nicht?“, sondern: Welche Art von Weltbild bringt Menschen dazu, eine ganze Region in gerade Linien zu verwandeln?</div>
+
+              <h2>Warum der Vergleich mit Nazca hinkt — und trotzdem hilft</h2>
+              <p>Die Sajama-Linien werden oft als „das bolivianische Nazca“ beschrieben. Das hilft als Einstieg, ist aber eigentlich fast unfair. Nazca punktet mit ikonischen Figuren. Sajama punktet mit <strong>Maßstab</strong>. Es ist weniger Kunstwerk im engeren Sinne und mehr ein riesiges Netz aus Bewegung, Ritual und Raumordnung. Genau das macht den Fall subtiler und vielleicht für viele auch noch unheimlicher.</p>
+              <p>Bei Nazca denkt man sofort an Bilder. Bei Sajama denkt man an <strong>System</strong>. Und Systeme üben ihren eigenen Sog aus — besonders dann, wenn ihre innere Logik nur teilweise verstanden ist.</p>
+
+              <h2>Schutz, Forschung und offenes Ende</h2>
+              <p>Moderne Forschungsprojekte und digitale Kartierungen haben versucht, die Sajama-Linien präziser zu dokumentieren und zu schützen. Das ist wichtig, weil Erosion, Entwicklung und unkontrollierter Tourismus diese fragile Kulturlandschaft bedrohen können. Gleichzeitig zeigt gerade diese wissenschaftliche Arbeit, dass der Fall keineswegs erledigt ist. Je besser das Netz kartiert wird, desto deutlicher wird oft erst, wie komplex es wirklich ist.</p>
+              <p>Und genau deshalb bleibt die Akte offen. Nicht, weil wir gar nichts wissen — sondern weil wir genug wissen, um zu begreifen, wie außergewöhnlich das Ganze ist.</p>
+
+              <h2>Sourkraut-Briefing Fazit</h2>
+              <p>Die Sajama-Linien sind kein billiger Mystery-Hype, sondern ein <strong>echtes Monument menschlicher Ausdauer, Präzision und spiritueller Raumordnung</strong>. Die nüchterne Forschung liefert starke Ansätze: Pilgerwege, heilige Verbindungen, soziale und rituelle Landschaft. Aber selbst diese gute Erklärung nimmt dem Fall nicht seine Wucht. Im Gegenteil. Denn wenn Menschen über Jahrtausende hinweg eine ganze Region so exakt einschreiben, dann schaut man auf mehr als Wege im Staub. Man schaut auf eine Botschaft in Erdgröße — und wir verstehen sie bis heute nur in Fragmenten.</p>
+            </article>
+
+            <aside class="side">
+              <div class="panel">
+                <h2>Aktenstatus</h2>
+                <div class="tag">Bolivien</div>
+                <div class="tag">Geoglyphen</div>
+                <div class="tag">Altiplano</div>
+                <div class="tag">Pilgerwege</div>
+                <div class="tag">Ancient Mystery</div>
+                <p class="small" style="margin-top:10px;">Ein Fall, der archäologisch stark erklärbar ist und trotzdem nicht aufhört, gigantisch und fremdartig zu wirken.</p>
+              </div>
+
+              <div class="panel">
+                <h2>Schnellakte</h2>
+                <ul>
+                  <li><strong>Name:</strong> Sajama-Linien</li>
+                  <li><strong>Region:</strong> Nevado Sajama / Westbolivien</li>
+                  <li><strong>Typ:</strong> lineare Geoglyphen / Wegnetz</li>
+                  <li><strong>Dimension:</strong> ca. 22.525 km²</li>
+                  <li><strong>Länge:</strong> grob 16.000 km</li>
+                  <li><strong>Deutung:</strong> rituell, sozial, landschaftlich codiert</li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <h2>Warum die Akte knallt</h2>
+                <div class="data-grid">
+                  <div><strong>Größe:</strong><br/>deutlich größer als Nazca</div>
+                  <div><strong>Wirkung:</strong><br/>erst aus der Höhe voll lesbar</div>
+                  <div><strong>Präzision:</strong><br/>auffallend gerade über lange Distanzen</div>
+                  <div><strong>Mystery:</strong><br/>Funktion bis heute nicht komplett geklärt</div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <h2>Quellenlage</h2>
+                <p class="small">Die Akte stützt sich auf dokumentierte Beschreibungen der Sajama-Linien, kartografische und fotografische Referenzen sowie Forschungs- und Schutzprojekte rund um Tierra Sajama.</p>
+                <div class="source-list">
+                  <div class="source-item">
+                    <strong>Wikipedia / Überblick</strong><br />
+                    <span class="small">Zusammenfassung zu Ausdehnung, Deutung und Forschungsstand.</span><br />
+                    <a href="https://en.wikipedia.org/wiki/Sajama_Lines" target="_blank" rel="noopener noreferrer">Quelle öffnen</a>
+                  </div>
+                  <div class="source-item">
+                    <strong>Wikimedia Commons / Karte</strong><br />
+                    <span class="small">Kartendarstellung der Sajama-Linien als visuelle Referenz.</span><br />
+                    <a href="https://commons.wikimedia.org/wiki/File:Sajama_Linien_Karte.jpg" target="_blank" rel="noopener noreferrer">Quelle öffnen</a>
+                  </div>
+                  <div class="source-item">
+                    <strong>Wikimedia Commons / NASA ISS</strong><br />
+                    <span class="small">ISS-Aufnahme der Sajama-Region, ursprünglich aus dem JSC Gateway to Astronaut Photography of Earth.</span><br />
+                    <a href="https://commons.wikimedia.org/wiki/File:ISS025-E-13914_-_View_of_Bolivia.jpg" target="_blank" rel="noopener noreferrer">Quelle öffnen</a>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer">Dr. Sourkraut Filez // Akte 010 // Sajama-Linien // Zwischen Archäologie, Ritualraum und maximaler Gänsehaut.</p>
+  </div>
+
+  <script>
+    const compass = document.getElementById('compass');
+    window.addEventListener('scroll', () => {
+      const deg = window.scrollY * 0.08;
+      compass.style.transform = `rotate(${deg}deg)`;
+    });
+  </script>
+</body>
+</html>
