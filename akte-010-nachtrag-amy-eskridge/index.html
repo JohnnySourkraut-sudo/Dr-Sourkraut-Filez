@@ -67,6 +67,10 @@
     h2 { font-size: 28px; margin: 22px 0 12px; letter-spacing: -.03em; }
     p { margin: 0 0 16px; }
     .quote { margin: 18px 0; padding: 16px 18px; border-left: 4px solid var(--amber); background: rgba(182,122,30,.10); border-radius: 14px; font-weight: 600; color: #4b3620; }
+    .asset-gallery { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:22px 0; }
+    .asset-img { border-radius: 14px; border: 1px solid rgba(0,0,0,.12); background: linear-gradient(135deg, rgba(255,255,255,.8), rgba(240,240,235,.6)); overflow: hidden; box-shadow: 0 12px 28px rgba(0,0,0,.12); }
+    .asset-img img { width: 100%; height: auto; display: block; }
+    .asset-img .caption { padding: 10px 12px; font-size: 12px; color: var(--muted); font-family: var(--type); background: rgba(255,255,255,.6); border-top: 1px solid rgba(0,0,0,.08); text-align: center; }
     .panel { background: rgba(111,129,111,.06); border: 1px solid rgba(0,0,0,.10); border-radius: 18px; padding: 18px; margin: 22px 0 0; }
     .tag { display:inline-block; padding:7px 10px; border-radius:999px; border:1px solid rgba(0,0,0,.12); margin-right:8px; margin-bottom:8px; background:rgba(255,255,255,.42); color:var(--muted); font-size:13px; font-weight:800; font-family: var(--type); }
     .source-list { display:grid; gap:12px; margin-top:14px; }
@@ -78,6 +82,7 @@
     @media (max-width: 980px) {
       .hero::before { display:none; }
       .sheet-inner { padding: 28px; }
+      .asset-gallery { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -102,6 +107,17 @@
           <p>In der erweiterten Community-Erzählung ist Amy Eskridge nicht bloß irgendein weiterer Name auf einer Liste. Sie steht eher für die beunruhigende Vorstellung, dass Menschen mit Blick auf sensible, nicht alltägliche Technologien oder mit Nähe zu schwer greifbaren Projekten plötzlich aus dem sichtbaren Raster fallen können — und dass genau dadurch ein Fall im Nachhinein noch viel rätselhafter wirkt als im Moment selbst.</p>
 
           <div class="quote">Sourkraut-Nachtrag: Wenn man Akte 010 nicht nur als nüchterne News-Sammelakte liest, sondern als Karte der wirklich dubiosen Überschneidungen zwischen Forschung, Geheimwissen, UAP-Nähe und plötzlichem Verschwinden, dann ist Amy Eskridge einer der Namen, die man kaum ignorieren kann.</div>
+
+          <div class="asset-gallery">
+            <div class="asset-img">
+              <img src="/Dr-Sourkraut-Filez/akte-010-tote-vermisste-wissenschaftler/assets/community-overview.jpg" alt="Community-Übersichtsbild zur Serie toter und vermisster Wissenschaftler" loading="lazy" />
+              <div class="caption">Kontextbild aus der laufenden Community-Debatte: Amy Eskridge wird inzwischen oft zusammen mit der größeren Wissenschaftler-Serie gelesen.</div>
+            </div>
+            <div class="asset-img">
+              <img src="/Dr-Sourkraut-Filez/akte-010-tote-vermisste-wissenschaftler/assets/jpl-plasma-lab.jpg" alt="Historisches Laborbild als visuelle Referenz für High-Tech- und Forschungsumfelder" loading="lazy" />
+              <div class="caption">Visueller High-Tech-Kontext: Da ein sauber frei nutzbares Primärporträt von Amy weiterhin fehlt, arbeitet diese Nachtragsakte mit Forschungs- und Umfeldbildern statt mit fragwürdigen Social-Screenshots.</div>
+            </div>
+          </div>
 
           <h2>Warum ihr Fall so viel stärker wirkt als ein normaler Nachtrag</h2>
           <p>Der Mystery-Wert rund um Amy Eskridge ist besonders hoch, weil ihr Name in alternativen Recherchen, Tech-/Disclosure-Kreisen und verschwörungssensiblen UAP-Diskussionen nicht wie eine Randnotiz behandelt wird, sondern fast wie ein fehlendes Puzzleteil. Genau dadurch kippt sie aus der Kategorie „kleine Ergänzung“ in die Kategorie <strong>eigene Nachtragsakte</strong>.</p>
