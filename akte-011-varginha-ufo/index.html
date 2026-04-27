@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Sourkraut Filez // Akte 011: Der Varginha-Zwischenfall</title>
+  <meta name="description" content="Akte 011: Der Varginha-Zwischenfall — Brasiliens Roswell mit Wesen-Sichtung, Militärbewegungen und James Fox als modernem Verstärker des Falls." />
+  <style>
+    :root {
+      --bg: #0b1110;
+      --bg2: #101716;
+      --sheet: #f2ead9;
+      --sheet2: #e8deca;
+      --sheet3: #dfd4c2;
+      --ink: #1f231e;
+      --muted: #667066;
+      --olive: #6f816f;
+      --accent: #a88969;
+      --amber: #b67a1e;
+      --red: #8e3d3d;
+      --line: rgba(18,24,20,.12);
+      --type: "Courier New", Courier, monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #edf2ee;
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at top left, rgba(168,137,105,.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(182,122,30,.08), transparent 20%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height: 1.72;
+    }
+    .wrap { max-width: 1220px; margin: 0 auto; padding: 28px 18px 90px; }
+    .hero {
+      background: linear-gradient(180deg, rgba(17,23,21,.94), rgba(22,29,26,.90));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 26px 70px rgba(0,0,0,.34);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+    .hero::before {
+      content: "AKTE 011 // VARGINHA // BRAZIL'S ROSWELL";
+      position: absolute; top: 18px; right: -110px; transform: rotate(15deg);
+      background: rgba(168,137,105,.14); color: #f0e0c8; border: 1px solid rgba(168,137,105,.25);
+      padding: 10px 110px; letter-spacing: .18em; font-size: 11px; font-weight: 900; font-family: var(--type);
+    }
+    .eyebrow { color: #96a79b; text-transform: uppercase; letter-spacing: .18em; font-size: 12px; font-weight: 900; margin-bottom: 12px; font-family: var(--type); }
+    h1 { margin: 0 0 12px; font-size: clamp(36px, 5.5vw, 74px); line-height: .95; letter-spacing: -.05em; max-width: 980px; }
+    .sub { font-size: 19px; color: #a8b5ab; max-width: 980px; }
+    .notice { margin-top: 18px; padding: 14px 16px; border-left: 4px solid var(--amber); border-radius: 14px; background: rgba(182,122,30,.08); color: #f3e2bf; font-weight: 700; font-family: var(--type); }
+    .dateline { margin-top: 16px; display: inline-block; padding: 10px 14px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); color: #d7dfd9; font-family: var(--type); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+    .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:22px; }
+    .metric { padding:18px; border-radius:20px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); }
+    .metric small { display:block; margin-bottom:8px; color:#9cad9f; font-size:11px; text-transform:uppercase; letter-spacing:.14em; font-weight:800; font-family: var(--type); }
+    .metric strong { font-size:31px; letter-spacing:-.04em; }
+    .stack { position: relative; margin-top: 30px; padding: 28px 0; }
+    .sheet-main { position: relative; z-index: 4; max-width: 1040px; margin: 0 auto; background: linear-gradient(180deg, rgba(255,255,255,.16), transparent 140px), var(--sheet); color: var(--ink); overflow: hidden; border-radius: 20px; border: 1px solid var(--line); box-shadow: 0 22px 60px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.4); }
+    .sheet-inner { position: relative; z-index: 1; padding: 30px 30px 30px 60px; }
+    .briefing-head { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start; border-bottom:1px dashed rgba(0,0,0,.15); padding-bottom:16px; margin-bottom:22px; }
+    .briefing-title { font-family: var(--type); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); font-size: 12px; }
+    .briefing-stamp { font-family: var(--type); color: #7a6a54; border: 2px solid rgba(168,137,105,.45); padding: 8px 12px; border-radius: 999px; font-weight: 900; transform: rotate(-4deg); }
+    .content-grid { display:grid; grid-template-columns: 1.48fr .9fr; gap: 22px; }
+    .article h2, .side h2 { font-size: 26px; margin-top:22px; margin-bottom:12px; letter-spacing: -.03em; }
+    .article h2:first-child { margin-top:0; }
+    .article p { margin: 0 0 16px; }
+    .quote { margin: 18px 0; padding: 16px 18px; border-left: 4px solid var(--amber); background: rgba(182,122,30,.10); border-radius: 14px; font-weight: 600; color: #4b3620; }
+    .panel { background: rgba(111,129,111,.06); border: 1px solid rgba(0,0,0,.10); border-radius: 18px; padding: 18px; margin-bottom: 16px; }
+    .tag { display:inline-block; padding:7px 10px; border-radius:999px; border:1px solid rgba(0,0,0,.12); margin-right:8px; margin-bottom:8px; background:rgba(255,255,255,.42); color:var(--muted); font-size:13px; font-weight:800; font-family: var(--type); }
+    .source-list { display:grid; gap:12px; }
+    .source-item { padding:14px; border-radius:16px; border:1px solid rgba(0,0,0,.10); background:rgba(255,255,255,.32); }
+    .small { font-size: 14px; color: var(--muted); }
+    a { color: #7a6a54; font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .asset-gallery { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 22px 0; }
+    .asset-img { border-radius: 14px; border: 1px solid rgba(0,0,0,.12); background: linear-gradient(135deg, rgba(255,255,255,.8), rgba(240,240,235,.6)); overflow: hidden; box-shadow: 0 12px 28px rgba(0,0,0,.12); }
+    .asset-img img { width: 100%; height: auto; display: block; }
+    .asset-img .caption { padding: 10px 12px; font-size: 12px; color: var(--muted); font-family: var(--type); background: rgba(255,255,255,.6); border-top: 1px solid rgba(0,0,0,.08); text-align: center; }
+    .footer { max-width:1040px; margin:18px auto 0; color:#93a195; font-size:14px; text-align:center; }
+    @media (max-width: 980px) {
+      .metrics, .content-grid { grid-template-columns:1fr; }
+      .hero::before { display:none; }
+      .sheet-inner { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Dr. Sourkraut Filez // Akte 011 // Brasilien</div>
+      <h1>Der Varginha-Zwischenfall</h1>
+      <p class="sub">Brasiliens Roswell: ein Crash-Gerücht, verstörte Zeugen, angeblich gefangene Wesen, militärische Bewegung und ein Fall, der durch James Fox für eine neue Generation von Believern wieder hochgezogen wurde.</p>
+      <div class="notice">Diese Akte wird bewusst believer-freundlich erzählt: nicht als dumpfe Behauptung, sondern als dichtes Mysterium aus Zeugenaussagen, Militärreaktionen, lokalen Narben und modernem Doku-Druck.</div>
+      <div class="dateline">Stand: Vorbereitungsfassung für morgen // Deploy nach Go</div>
+      <div class="metrics">
+        <div class="metric"><small>Fallstatus</small><strong>Klassiker+</strong></div>
+        <div class="metric"><small>Believer-Faktor</small><strong>Extrem hoch</strong></div>
+        <div class="metric"><small>Rabbit-Hole</small><strong>9.7 / 10</strong></div>
+      </div>
+    </section>
+
+    <section class="stack">
+      <div class="sheet-main">
+        <div class="sheet-inner">
+          <div class="briefing-head">
+            <div>
+              <div class="briefing-title">Field Briefing // Akte 011 // Varginha</div>
+              <h2 style="margin:8px 0 0; font-size:34px;">Eine der stärksten Wesen-/Crash-/Militär-Akten außerhalb der USA</h2>
+            </div>
+            <div class="briefing-stamp">PREPARED</div>
+          </div>
+
+          <div class="content-grid">
+            <article class="article">
+              <h2>Warum Varginha so stark ist</h2>
+              <p>Der Varginha-Fall ist nicht einfach nur eine weitere UFO-Sichtung. Genau das macht ihn für <strong>Dr. Sourkraut Filez</strong> so wertvoll. Hier verschmilzt gleich mehrere Arten von Hochstrangeness zu einer einzigen Akte: <strong>Crash-Gerüchte, Wesen-Sichtung, militärische Präsenz, Einschüchterung, Tod eines beteiligten Polizisten und jahrzehntelange Cover-up-Vorwürfe</strong>.</p>
+              <p>Für viele Believer ist Varginha deshalb nicht bloß „interessant“, sondern einer der wenigen Fälle, bei denen sich alles so verdichtet, dass der Begriff <strong>Brasiliens Roswell</strong> fast zwangsläufig fällt.</p>
+
+              <div class="asset-gallery">
+                <div class="asset-img">
+                  <img src="assets/varginha-water-tower.jpg" alt="Wasserturm Nave Espacial de Varginha in Varginha, Brasilien" loading="eager" />
+                  <div class="caption">Wikimedia Commons: Die ikonische „Nave Espacial de Varginha“ — heute Stadtzeichen, Tourismusobjekt und sichtbarer Marker dafür, wie tief der Fall in das kulturelle Gedächtnis der Stadt eingebrannt ist.</div>
+                </div>
+              </div>
+
+              <h2>Was 1996 passiert sein soll</h2>
+              <p>Im Januar 1996 meldeten Bewohner von Varginha im brasilianischen Bundesstaat Minas Gerais eine Reihe seltsamer Ereignisse. Berichtet wurde von einem möglichen Absturz oder Notfallobjekt, von ungewöhnlichen Militärbewegungen und vor allem von der Sichtung einer kleinen, braun wirkenden, angeblich stark riechenden Kreatur mit auffälligem Kopf und roten Augen.</p>
+              <p>Besonders berühmt wurden die Aussagen junger Zeuginnen, die ein Wesen in der Stadt gesehen haben wollen. Von dort aus eskalierte das Narrativ: Militärfahrzeuge, Transporte, abgesperrte Areale, eingefangene Wesen, tote und lebende Kreaturen — und die Vermutung, dass die eigentliche Geschichte nie offen gesagt wurde.</p>
+
+              <div class="quote">Sourkraut-Lesart: Varginha knallt nicht wegen eines einzelnen UFO-Fotos, sondern weil hier Wesen-Bericht, Stadtgerücht, Militärlogistik und jahrzehntelanges Unbehagen perfekt ineinandergreifen.</div>
+
+              <h2>Warum James Fox der moderne Verstärker ist</h2>
+              <p>Für die heutige Audience ist James Fox fast so wichtig wie der Ursprungsfall selbst. Seine Dokumentation <strong>Moment of Contact</strong> hat Varginha nicht einfach nur neu erzählt — sie hat den Fall für eine neue Generation von Deep Researchers emotional aufgeladen, neu strukturiert und wieder auf die internationale Bühne gebracht.</p>
+              <p>Entscheidend ist dabei: Fox behandelt Varginha nicht wie ein lächerliches Alt-UFO, sondern wie eine <strong>offene Akte mit noch lebenden Narben</strong>. Zeugenaussagen, Ortsbegehungen, Karten, militärische Spurenelemente und die Behauptung, dass sogar Mediziner oder Sicherheitskräfte Kontakt mit einem nichtmenschlichen Wesen hatten, geben dem Fall moderne Wucht.</p>
+
+              <h2>Das eigentliche Rabbit Hole</h2>
+              <p>Der härtere believer-freundliche Reiz liegt nicht nur in der Frage, <em>ob</em> etwas abgestürzt ist. Das eigentliche Rabbit Hole ist die Möglichkeit, dass in Varginha gleich mehrere Linien zusammenlaufen: <strong>Crash-Bergung, lebende Entität, lokales Militär, spätere Einschüchterung und institutionelles Schweigen</strong>. Genau das hebt die Akte über normale Sichtungsfälle hinaus.</p>
+              <p>Varginha ist damit ein Paradefall für eure Audience: nicht bloß Licht am Himmel, sondern <strong>Körperlichkeit</strong>, <strong>Zeugenangst</strong>, <strong>militärischer Druck</strong> und eine Stadt, die die Geschichte bis heute nicht loswird.</p>
+
+              <h2>Die skeptische Gegenlinie — und warum sie den Fall nicht killt</h2>
+              <p>Natürlich gibt es Gegenargumente. Offizielle Stellen und skeptische Einordnungen verweisen auf Verwechslungen, lokale Dynamiken, urbane Legenden und die Möglichkeit, dass aus einzelnen Ereignissen später ein Gesamtmythos gebaut wurde. Genau das muss in einer guten Sourkraut-Akte genannt werden.</p>
+              <p>Aber gerade bei Varginha zerstört diese Gegenlinie das Mysterium nicht vollständig. Im Gegenteil: Für viele macht sie den Fall sogar noch interessanter, weil trotz aller Rationalisierung ein harter Rest bleibt — zu viele Menschen, zu viele Details, zu viel emotionale Konsistenz im Zeugenkern.</p>
+
+              <h2>Warum diese Akte morgen stark funktionieren kann</h2>
+              <p>Varginha hat alles, was eure Leser mögen: <strong>Believer-Energie, menschliche Dramatik, Wesen-Komponente, Militär-Komponente, Cover-up-Vibes und modernen James-Fox-Anschluss</strong>. Das ist kein kalter Archivfall, sondern eine Akte, die sich lebendig anfühlt — fast so, als sei sie nie richtig abgeschlossen worden.</p>
+              <p>Genau deshalb ist sie für Akte 011 eine starke Wahl: nicht nur wegen des alten Falls, sondern weil sie sich heute noch wie ein offenes Echo liest.</p>
+            </article>
+
+            <aside class="side">
+              <div class="panel">
+                <h2>Aktenstatus</h2>
+                <div class="tag">Brasiliens Roswell</div>
+                <div class="tag">Wesen-Sichtung</div>
+                <div class="tag">Militärbewegung</div>
+                <div class="tag">James Fox</div>
+                <div class="tag">Believer-Hochkaräter</div>
+                <p class="small" style="margin-top:10px;">Diese Vorbereitungsfassung ist so angelegt, dass sie morgen mit wenig Feinschliff deployfähig gemacht werden kann.</p>
+              </div>
+
+              <div class="panel">
+                <h2>Schnellakte</h2>
+                <ul>
+                  <li><strong>Titel:</strong> Der Varginha-Zwischenfall</li>
+                  <li><strong>Ort:</strong> Varginha, Minas Gerais, Brasilien</li>
+                  <li><strong>Jahr:</strong> 1996</li>
+                  <li><strong>Kern:</strong> Wesen + Militär + Cover-up</li>
+                  <li><strong>Moderner Booster:</strong> James Fox / Moment of Contact</li>
+                  <li><strong>Leserfit:</strong> believer + deep research</li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <h2>Quellenlage</h2>
+                <div class="source-list">
+                  <div class="source-item">
+                    <strong>Wikimedia Commons / Varginha-Kategorie</strong><br />
+                    <span class="small">Nützlich für grundlegende Kategorisierung, Geodaten und reale Stadt-/Fallbezüge.</span><br />
+                    <a href="https://commons.wikimedia.org/wiki/Category:Varginha_UFO_incident" target="_blank" rel="noopener noreferrer">Quelle öffnen</a>
+                  </div>
+                  <div class="source-item">
+                    <strong>Wikimedia Commons / Nave Espacial de Varginha</strong><br />
+                    <span class="small">Verwendete Bildquelle für einen realen, heute sichtbaren kulturellen Marker des Falls.</span><br />
+                    <a href="https://commons.wikimedia.org/wiki/File:Nave_Espacial_de_Varginha.jpg" target="_blank" rel="noopener noreferrer">Quelle öffnen</a>
+                  </div>
+                  <div class="source-item">
+                    <strong>James Fox Gespräch / Transcript</strong><br />
+                    <span class="small">Wichtig für die moderne James-Fox-Lesart und die Aufladung des Falls für heutige Deep-Research-Audiences.</span><br />
+                    <a href="https://singjupost.com/the-why-files-w-james-fox-on-ufo-disclosure-varginha-more-transcript/" target="_blank" rel="noopener noreferrer">Quelle öffnen</a>
+                  </div>
+                  <div class="source-item">
+                    <strong>IMDb / Moment of Contact</strong><br />
+                    <span class="small">Referenz für die Doku-Verankerung im heutigen Varginha-Diskurs.</span><br />
+                    <a href="https://www.imdb.com/title/tt21451264/" target="_blank" rel="noopener noreferrer">Quelle öffnen</a>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">Dr. Sourkraut Filez // Akte 011 Vorbereitung // wartet auf Deploy-Go</div>
+  </div>
+</body>
+</html>

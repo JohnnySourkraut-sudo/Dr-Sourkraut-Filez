@@ -1,0 +1,21 @@
+{
+  "id": "akte-011-varginha-ufo",
+  "title": "Akte 011 – Der Varginha-Zwischenfall",
+  "slug": "akte-011-varginha-ufo",
+  "category": "Classic UFO Case",
+  "location": "Varginha, Minas Gerais, Brasilien",
+  "era": "1996 / modern neu aufgeladen durch James Fox",
+  "mystery_score": 9.7,
+  "summary": "Eine believer-starke Großakte über Brasiliens Roswell: Wesen-Sichtung, Militärbewegungen, Zeugenaussagen und James Fox als moderner Verstärker des Falls.",
+  "status": "research-ready",
+  "assets": [
+    "assets/varginha-water-tower.jpg"
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Varginha_UFO_incident",
+    "https://commons.wikimedia.org/wiki/Category:Varginha_UFO_incident",
+    "https://commons.wikimedia.org/wiki/File:Nave_Espacial_de_Varginha.jpg",
+    "https://singjupost.com/the-why-files-w-james-fox-on-ufo-disclosure-varginha-more-transcript/",
+    "https://www.imdb.com/title/tt21451264/"
+  ]
+}
