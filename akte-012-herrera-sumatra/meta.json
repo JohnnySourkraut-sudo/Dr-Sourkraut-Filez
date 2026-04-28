@@ -1,0 +1,24 @@
+{
+  "id": "akte-012-herrera-sumatra",
+  "title": "Akte 012 – Das Octagon von Sumatra",
+  "slug": "akte-012-herrera-sumatra",
+  "category": "Modern Whistleblower Case",
+  "location": "Padang / West-Sumatra, Indonesien",
+  "era": "2009 / modern Disclosure-Ära",
+  "mystery_score": 9.2,
+  "summary": "Eine moderne Dr.-Sourkraut-Akte über Michael Herreras Sumatra-Bericht: Hilfsmission im Katastrophengebiet, ein angeblich riesiges achteckiges Flugobjekt, bewaffnete Männer ohne klare Kennzeichnung, Container-Gerüchte und eine vorsichtige Cross-Referenz zu Jake Barber.",
+  "status": "preview-ready",
+  "assets": [
+    "assets/octagon-ufo.jpg",
+    "assets/sumatra-relief.jpg",
+    "assets/michael-herrera.jpg",
+    "assets/jake-barber.jpg"
+  ],
+  "sources": [
+    "https://www.mirror.co.uk/news/us-news/marine-who-exposed-ufo-encounter-30506959",
+    "https://www.vetted.show/episodes/michael-herrera-story-marine-encounters-ufo-on-aide-mission-in-indonesia",
+    "https://www.newsnationnow.com/podcasts-newsnation/i-was-intimidated-i-had-surveillance-i-had-threats-u-s-marine-who-saw-craft/",
+    "https://commons.wikimedia.org/wiki/Category:2009_West_Sumatra_earthquake_relief_efforts",
+    "https://commons.wikimedia.org/wiki/File:US_Navy_090909-N-4010S-069_Marines_work_with_Indonesian_military_personnel_to_load_a_CH-53E_Super_Stallion_helicopter_with_relief_supplies_for_victims_of_recent_earthquakes_and_resulting_landslides.jpg"
+  ]
+}
